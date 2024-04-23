@@ -4,13 +4,6 @@
 
 This is a demo workspace for local PHP + PgSQL development powered by docker compose.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Installation
 
 1. Fork (and clone) this repository. There's a guide on how to do so [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository).
