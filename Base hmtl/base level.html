@@ -7,6 +7,45 @@
 </head>
 <body>
     
+    <div>
+        <form action="" method="get"> Kontaktky formular
+            <fieldset>
+                <legend>Osobne udaje</legend>
+                <div>
+                    <label for="meno">Meno</label>
+                    <input type="text" name="meno" id="meno" placeholder="Meno">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required placeholder="Email">
+                </div>
+                <div>
+                    <label for="password">Heslo</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div>
+                    <label for="TOS"> <input type="checkbox" name="TOS" id="TOS">Suhlasim s podmienkami a spamom</label>
+                </div>
+                <input type="submit" value="submit">
+                <input type="button" value="buttonsubmit">
+                <input type="reset" value="reset">
+                <div>
+                    <label for="dob">Datum narodenia</label>
+                    <input type="datetime-local" name="dob" id="dob">
+                </div>
+            </fieldset>
+                <fieldset>
+                    <legend>Oblubena karta</legend>
+                    <label for="card"></label>
+                    <input type="radio" name="card" id="card"> Esova
+                    <input type="radio" name="card" id="card"> Tvarova
+                    <input type="radio" name="card" id="card"> Pikova
+                </fieldset>
+        </form>
+
+
+    </div>
+
     <header>
         <nav>
             <ul>
@@ -30,6 +69,31 @@
             <form> komentuj tu </form>
             <textarea name="komentuj" id="" cols="30" rows="10"></textarea>
             <button>odoslat komentar</button>
+        </div>
+        <div>
+            <table border="5">
+                <thead>
+                    <tr>
+                        <th>Meno</th><th>Vyska</th><th>Vaha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dominik</td><td rowspan="4">120g</td><td rowspan="4">120g</td>
+                    </tr>
+                    <tr>
+                        <td>Praca</td>
+                    </tr>
+                    <tr>
+                        <td>Jozef</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>priemer</td><td colspan="2">120g</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
 </body>
 </html>
