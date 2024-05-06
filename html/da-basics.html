@@ -15,14 +15,100 @@
                     <figcaption> Veselí a rozkošní teletubbies cca. 1930</figcaption>
                     <img src="https://dus09vr7ngt46.cloudfront.net/uploads/2018/02/04113351/tumblr_nd2vmbmnkj1se2y9wo1_500.jpg?height=350&width=500&cropped" alt="dark-tubbies">
                 </figure>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>jméno</th>
+                            <th>věk</th>
+                            <th>výška</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    <tr>
+                        <td> Tinky winky</td>
+                        <td rowspan="4"> 12</td>
+                        <td> 2m</td>
+                    </tr>
+                    <tr>
+                        <td> Dipsy</td>
+                        <td> 2m</td>
+                    </tr>
+                    <tr>
+                        <td> Lala</td>
+                        <td> 2m</td>
+                    </tr>
+                    <tr>
+                        <td> Po</td>
+                        <td> 2m</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>průměr</td>
+                        <td rowspan="2">12</td>
+                        <td>2</td>
+                    </tr>
+                </tfoot>
+                </table>
             </section>
             <div>
                 <form>
                     <p>komentujte zde:</p>
-                    <textarea></textarea>
+                    <fieldset><legend>Osobní údaje</legend>
+                        <div>
+                            <label for="name">Jméno:</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div> 
+                            <label for="email"> Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="password"> Heslo:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div>
+                            <label for="terms">Souhlas s použitím:</label>
+                            <input type="checkbox" id="terms" name="terms" required>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Já a teletubbies</legend>
+                        <div>
+                            <fieldset>
+                            <legend>Oblíbený teletubbie?</legend>
+                            <label for="tinkywinky">Tinky winky</label>
+                            <input type="radio" id="tinkywinky" name="top-teletubbie" value="tinkywinky" required>
+                            <label for="dipsy">Dipsy</label>
+                            <input type="radio" id="dipsy" name="top-teletubbie" value="dipsy" required>
+                            <label for="lala">Lala</label>
+                            <input type="radio" id="lala" name="top-teletubbie" value="lala" required>
+                            <label for="po">Po</label>
+                            <input type="radio" id="po" name="top-teletubbie" value="po" required>
+                            </fieldset>
+                        </div>
+                        <div>
+                            <label for="worst-teletubbie">Nejméně oblíbený teletubbie?</label>
+                            <select name="worst-teletubbie" id="worst-teletubbie" required>
+                                <option value="">...</option>
+                                <option value="tinkyw">Tinky winky</option>
+                                <option value="dips">Dipsy</option>
+                                <option value="lal">Lala</option>
+                                <option value="p">Po</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="file">Nahraj trauma</label>
+                            <input type="file" id="file" name="file" accept="image/*,audio/*">
+                        </div>
+                        <div>
+                            <label for="date">Datum kdy vyšla poslední epizoda</label>
+                            <input type="datetime-local" name="date" id="date" required>
+                        </div>
+                    </fieldset>
+                    <textarea cols="60" rows="10"></textarea>
                     <button>Sdílej trauma</button>
                 </form>
-                
             </div>
         </article>
     </main>
