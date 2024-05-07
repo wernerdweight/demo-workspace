@@ -1,0 +1,27 @@
+form {
+    background-color:rgb(0, 191, 255);
+    border:2px;
+    border-color: blueviolet;
+
+}
+input:active {
+    background-color: greenyellow;
+}
+a:hover {
+    color: red;
+}
+
+table thead {
+    background-color: greenyellow;
+}
+
+tr {
+    padding: 0 20px;
+}
+input[type="password"] {
+    background-color: lightblue;
+}
+
+td:first-child {
+    padding: 0 20px;
+}
