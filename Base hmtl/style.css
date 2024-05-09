@@ -1,22 +1,28 @@
+:root {
+    --primary-color: #843ec6;
+    --text-color: #545058; 
+}
+
 form {
     background-color:rgb(0, 191, 255);
     border:2px;
-    border-color: blueviolet;
+    border-color: #843ec6;
 
 }
 input:active {
-    background-color: greenyellow;
+    background-color: #c0f079;
 }
 a:hover {
-    color: red;
+    color: #ff0000;
 }
 
 table thead {
-    background-color: greenyellow;
+    background-color: #adff2f;
 }
 
 tr {
     padding: 0 20px;
+    color: var(--text-color);
 }
 input[type="password"] {
     background-color: lightblue;
@@ -24,4 +30,20 @@ input[type="password"] {
 
 td:first-child {
     padding: 0 20px;
+}
+
+input[type="submit"] {
+    border: 2px;
+    color: var(--text-color);
+    background-color: darkgray;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
 }

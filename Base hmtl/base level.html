@@ -35,29 +35,32 @@
                     <input type="datetime-local" name="dob" id="dob">
                 </div>
             </fieldset>
-                <fieldset>
-                    <legend>Oblubena karta</legend>
-                    <label for="card"></label>
-                    <input type="radio" name="card" id="card"> Esova
-                    <input type="radio" name="card" id="card"> Tvarova
-                    <input type="radio" name="card" id="card"> Pikova
-
-                    <label for="vyber">vyber</label>
-                    <select name="vyber" id="vyber">
-                        <option value="vyber">moznost 1</option>
-                        <option value="vyber">moznost 2</option>
-                    </select>
-                </fieldset>
+            <fieldset>
+                <legend>Oblubena karta</legend>
+                <label for="card"></label>
+                <input type="radio" name="card" id="card"> Esova
+                <input type="radio" name="card" id="card"> Tvarova
+                <input type="radio" name="card" id="card"> Pikova
+                
+                <label for="vyber">vyber</label>
+                <select name="vyber" id="vyber">
+                    <option value="vyber">moznost 1</option>
+                    <option value="vyber">moznost 2</option>
+                </select>
+            </fieldset>
         </form>
         <div>
-            <form> komentuj tu </form>
-            <textarea name="komentuj" id="" cols="30" rows="10"></textarea>
-            <button>odoslat komentar</button>
+            <form> komentuj tu 
+                <fieldset>
+                    <textarea name="komentuj" id="" cols="30" rows="10"></textarea>
+                    <input type="submit" value="komentuj">
+                </fieldset>
+            </form>
         </div>
-
-
+        
+        
     </div>
-
+    
     <header>
         <nav>
             <ul>
@@ -67,41 +70,41 @@
             </ul>
         </nav>
     </header>
-        <h1>Moje prázdne portfolio</h1>
-        <section>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur <strong>adipisicing elit</strong>. Consequuntur soluta est saepe sunt ea perspiciatis ab error ex quibusdam consequatur voluptatum corporis nulla ipsa maxime, obcaecati deleniti incidunt modi consectetur.
-            </p>
-            <!--<figure>
-                <img src="https://images.unsplash.com/photo-1612010167108-3e6b327405f0?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stonks">
-                <figcaption>Názorná ukážka stonksov</figcaption> 
-            </figure> -->
-        </section>
-        
-        <div>
-            <table border="5">
-                <thead>
-                    <tr>
-                        <th>Meno</th><th>Vyska</th><th>Vaha</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Dominik</td><td rowspan="4">120g</td><td rowspan="4">120g</td>
-                    </tr>
-                    <tr>
-                        <td>Praca</td>
-                    </tr>
-                    <tr>
-                        <td>Jozef</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>priemer</td><td colspan="2">120g</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+    <h1>Moje prázdne portfolio</h1>
+    <section>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur <strong>adipisicing elit</strong>. Consequuntur soluta est saepe sunt ea perspiciatis ab error ex quibusdam consequatur voluptatum corporis nulla ipsa maxime, obcaecati deleniti incidunt modi consectetur.
+        </p>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1612010167108-3e6b327405f0?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stonks">
+            <figcaption>Názorná ukážka stonksov</figcaption> 
+        </figure> 
+    </section>
+    
+    <div>
+        <table border="5">
+            <thead>
+                <tr>
+                    <th>Meno</th><th>Vyska</th><th>Vaha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dominik</td><td rowspan="4">120g</td><td rowspan="4">120g</td>
+                </tr>
+                <tr>
+                    <td>Praca</td>
+                </tr>
+                <tr>
+                    <td>Jozef</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>priemer</td><td colspan="2">120g</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </body>
 </html>
