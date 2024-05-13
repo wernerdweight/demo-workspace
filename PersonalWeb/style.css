@@ -1,0 +1,31 @@
+header {
+    position: sticky;
+    background-color: rgb(230, 230, 230);
+    text-align: right;
+    top: 0;
+}
+h1 {
+    text-align: center;
+}
+
+main > div {
+    border: 2px;
+    border-color: black;
+    background-color: rgb(230, 230, 230);
+    display: inline-block;
+    width: 30%;
+    margin-right: 50px;
+   
+    
+}
+textarea {
+    align-content: center;
+}
+body {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
