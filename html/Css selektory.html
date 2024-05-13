@@ -1,0 +1,191 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Lecture Example</title>
+  <style>
+    input[type] {
+      background-color: red;
+    }
+    input[type="password"] {
+      border: 20px solid blue;
+    }
+    input[type*="t"] {
+      border: 20px dotted green;
+    }
+    label.required::after {
+      content: "*";
+      color: red;
+    }
+    a:hover {
+      color: red;
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: red;
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+    .close::before {
+      content: "X";
+      display: inline;
+    }
+    .close::after {
+      content: "😌";
+      display: none;
+    }
+    .close:hover::before {
+      display: none;
+    }
+    .close:hover::after {
+      display: inline;
+    }
+
+    *:focus {
+      outline: 2px solid red;
+    }
+    input:active {
+      background-color: lightgray;
+    }
+    input:required {
+      border: 2px solid red;
+    }
+    input:disabled {
+      background-color: lightgray;
+    }
+
+    tbody tr:nth-child(3n+1) {
+      background-color: lightgray;
+    }
+    tbody tr:nth-child(3n+2) {
+      background-color: darkblue;
+    }
+
+    td {
+      padding: 0 20px;
+    }
+    td:first-child {
+      padding-left: 0;
+    }
+    td:last-child {
+      padding-right: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="close"></div>
+
+  <header id="main-header" class="My_Header8">
+    <h1>Welcome to CSS Selectors Lecture</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section id="intro-section">
+      <h2>About CSS Selectors</h2>
+      <p>CSS selectors are powerful tools for styling HTML elements based on various criteria.</p>
+      <p>In this lecture, we'll explore different types of selectors and how to use them effectively.</p>
+    </section>
+
+    <section id="selector-types">
+      <h2 class="selector-type">Types of CSS Selectors</h2>
+      <ul>
+        <li class="selector-type">Element Selector</li>
+        <li class="selector-type">Class Selector</li>
+        <li class="selector-type">ID Selector</li>
+        <li class="selector-type">Descendant Selector</li>
+        <li class="selector-type">Child Selector</li>
+        <li class="selector-type">Adjacent Sibling Selector</li>
+        <li class="selector-type">General Sibling Selector</li>
+      </ul>
+    </section>
+
+    <section id="example-form">
+      <h2>Example Form</h2>
+      <form class="selector-type">
+        <div>
+          <label class="required" for="username"><span>Username:</span></label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+          <label for="password" class="required">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+          <input type="checkbox" name="x" id="x">
+        </div>
+        <div>
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <table>
+    <caption>Table with CSS Selectors</caption>
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+        <td>Row 1, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Footer</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <footer>
+    <p>&copy; 2024 CSS Selectors Lecture</p>
+  </footer>
+
+</body>
+
+</html>

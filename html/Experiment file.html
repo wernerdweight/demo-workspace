@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlimited</title>
+  <style>
+    .unit-example {
+      margin-bottom: 20px;
+    }
+
+    .unit-example p {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .red-rectangle {
+      width: 200px;
+      height: 100px;
+      background-color: red;
+      margin-bottom: 10px;
+    }
+
+    .viewport-example {
+      width: 200px;
+      height: 100px;
+      background-color: red;
+      margin-bottom: 10px;
+    }
+
+    .angle-example {
+      width: 200px;
+      height: 100px;
+      background-color: red;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    aside {
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: aquamarine;;
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside>
+    <nav>
+      <ul>
+        <li><a href="#length-units">Length Units</a></li>
+        <li><a href="#percentage-unit">Percentage Unit</a></li>
+        <li><a href="#viewport-relative-units">Viewport-Relative Units</a></li>
+        <li><a href="#angle-units">Angle Units</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <header>
+    <h1>CSS Units Lecture</h1>
+  </header>
+
+  <main>
+    <section id="length-units">
+      <h2>Length Units</h2>
+      <div class="unit-example">
+        <p>1. Absolute Length Units:</p>
+        <div class="red-rectangle" style="width: 10px;"></div>
+        <!--
+          <div class="red-rectangle" style="width: 20mm;"></div>
+          <div class="red-rectangle" style="width: 2cm;"></div>
+          <div class="red-rectangle" style="width: 1in;"></div>
+        -->
+      </div>
+      <div class="unit-example" style="font-size: 24px">
+        <p>2. Relative Length Units:</p>
+        <div class="red-rectangle" style="width: 1em;"></div>
+        <div class="red-rectangle" style="width: 2rem;"></div>
+        <!--
+          <div class="red-rectangle" style="width: 3ex;"></div>
+          <div class="red-rectangle" style="width: 4ch;"></div>
+        -->
+      </div>
+    </section>
+
+    <section id="percentage-unit">
+      <h2>Percentage Unit</h2>
+      <div class="unit-example">
+        <p>50% of parent width:</p>
+        <div class="red-rectangle" style="width: 50%;"></div>
+      </div>
+    </section>
+
+    <section id="viewport-relative-units">
+      <h2>Viewport-Relative Units</h2>
+      <div class="unit-example">
+        <p>10vw (10% of viewport width):</p>
+        <div class="viewport-example" style="width: 10vw;"></div>
+      </div>
+      <div class="unit-example">
+        <p>20vh (20% of viewport height):</p>
+        <div class="viewport-example" style="height: 20vh;"></div>
+      </div>
+    </section>
+
+    <section id="angle-units">
+      <h2>Angle Units</h2>
+      <div class="unit-example">
+        <p>45deg (45 degrees):</p>
+        <div class="angle-example" style="transform: rotate(45deg);">Rotate me!</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 CSS Units Lecture</p>
+  </footer>
+
+</body>
+
+</html>
