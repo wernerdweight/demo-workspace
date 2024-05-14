@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roman Čepl - grafický designer</title>
   <link rel="icon" type="image" href="/czepl_web/image/iconweb.jpg"/>
+  <link rel="stylesheet" href="/czepl_web/style.css">
+  
 </head>
 
 <body>
-
+  
   <header>
     <h1>ROMAN ČEPL</h1>
     <h2>GRAFICKÝ DESIGNER</h2>
@@ -21,10 +24,10 @@
         <li><a href="#Reference">Reference</a></li>
       </ul>
     </nav>
+    <img src="" alt="">
   </header>
-
+  
   <main>
-    <img src="/czepl_web/image/nightsky_aurora.jpg" alt="nightsky_aurora">
     <section id="O_mne">
       <h2>O mně</h2>
       <p>Jsem grafik a fotograf. Během studia
@@ -39,44 +42,77 @@
         Photoshop, Indesign a další...
       </p>
     </section>
-
+    
     <section id="Portfolio">
       <article>
         <h2>Portfolio</h2>
         <nav>
-            <ul>
-              <li><a href="#Packing_box">Packing Box</a></li>
-              <li><a href="#Bannery">Portfolio</a></li>
-              <li><a href="#Obleceni">Oblečení</a></li>
-              <li><a href="#Billboardy">Billboardy</a></li>
-              <li><a href="#Vizitky">Vizitky</a></li>
-              <li><a href="#Loga">Loga</a></li>
-              <li><a href="#Printy">Printy</a></li>
-              <li><a href="#Patterny">Patterny</a></li>
-              <li><a href="#Fotky">Fotky</a></li>
-              <li><a href="#Katalogy">Katalogy</a></li>
-              <li><a href="#Hra">Hra</a></li>
-              <li><a href="#Weby">Weby</a></li>
-            </ul>
-          </nav>
-
-        <h2>Služby</h2>
+          <ul>
+            <li><a href="#Packing_box">Packing Box</a></li>
+            <li><a href="#Bannery">Portfolio</a></li>
+            <li><a href="#Obleceni">Oblečení</a></li>
+            <li><a href="#Billboardy">Billboardy</a></li>
+            <li><a href="#Vizitky">Vizitky</a></li>
+            <li><a href="#Loga">Loga</a></li>
+            <li><a href="#Printy">Printy</a></li>
+            <li><a href="#Patterny">Patterny</a></li>
+            <li><a href="#Fotky">Fotky</a></li>
+            <li><a href="#Katalogy">Katalogy</a></li>
+            <li><a href="#Hra">Hra</a></li>
+            <li><a href="#Weby">Weby</a></li>
+          </ul>
+        </nav>
         <p>Potřebujete pomoc s grafikou? - <strong>Napište</strong> </p>
         <form>
           <fieldset>
-              <label for="name"></label>
-              <div>
-                  <input type="text" name="name" id="name"  placeholder="Jméno a Příjmení (povinné)" required> </div>
+            <label for="name"></label>
+            <div>
+              <input type="text" name="name" id="name"  placeholder="Jméno a Příjmení (povinné)" required> </div>
               <label for="email"></label>
-              <div>
-                  <input type="email"name="email" id="email" placeholder="Email (povinné)" required></div>
+            </div>
+            <div>
+              <input type="email"name="email" id="email" placeholder="Email (povinné)" required></div>
               <label for="predmet"></label>
-                <textarea name="predmet" rows="2" cols="50" placeholder="Předmět"></textarea><br>
+              <textarea name="predmet" rows="2" cols="50" placeholder="Předmět"></textarea><br>
               <label for="message"></label>
-                <textarea name="message" rows="4" cols="50" placeholder="Zpráva"></textarea><br>
-            </fieldset>
+              <textarea name="message" rows="4" cols="50" placeholder="Zpráva"></textarea><br>
+            </div>
+          </fieldset>
         </form>
+      </article>
     </section>
+    <h2>Služby</h2>
+    <div class="simple-card">
+      <img src="/czepl_web/image/empty.jpg"
+      alt="Graficky design">
+      <p>
+        Grafický design
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
+      </p>
+    </div>
+    <div class="simple-card">
+      <img src="/czepl_web/image/empty.jpg"
+      alt="Webdesign">
+      <p>
+        Webdesign
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
+      </p>
+    </div>
+    <div class="simple-card">
+      <img src="/czepl_web/image/empty.jpg" 
+      alt="Produktová fotografie">
+      <p>
+        Produktová fotografie
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
+      </p>
+    </div>
+  </main>
 </body>
 
 </html>

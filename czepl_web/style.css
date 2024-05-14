@@ -1,0 +1,32 @@
+:root {
+    --primary-color: white;
+    --secondary-color: black;
+    --background-color: grey
+}
+main {
+    background-color:var(background-color);}
+header {
+        background-image: url("/czepl_web/image/nightsky_aurora.jpg");
+        background-size: cover;
+        min-height: 70vh;
+        color: var(--primary-color)
+}
+h1 {
+    color: var(--primary-color);
+}
+.grid {
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.simple-card {
+    width: 20rem;
+    max-width: 100%;
+    font-size: 1.15rem;
+    border: 1px solid black;
+    margin: 10px;
+    transition: all 300ms ease-in-out;
+    image size:  1px;
+}
+.simple-card:hover{
+    box-shadow: 0rem 0rem 1rem 0 rgb(193, 193, 193);
+}

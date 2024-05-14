@@ -16,8 +16,7 @@
     <pre>
       <div class="container">
 
-<?php
-echo ;
+
 
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
