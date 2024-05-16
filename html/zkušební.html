@@ -1,110 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Forms</title>
-</head>
-
-<body>
-
-  <h1>HTML Forms</h1>
-
-  <form action="#" method="post">
-    <fieldset>
-      <legend>Personal Information</legend>
-
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" minlength="6" required><br>
-
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob" required><br>
-
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender" required>
-        <option value="">Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select><br>
-
-      <label>Favorite Color:</label>
-      <input type="color" name="color"><br>
-
-      <label>Bio:</label><br>
-      <textarea name="bio" rows="4" cols="50" placeholder="Tell us about yourself"></textarea><br>
-    </fieldset>
-
-    <fieldset>
-      <legend>Contact Information</legend>
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"
-        required><br>
-
-      <label for="country">Country:</label>
-      <input type="text" id="country" name="country" list="countries" required>
-      <datalist id="countries">
-        <option value="USA"></option>
-        <option value="USA2"></option>
-        <option value="Canada"></option>
-        <option value="UK"></option>
-        <option value="Australia"></option>
-      </datalist><br>
-
-      <label for="country">Also country:</label>
-      <select id="country2" name="country2">
-        <optgroup label="Europe">
-          <option value="cz">Czech Republic</option>
-          <option value="sk">Slovakia</option>
-          <option value="au">Austria</option>
-          <option value="de">Germany</option>
-        </optgroup>
-        <optgroup label="Americas">
-          <option value="us">USA</option>
-          <option value="ca">Canada</option>
-        </optgroup>
-        <optgroup label="Asia">
-          <option value="jp">Japan</option>
-          <option value="kr">South Korea</option>
-          <option value="cn">China</option>
-        </optgroup>
-      </select>
-
-
-      <label>Interests:</label><br>
-      <input type="checkbox" id="interest1" name="interests" value="music">
-      <label for="interest1">Music</label>
-      <input type="checkbox" id="interest2" name="interests" value="sports">
-      <label for="interest2">Sports</label>
-      <input type="checkbox" id="interest3" name="interests" value="reading">
-      <label for="interest3">Reading</label><br>
-
-      <label>Preferred Language:</label><br>
-      <input type="radio" id="lang1" name="language" value="english">
-      <label for="lang1">English</label>
-      <input type="radio" id="lang2" name="language" value="spanish">
-      <label for="lang2">Spanish</label>
-      <input type="radio" id="lang3" name="language" value="french">
-      <label for="lang3">French</label><br>
-
-      <label for="file">Upload Photo:</label>
-      <input type="file" id="file" name="photo" accept="image/*"><br>
-    </fieldset>
-
-    <input type="hidden" name="hiddenField" value="hiddenValue">
-
-    <input type="reset" value="Reset">
-    <input type="submit" value="Submit">
-  </form>
-
-</body>
-
-</html>
+<nav class="navbar">
+  <div class="navbar__flex">
+  <a class="navbar__logo" href="#">
+  <img src="palm-trees-7150530.svg" alt="Logo">
+  Super Dovolená
+  </a>
+  <div class="navbar__links">
+  <a href="#">Nabídka zájezdů</a>
+  <a href="#">Zajímavosti</a>
+  <a href="#">Zákaznická zóna</a>
+  </div>
+  </div>
+  </nav>
+  <main class="homepage-content">
+  <section class="homepage-content__flex
+  homepage-content__flex--vacations">
+  <h2>Akční zájezdy</h2>
+  <!-- HTML kód karet s drobnou úpravou -->
+  </section> 
+  
+  <section class="homepage-content__flex
+  homepage-content__flex--posts">
+  <h2>Zajímavosti o destinacích</h2>
+  <!-- HTML kód karet s drobnou úpravou -->
+  </section>
+  <div class="homepage-content__cta">
+  <a href="#">Chci zájezd</a>
+  </div>
+  </main>
+  <footer class="footer">
+  <div class="footer__flex">
+  <div class="footer__container">
+  <a class="footer__link" href="#">Obchodní podmínky</a>
+  <a class="footer__link" href="#">Nabídka zájezdů</a>
+  <a class="footer__link" href="#">Kontakty</a>
+  </div>
+  <div class="footer__container">
+  <a class="footer__link" href="#">Ochrana osobních
+  údajů</a>
+  <a class="footer__link" href="#">Soubory Cookies</a>
+  <a class="footer__link" href="#">Zákaznická zóna</a>
+  </div>
+  </div>
+  <span class="footer__copy">&copy; 2024</span>
+  </footer>

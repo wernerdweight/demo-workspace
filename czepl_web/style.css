@@ -1,32 +1,144 @@
 :root {
     --primary-color: white;
     --secondary-color: black;
-    --background-color: grey
+    --background-color: grey;
+    --third-color: #6A0035;
 }
 main {
-    background-color:var(background-color);}
+    background-color:var(background-color);
+    align-items: center;
+}
 header {
         background-image: url("/czepl_web/image/nightsky_aurora.jpg");
         background-size: cover;
         min-height: 70vh;
         color: var(--primary-color)
 }
-h1 {
+h1, h2 {
     color: var(--primary-color);
+    text-align: left;
+    padding-left: 50px;
+}
+h1 {
+    padding-top: 30vh;
 }
 .grid {
     display: grid ;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.simple-card {
+#O_mne {
+    background-color: var(--third-color);
+    color:var(--primary-color);
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.Graficky_Design {
     width: 20rem;
     max-width: 100%;
     font-size: 1.15rem;
-    border: 1px solid black;
+    margin: 10px;
+    transition: all 300ms ease-in-out;
+    background-color: contain;
+    text-align: center;
+}
+.Graficky_Design:hover {
+    box-shadow: 0rem 0rem 1rem 0 rgb(193, 193, 193);
+}
+.Webdesign {
+    width: 20rem;
+    max-width: 100%;
+    font-size: 1.15rem;
     margin: 10px;
     transition: all 300ms ease-in-out;
     image size:  1px;
+    text-align: center;
 }
-.simple-card:hover{
+.Webdesign:hover {
     box-shadow: 0rem 0rem 1rem 0 rgb(193, 193, 193);
+}
+.Produktove_Fotografie {
+    width: 20rem;
+    max-width: 100%;
+    font-size: 1.15rem;
+    margin: 10px;
+    transition: all 300ms ease-in-out;
+    image size:  1px;
+    text-align: center;
+}
+.Produktove_Fotografie:hover{
+    box-shadow: 0rem 0rem 1rem 0 rgb(193, 193, 193);
+}
+img{
+    width: 100px;
+    height: contain;
+}
+.menu1 li {
+    list-style-type: none ; 
+    display: inline-block;
+}
+.menu1 .grid {
+    padding: 0;
+}
+.menu1 {
+    display: block;
+    padding: 10px;
+    border:1px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.253);
+    color: var(--primary-color);
+}
+.menu2 li {
+    list-style-type: none ; 
+    display: inline-block;
+}
+.menu2{
+    display: block;
+    padding: 10px;
+    border:1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+.container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 100px 1.4fr 0.6fr; 
+    gap: 10px 20px; 
+    grid-template-areas: 
+    "Grafický-Design Webdesign Produktové-Fotografie"
+    "Grafický-Design Webdesign Produktové-Fotografie"
+    "Grafický-Design Webdesign Produktové-Fotografie"; 
+}
+.Graficky_Design { grid-area: Grafický-Design; }
+.Webdesign { grid-area: Webdesign; }
+.Produktove_Fotografie { grid-area: Produktové-Fotografie; 
+}
+.container2 {
+    display: flex; 
+    gap: 10px 20px;
+    padding: 1rem;
+    align-items: center;
+}
+.container2 > div {
+    flex-basis: 400px;
+    background-color: rgb(234, 234, 234);
+    padding: 1rem;
+}
+.container2 > div:hover {
+    box-shadow: 0 0.25rem 0.65rem 0,1rem;
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(105%);
+}
+.form {
+    background-color: var(--third-color);
+    color: var(--primary-color);
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    border:1px solid var(--secondary-color);
+
 }
