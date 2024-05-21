@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu {
+    position: relative;
+    border-radius: 10px;
+}
+
+.menu-items {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.menu-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 20%;
+    transition: transform 0.5s;
+}
+
+.menu-item:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.menu-item:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.menu-item:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.menu-item:nth-child(4) {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:nth-of-type(1):checked ~ .menu-items {
+    transform: rotate(0deg);
+}
+
+input[type="radio"]:nth-of-type(2):checked ~ .menu-items {
+    transform: rotate(-90deg);
+}
+
+input[type="radio"]:nth-of-type(3):checked ~ .menu-items {
+    transform: rotate(-180deg);
+}
+
+input[type="radio"]:nth-of-type(4):checked ~ .menu-items {
+    transform: rotate(-270deg);
+}

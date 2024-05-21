@@ -14,16 +14,19 @@
   
   <header>
     <nav class="menu1">
-      <div class="grid">
+      <ul>
         <li><a href="#O_mne">O mně</a></li>
         <li><a href="#Portfolio">Portfolio</a></li>
         <li><a href="#Sluzby">Služby</a></li>
         <li><a href="#Kontakt">Kontakt</a></li>
         <li><a href="#Reference">Reference</a></li>
-      </div>
+      </ul>
     </nav>
+    <div class="czepl_logo">
+      <img src="/czepl_web/image/czepl_logo.png" alt="czepl_logo">
+    </div>
     <h1>ROMAN ČEPL</h1>
-    <h2>GRAFICKÝ DESIGNER</h2>
+    <h2>GRAFICKÝ <br> DESIGNER</h2>
   </header>
   
   <main>
@@ -45,58 +48,24 @@
     <section id="Portfolio">
       <article>
         <h3>Portfolio</h3>
-        <nav class="menu2">
-          <ul>
-            <li><a href="#Packing_box">Packing Box</a></li>
-            <li><a href="#Bannery">Portfolio</a></li>
-            <li><a href="#Obleceni">Oblečení</a></li>
-            <li><a href="#Billboardy">Billboardy</a></li>
-            <li><a href="#Vizitky">Vizitky</a></li>
-            <li><a href="#Loga">Loga</a></li>
-            <li><a href="#Printy">Printy</a></li>
-            <li><a href="#Patterny">Patterny</a></li>
-            <li><a href="#Fotky">Fotky</a></li>
-            <li><a href="#Katalogy">Katalogy</a></li>
-            <li><a href="#Hra">Hra</a></li>
-            <li><a href="#Weby">Weby</a></li>
-          </ul>
-        </nav>
+        <div class="menu2">
+            <a href="#Packing_box">Packing Box</a>
+            <a href="#Bannery">Bannery</a>
+            <a href="#Obleceni">Oblečení</a>
+            <a href="#Billboardy">Billboardy</a>
+            <a href="#Vizitky">Vizitky</a>
+            <a href="#Loga">Loga</a>
+            <a href="#Printy">Printy</a>
+            <a href="#Patterny">Patterny</a>
+            <a href="#Fotky">Fotky</a>
+            <a href="#Katalogy">Katalogy</a>
+            <a href="#Hra">Hra</a>
+            <a href="#Weby">Weby</a>
+        </div>
+        <div class="rotating-element">
+          <img src="/czepl_web/image/kolo_menu.svg" alt="kolo_menu">
+        </div>
       </article>
-    </section>
-    <section id="Sluzby">
-      <h3>Služby</h3>
-      <div class="container">
-        <div class="Graficky_Design">
-          <img src="/czepl_web/image/4531692_creative_designer_desktop_draw_pen_icon.png"
-          alt="Graficky_Design">
-          <p>
-            Grafický design
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
-          </p>
-        </div>
-        <div class="Webdesign">
-          <img src="/czepl_web/image/9845945_browser_internet_search_worldwide_scan_icon.svg"
-          alt="Webdesign">
-          <p>
-            Webdesign
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
-          </p>
-        </div>
-        <div class="Produktove_Fotografie">
-          <img src="/czepl_web/image/2202258_camera_photo_photographer_photography_icon.png"
-          alt="Produktova_Fotografie">
-          <p>
-            Produktová fotografie
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
-          </p>
-        </div>
-      </div>
     </section>
     <section id="Sluzby">
       <h3>Služby</h3>
@@ -105,17 +74,17 @@
           <img src="/czepl_web/image/4531692_creative_designer_desktop_draw_pen_icon.png"
           alt="Graficky_Design">
           <p>
-            Grafický design
+            <strong>Grafický design</strong>
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
           </p>
         </div>
         <div class="Webdesign">
           <img src="/czepl_web/image/9845945_browser_internet_search_worldwide_scan_icon.svg"
           alt="Webdesign">
           <p>
-            Webdesign
+            <strong>Webdesign</strong>
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
@@ -125,7 +94,7 @@
           <img src="/czepl_web/image/2202258_camera_photo_photographer_photography_icon.png"
           alt="Produktova_Fotografie">
           <p>
-            Produktová fotografie
+            <strong>Produktová fotografie</strong>
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam natus inventore quia non mollitia rem. Labore, ex! Maxime perspiciatis maiores eius aspernatur incidunt. Consequatur ab perferendis ipsa libero adipisci sapiente?
@@ -145,7 +114,7 @@
           <label for="email">
           </label>
           <div>
-            <input type="email"name="email" id="email" placeholder="Email (povinné)" required>
+            <input type="email" name="email" id="email" placeholder="Email (povinné)" required>
           </div>
           <label for="predmet">
           </label>
@@ -158,6 +127,18 @@
       </form>
     </div>
   </main>
+<footer>
+  <div class="jazyk">
+      <p>ČESKY</p>
+      <P>|</P>
+      <p>ENGLISH</p>
+  </div>
+  <div class="copyright">
+      <p>
+      (c) 2024 ROMAN ČEPL
+      </p>
+  </div>
+</footer>
 </body>
 
 </html>
