@@ -1,6 +1,6 @@
 @font-face {
     font-family:'Imper';
-    src: url(/PersonalWeb/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+    src: url(/src/assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -55,7 +55,6 @@ nav.small a {
 }
 .me-text {
     text-align: center;
-    font-weight: 800;
 }
 
 .header2 {
