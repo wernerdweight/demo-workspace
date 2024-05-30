@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kontaktujte mě{% endblock %}
+
+{% block main %}
+<div class="form">
+      <p>Potřebujete pomoc s grafikou? - <strong>Napište</strong> </p>
+      <form>
+        <fieldset>
+          <label for="name">    
+          </label>
+          <div>
+            <input type="text" name="name" id="name"  placeholder="Jméno a Příjmení (povinné)" required>
+          </div>
+          <label for="email">
+          </label>
+          <div>
+            <input type="email" name="email" id="email" placeholder="Email (povinné)" required>
+          </div>
+          <label for="predmet">
+          </label>
+          <textarea name="predmet" id="predmet" cols="50" placeholder="Předmět"></textarea>
+          <br>
+          <label for="message"></label>
+          <textarea name="message" id="text" cols="50" placeholder="S čím Vám pomohu?"></textarea>
+        </fieldset>
+      </form>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Roman Čepl - grafický designer{% endblock %}</title>
+        <link rel="icon" type="image" href="{{ asset('image/iconweb.jpg') }}"/>
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <header>
+    <nav class="menu1">
+      <ul>
+        <li><a href="{{path('app_home')}}#O_mne">O mně</a></li>
+        <li><a href="{{path('app_home')}}#Portfolio">Portfolio</a></li>
+        <li><a href="{{path('app_home')}}#Sluzby">Služby</a></li>
+        <li><a href="{{path('app_contact')}}">Kontakt</a></li>
+        <li><a href="{{path('app_home')}}#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <div class="czepl_logo">
+      <img src="{{ asset('image/czepl_logo.png') }}" alt="czepl_logo">
+    </div>
+    <h1>ROMAN ČEPL</h1>
+    <h2>GRAFICKÝ <br> DESIGNER</h2>
+  </header>
+  
+  <main>
+  {% block main %}
+  {% endblock %}
+   
+  </main>
+  <footer>
+    <div class="jazyk">
+      <p>ČESKY</p>
+      <P>|</P>
+      <p>ENGLISH</p>
+    </div>
+    <div class="copyright">
+      <p>
+        (c) 2024 ROMAN ČEPL
+      </p>
+    </div>
+  </footer>
+        {% endblock %}
+    </body>
+</html>

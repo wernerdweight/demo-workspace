@@ -6,8 +6,8 @@
 }
 main {
     background-color:var(background-color);
-    align-items: center;
     font-family: Arial, sans-serif;
+    flex-basis: 100%;
 }
 header {
     background-image: url("/czepl_web/image/nightsky_aurora.jpg");
@@ -15,21 +15,32 @@ header {
     color: var(--primary-color);
     height: 70vh;
     font-family: arial;
+    padding-top: 2vh;
+    flex-basis: 100%;
+}
+body {
+    margin:0;
+    flex-basis: 100%;
 }
 .czepl_logo > img{
     width: 200px;
     padding-left: 7vh;
-    padding-top: 7vh;
+    padding-top: 0;
     align-items: center;
 }
 h1, h2 {
     font-family: arial;
     color: var(--primary-color);
-    text-align: left;
     padding-left: 7vh;
 }
 h1 {
-    padding-top: 20vh;
+    font-size: 20pt;
+    padding-top: 15vh;
+    font-weight: lighter ;
+}
+h2 {
+    font-size: 30pt;
+    font-weight: bolder;
 }
 #O_mne {
     background-color: var(--third-color);
@@ -50,20 +61,16 @@ h1 {
     text-align: center;
 }
 .menu1 {
-    display: block;
-    padding: 1px;
     margin-inline-start: 940px;
-    margin-top: 10px;
     width: 500px;
     color: var(--primary-color);
     background-color: rgba(255, 255, 255, 0.588);
-    position:fixed;
     z-index: 1000;
     border-radius: 50px;
 }
 .menu1 ul{
+    margin-top: 0;
     list-style-type: none;
-    margin: 0;
     display:flex;
     justify-content: space-around;
 }
@@ -110,9 +117,10 @@ h1 {
     gap: 10px 20px;
     padding: 1rem;
     background-size: contain;
+    flex-wrap: wrap;
 }
 .container2 > div {
-    flex-basis: 400px;
+    flex-basis: 100%;
     align-items: flex-start;
     background-color: rgb(234, 234, 234);
     padding: 1rem;
@@ -125,8 +133,12 @@ h1 {
 .form {
     background-color: var(--third-color);
     color: var(--primary-color);
+    text-align: center;
+    padding: 10vh;
+    font-family: arial;
 }
-@media (max-width:768px) {
+#predmet{
+    font-family: arial;
 }
 .rotating-element {
     width: 500px;
@@ -143,9 +155,6 @@ h1 {
         transform: rotate(360deg);
     }
 }
-.rotating-element {
-    width: 500px;
-}
 footer {
     background-color: var(--background-color);
     height: 70px;
@@ -159,5 +168,50 @@ footer {
     background-size: contain;
 }
 .copyright {
-margin-left: 70vh;
+    margin-left: 70vh;
+}
+#Portfolio_karta {
+    background-color: var(--background-color);
+    place-content: center;
+}
+.karta {
+    display: flex; 
+    gap: 10px 20px;
+    flex-wrap: wrap;
+    
+}
+.Packing_box > img {
+    width: 500px;
+    padding: 7vh;
+    
+}
+.Packing_text {
+    max-width: 300px;
+    max-height: 200px;
+    text-align: justify;
+}
+
+.Packing_box2 > img {
+    width: 500px;
+}
+@media (max-width:768px) 
+{
+    header {
+        flex: 100%;
+    }
+    .content {
+        padding: 0 1rem;
+        flex-wrap: wrap;
+        
+        main, aside {
+            flex-basis: 100%;
+        }
+    }
+    .menu1 {
+        margin-inline-start: 20px;
+        width: 500px;}
+    .Packing_box > img {
+        width: 98vw;
+        padding: 1vw;
+}
 }
