@@ -3,6 +3,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
+    <style>
+        :root{
+            --text-color: rgb(54, 155, 189);
+        }
+        h1 {
+            color:var(--text-color);
+        }
+        .main-image {
+            border-style: dotted;
+            border-color: rgb(193, 0, 0);
+        }
+        .main-image:hover {
+            border-color: rgb(6, 130, 8);
+        }
+        article p {
+            font-weight: light;
+        }
+        input[type="password"] {
+            background-color: rgb(0, 216, 205);
+        }
+        input:required {
+            border-color:var(--text-color);
+        }
+        td:first-child {
+            font-style: italic;
+        }
+        form > p {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        article p {
+            text-align: justify;
+        }
+        p.Pellentesque {
+            font-weight: bolder;
+            font-size: 120%;
+        }
+    </style>
     <title>Jak mi zničili dětství - Telletubbies</title>
 </head> 
 <body>
@@ -10,8 +47,11 @@
         <article>
             <h1> Jak mi telletubbies zničili dětství </h1>
             <section>
-                <p> Je to prostě <em>pure Nightmare</em> fuel</p>
-                <figure>
+                <p class="Pellentesque"> Je to prostě <em>pure Nightmare</em> fuel</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec iaculis gravida nulla. Aenean vel massa quis mauris vehicula lacinia. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam in lorem sit amet leo accumsan lacinia. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Duis pulvinar. Fusce consectetuer risus a nunc.
+                </p>
+                <figure class="main-image">
                     <figcaption> Veselí a rozkošní teletubbies cca. 1930</figcaption>
                     <img src="https://dus09vr7ngt46.cloudfront.net/uploads/2018/02/04113351/tumblr_nd2vmbmnkj1se2y9wo1_500.jpg?height=350&width=500&cropped" alt="dark-tubbies">
                 </figure>
@@ -53,9 +93,10 @@
             </section>
             <div>
                 <form>
-                    <p>komentujte zde:</p>
+                    <p>Komentujte zde:</p>
                     <fieldset><legend>Osobní údaje</legend>
                         <div>
+                            <p>Tralalaa</p>
                             <label for="name">Jméno:</label>
                             <input type="text" id="name" name="name">
                         </div>
