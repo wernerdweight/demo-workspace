@@ -26,23 +26,17 @@
   <div id="menu">
     <ul class="menu">
       <li class="menu-item">
-        <a href="page">Main</a>
-      </li>
+        <a href="{{path('app_home')}}#main>Main</a></li>
       <li class="menu-item">
-        <a href="blog">Blog</a>
-      </li>
+        <a href="{{path('app_blog')}}#blog>Blog</a></li>
       <li class="menu-item">
-        <a href="about.html">About me</a>
-      </li>
+        <a href="{{path('app_about')}}#about>About me</a></li>
       <li class="menu-item">
-        <a href="media">Media</a>
-      </li>
+        <a href="{{path('app_media')}}#media>Media</a></li>
       <li class="menu-item">
-        <a href="contact">Contact</a>
-      </li>
+        <a href="{{path('app_contact')}}#app>Contact</a></li>
       <li class="menu-item">
-        <a href="other">Other fun shit</a>
-      </li>
+        <a href="{{path('app_other')}}#other>Other fun shit</a></li>
     </ul>
   </div>
   <div style="text-align: center">
@@ -52,7 +46,9 @@
     <p class="text">And this page is under construction, so kindly, fuck off</p>
     <img src="{{asset('images/Tiefling_middle_finger.png')}}" alt="Tiefling Middle Finger" id="tiefling">
     <p class="text">...</p>
-    <footer>Bear with me</footer>
+      {% block footer %} 
+      Bear with me
+      {% endblock footer %}
   </div>
   <div>
   <form  method="get" action="#">
