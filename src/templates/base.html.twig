@@ -24,20 +24,11 @@
     </div>
   </div>
   <div id="menu">
+  {% for menuItem in MenuController %}
     <ul class="menu">
       <li class="menu-item">
-        <a href="{{path('app_home')}}#main>Main</a></li>
-      <li class="menu-item">
-        <a href="{{path('app_blog')}}#blog>Blog</a></li>
-      <li class="menu-item">
-        <a href="{{path('app_about')}}#about>About me</a></li>
-      <li class="menu-item">
-        <a href="{{path('app_media')}}#media>Media</a></li>
-      <li class="menu-item">
-        <a href="{{path('app_contact')}}#app>Contact</a></li>
-      <li class="menu-item">
-        <a href="{{path('app_other')}}#other>Other fun shit</a></li>
-    </ul>
+        <a href="#main">{{menuItem}}</a></li>
+      {% endfor %}
   </div>
   <div style="text-align: center">
     <h2>Hell-o, I'm Gris and web development trainee, so let's code together!</h2>
