@@ -6,7 +6,6 @@
         <title>{% block title %}FabianD{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
-        <link rel="stylesheet" href="style.css">
         {% endblock %}
 
         {% block javascripts %}
@@ -15,59 +14,29 @@
     </head>
     <body>
         {% block body %}
-         <header>
-        <nav id="main-nav">
-            <a href="#">Home</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+        <header>
+            <nav id="main-nav">
+             <a href="{{path('app_home')}}">Home</a>
+             <a href="{{path('app_contact')}}">Contact</a>
+            </nav>
+        </header>
     <main>
-        <section class="about-me">
-            <span class="header2">
-                <h2>About me</h2>
-                <article class="me-text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?</p>
-                </article>
-            </span>
-        </section>
-        <section class="my-projects">
-            <h2> Moje práce </h2>
-            <article>
-                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur adipisci excepturi hic suscipit vel pariatur voluptates exercitationem labore harum quibusdam ipsa placeat quae, unde aliquid laudantium, vero debitis quam perferendis? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex veniam cum ullam. Minima dolore praesentium inventore eos. Sapiente nesciunt, praesentium quis iure soluta ratione nulla sed minima, iste cumque cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptates deleniti unde, quasi reprehenderit rem perferendis alias fuga debitis temporibus sint aspernatur at? Voluptas numquam reprehenderit consequuntur, cumque mollitia facilis.</p>
-            </article>
-        </section>
-        <div>
-            <h2> Random fun fax </h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi tenetur nostrum veritatis, eum quae inventore molestiae nihil ea repudiandae laboriosam. Delectus ab maiores molestiae, molestias repellendus labore quisquam ut consequatur? </p>
-        </div>
-        <div>
-            <h2>O mne</h2>
-            <article>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?</p>
-            </article>
-        </div>
-        <div>
-            <h2> Moje práce </h2>
-            <article>
-                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur adipisci excepturi hic suscipit vel pariatur voluptates exercitationem labore harum quibusdam ipsa placeat quae, unde aliquid laudantium, vero debitis quam perferendis? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex veniam cum ullam. Minima dolore praesentium inventore eos. Sapiente nesciunt, praesentium quis iure soluta ratione nulla sed minima, iste cumque cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptates deleniti unde, quasi reprehenderit rem perferendis alias fuga debitis temporibus sint aspernatur at? Voluptas numquam reprehenderit consequuntur, cumque mollitia facilis.</p>
-            </article>
-        </div>
-        <div>
-            <h2> Random fun fax </h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi tenetur nostrum veritatis, eum quae inventore molestiae nihil ea repudiandae laboriosam. Delectus ab maiores molestiae, molestias repellendus labore quisquam ut consequatur? </p>
-        </div>
-    </main>
+    {% block main %}
+
+
+    {% endblock %}
     <footer>
-        <h2>Have a question?</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <br>
-            <button type="submit">Send</button>
-        </form>
-    </footer>
-    <script src="script.js"></script>
+    <div class="inner-footer">
+            <h2>Have a question?</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+        </footer>
+    </div>
 </body>
         {% endblock %}
     </body>

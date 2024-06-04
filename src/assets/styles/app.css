@@ -1,6 +1,6 @@
 @font-face {
-    font-family:'Imper';
-    src: url(/src/assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+    font-family: 'Imper';
+    src: url(/src/assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf);
     font-weight: normal;
     font-style: normal;
 }
@@ -22,13 +22,12 @@ body {
     font-family: var(--main-font);
 }
 
-
 header {
     padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1;
-    text-align: right;
+    text-align: center;
     background-color: var(--neutral-light);
     border-bottom: 2px solid black;
 }
@@ -39,38 +38,81 @@ nav a {
     margin: 0 1rem;
     font-size: 1.2rem;
     transition: font-size 0.3s ease;
+    position: relative;
+}
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
 }
 
-nav a:hover{
-    text-decoration: underline;
-}
+nav a:hover::before {
+    width: 100%; }
+
+
 nav.small a {
     font-size: 0.8rem;
 }
 
-.about-me {
-    background-color: #90A0A3;
-    padding: 1rem;
-    min-height: 25rem;
+h2 {
+    margin-top: 0;
 }
+
+.about-me {
+    background-color: var(--primary-color);
+    min-height: 25rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
 .me-text {
     text-align: center;
+    padding: 0 10rem;
+    margin: 1rem;
 }
 
-.header2 {
+.inner-about {
     text-align: center;
-    padding: 1rem;
 }
 
-footer{
+footer {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;;
 }
 
-form input, form textarea {
+form input, 
+form textarea {
     width: 50%;
     border: none;
     border-radius: 4px;
-    }
+}
+
+form[input="submit"] {
+    background-color: var(--secondary-color-2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+.inner-projects>h2 {
+    text-align: center;
+}
+
+.inner-footer {
+    margin-top: 5vh;
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
 
