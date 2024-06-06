@@ -13,6 +13,7 @@
   <p><strong>Count of tracks:</strong> {{ artist.tracks|length }}</p>
 
   <h2>Tracks</h2>
+  <a href="{{ path('app_track_add', { 'artist_id': artist.id }) }}">Add a track</a>
   <ul>
     {% for track in artist.tracks %}
       <li>{{ track.title }} ({{ track.duration|format_datetime(pattern='mm:ss') }}) {% if track.sellable %}<a href="#">Buy</a>{% endif %}</li>
