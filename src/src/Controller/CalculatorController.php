@@ -12,15 +12,15 @@ class CalculatorController extends AbstractController
     #[Route('/calculator', name: 'app_calculator')]
     public function index(Request $request): Response
     {
-        $result = null;
+        $result = $request->query->get('result');
 
         if ($request->isMethod('POST')) {
             $number1 = $request->request->get('number1');
             $number2 = $request->request->get('number2');
-            $operation = $request->request->get('operation');
+            $operator = $request->request->get('operator');
     
             if (is_numeric($number1) && is_numeric($number2)) {
-                switch ($operation) {
+                switch ($operator) {
                     case 'add':
                         $result = $number1 + $number2;
                         break;
@@ -38,13 +38,13 @@ class CalculatorController extends AbstractController
                         }
                         break;
                     default:
-                        $result = 'Invalid operation';
+                        $result = 'Invalid operator';
                 }
             } else {
                 $result = 'Invalid input';
             }
     
-            dump($result);
+            return $this->redirectToRoute('app_calculator', ['result' => $result]);
         }
     
 
