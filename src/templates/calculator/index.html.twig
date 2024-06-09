@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CalculatorController!{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="inner-calculator">
+        <h2>Calculator</h2>
+        <form action="{{ path('app_calculator') }}" method="post">
+            <input type="number" name="number1" id="number1" placeholder="Enter a number">
+            <select name="operator" id="operator">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <input type="number" name="number2" id="number2" placeholder="Enter a number">
+            <button type="submit">Calculate</button>
+        </form>
+        
+
+        {% if result is not null %}
+            <p>Result: {{ result }}</p>
+        {% endif %}
+
+        
+    </div>
+
+
+{% endblock %}

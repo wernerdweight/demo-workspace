@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %}FabianD{% endblock %}
 
 {% block main %}
+
  <section class="about-me">
             <div class="inner-about">
                 <h2>About me</h2>
@@ -14,43 +17,8 @@
                         </p>
                     </article>
             </div>
-        </section>
-        <section class="projects">
-            <div class="inner-projects">
-                <h2>My projects</h2>
-                <div class="project">
-                    <div class="project-image">
-                        <img src="assets/images/project1.jpg" alt="project1">
-                    </div>
-                    <div class="project-text">
-                        <h3>Project 1</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?
-                        </p>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-image">
-                        <img src="assets/images/project2.jpg" alt="project2">
-                    </div>
-                    <div class="project-text">
-                        <h3>Project 2</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?
-                        </p>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-image">
-                        <img src="assets/images/project3.jpg" alt="project3">
-                    </div>
-                    <div class="project-text">
-                        <h3>Project 3</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
+ </section>
+ {{ include('home/projects.html.twig') }}
+
+
 {% endblock %}

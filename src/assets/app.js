@@ -12,9 +12,10 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 window.addEventListener('scroll', function() {
     const nav = document.getElementById('main-nav');
     
-    if (window.scrollY > 50) {  // Adjust the scroll value as needed
+    if (window.scrollY > 50) { 
         nav.classList.add('small');
     } else {
         nav.classList.remove('small');
     }
 });
+
