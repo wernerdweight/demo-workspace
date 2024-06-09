@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello mother fluffer!{% endblock %}
 
 {% block main %}
-{( include ('home/about.html.twig)'))}
-{( include ('home/html.twig'))}
-{( include ('home/hmtl.twig'))}
-
-    {% endblock %}
+    {#( include ('home/about.html.twig)'))}
+    {( include ('home/html.twig'))}
+    {( include ('home/hmtl.twig'))#}
+    {% for album in albums %}
+    <a href="{{path ('app_album', {'id': album.id})}}">
+    {{album.title}}
+    </a>
+    {% endfor %}
+{% endblock %}

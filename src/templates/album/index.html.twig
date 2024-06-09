@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AlbumController!{% endblock %}
+
+{% block main %}
+    <h1> {{album.title}} </h1>
+    {% for track in album.tracks %}
+    {{track.title}}
+    {% endfor %}
+{% endblock %}
