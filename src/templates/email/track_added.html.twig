@@ -1,0 +1,6 @@
+{% extends 'email/base.html.twig' %}
+
+{% block main %}
+  <h1>New track added!</h1>
+  <p>Someone added the track <strong>{{ track.title }}</strong> from <em>{{ track.artist.name }}</em></p>
+{% endblock %}
