@@ -12,7 +12,8 @@ class HomeController extends AbstractController
     public function index(): Response
     {
     $portfolioItems = ['Packing Box', 'Bannery', 'Oblečení', 'Billboardy', 'Vizitky', 'Loga', 'Printy', 'Patterny', 'Fotky', 'Katalogy', 'Hra', 'Weby'];
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/index.html.twig', 
+        [
             'portfolioItems'=> $portfolioItems,
         ]);
     }
