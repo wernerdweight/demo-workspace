@@ -15,7 +15,24 @@
     <body>
         {% block body %}
           <header>
-            {% block header %}{% endblock %}
+            {% block header %}
+            <nav>
+              <ul>
+              <li><a href="{{ path('app_home') }}">Home</a></li>
+              <li><a href="{{ path('app_contact') }}">Contact</a></li>
+              {% if is_granted('ROLE_ADMIN') %}
+                <li><a href="{{ path('app_admin') }}">Admins only</a></li>
+              {% endif %}
+              {% if is_granted('ROLE_SUPER_ADMIN') %}
+                <li><a href="#">Superadmins only</a></li>
+              {% endif %}
+              {% if app.user is not null %}
+                <li><a href="{{ path('app_logout') }}">Logout</a></li>
+              {% else %}
+                <li><a href="{{ path('app_login') }}">Login</a></li>
+              {% endif %}
+            </nav>
+            {% endblock %}
           </header>
           <main class="container">
             {% block main %}{% endblock %}
