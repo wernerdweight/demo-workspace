@@ -82,3 +82,14 @@ form[type="submit"]{
     background-color: darkgray;
     width: 5rem;
 }
+
+
+.inner-calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+
