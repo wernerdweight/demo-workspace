@@ -83,8 +83,9 @@ h2 {
 }
 .container2 {
     display: flex; 
+    min-width: 316px;
     gap: 10px 20px;
-    background-size: contain;
+    background-size: var(--background-color);
     flex-wrap: wrap;
 }
 .container2 > div {
@@ -101,11 +102,11 @@ h2 {
     max-width: 100%;
     font-size: 1.15rem;
     transition: all 300ms ease-in-out;
-    background-color: contain;
+    background-color: var(--background-color);
     text-align: center;
 }
 .Graficky_Design, .Webdesign, .Produktove_Fotografie > img {
-    max-width: 100px;
+    max-width: 200px;
 }
 .form {
     background-color: var(--third-color);
@@ -121,11 +122,15 @@ h2 {
     font-family: arial;
 }
 footer {
+    display: flex;
     background-color: var(--background-color);
     height: 70px;
     font-family: arial;
-    display: flex;
     flex-wrap: wrap;
+}
+.jazyk {
+    display: flex;
+    flex:wrap
 }
 .copyright {
     margin-left: 70vh;
@@ -175,10 +180,10 @@ footer {
         flex-wrap: wrap;
     }       
     main, aside {
-            flex-basis: 100%;
+        flex-basis: 100%;
     }
     .container2 > div {
-    flex-basis: 100%;
+        flex-basis: 100%;
     }
     .Packing_box > img {
         width: 98vw;

@@ -21,6 +21,14 @@
         <li><a href="{{path('app_home')}}#Portfolio">Portfolio</a></li>
         <li><a href="{{path('app_home')}}#Sluzby">Služby</a></li>
         <li><a href="{{path('app_contact')}}">Kontakt</a></li>
+        {% if is_granted("ROLE_ADMIN") %}
+        <li><a href="{{path('app_admin')}}">Admin</a></li>
+        {% endif %}
+        {% if app.user is null %}
+        <li><a href="{{path('app_login')}}">Login</a></li>
+        {% else %}
+        <li><a href="{{path('app_logout')}}">Logout</a></li>
+        {% endif %}
       </ul>
     </nav>
     <div class="czepl_logo">
@@ -49,7 +57,7 @@
     </div>
     <div class="copyright">
       <p>
-        (c) 2024 ROMAN ČEPL
+        © 2024 ROMAN ČEPL
       </p>
     </div>
   </footer>
