@@ -24,13 +24,17 @@
       />
     </div>
   </div>
-  <div id="menu">
-  {% if menuItems is defined %}
+  <div id="menu" class="menu-container">
+    <div class="menu-button">
+      <a href="#">Menu</a>
+    </div>
+    {% if menuItems is defined %}
       <ul class="menu">
-  {% for menuItem in menuItems %}
-      <li class="menu-item">
-        <a href="#main">{{menuItem}}</a></li>
-      {% endfor %}
+        {% for menuItem in menuItems %}
+          <li class="menu-item">
+            <a href="#main">{{menuItem}}</a>
+          </li>
+        {% endfor %}
       </ul>
     {% endif %}
   </div>
@@ -58,7 +62,7 @@
       <label for="absolute">Absolutely love it!</label>
       <input type="radio" id="absolute name="absolute" value="absolute">
       <input type="submit" value="Bear with">
-    </fieldset> 
+    </fieldset>
   </form>
 </div>
         {% endblock %}
