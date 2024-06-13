@@ -3,41 +3,20 @@
 {% block title %}Kontaktujte mě{% endblock %}
 
 {% block main %}
-<div clas="kontaktblok">
-<div class="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.7846948781153!2d15.353615576192276!3d49.54521557143349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470cfc71ff9b8da1%3A0x46f37a23501d536f!2sNa%20Rybn%C3%AD%C4%8Dku%201325%2C%20396%2001%20Humpolec!5e0!3m2!1scs!2scz!4v1717683385978!5m2!1scs!2scz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-<div class="kontakt">
-  <p><strong>Roman Čepl</strong></p>
-  <p><strong>+420 731 034 787</strong></p>
-  <p>romancepl@seznam.cz</p>
-  <img src="{{ asset('image/1159683_instagram_instagram logo_icon.svg') }}"
-  <p> Instagram</p>
-  </div>
+<div class="kontaktblok">
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82855.41872808048!2d15.261265219524029!3d49.536776344310056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470cfc71d9325e1b%3A0xdfa2b0143d060cdd!2sHumpolec%2C%20396%2001%20Humpolec!5e0!3m2!1scs!2scz!4v1718187273427!5m2!1scs!2scz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="kontakt">
+        <p><strong>Roman Čepl</strong></p>
+        <p><strong>+420 731 034 787</strong></p>
+        <p>romancepl@seznam.cz</p>
+        <img src="{{ asset('image/1159683_instagram_instagram logo_icon.svg') }}" />
+    </div>
 </div>
 <div class="form">
-      <p><strong>Kontaktní formulář</strong></p>
-      <p>Potřebujete pomoc s grafikou? - <strong>Napište!</strong> </p>
-      {{form(form)}}
-      <form>
-        <fieldset>
-          <label for="name">    
-          </label>
-          <div>
-            <input type="text" name="name" id="name"  placeholder="Jméno a Příjmení (povinné)" required>
-          </div>
-          <label for="email">
-          </label>
-          <div>
-            <input type="email" name="email" id="email" placeholder="Email (povinné)" required>
-          </div>
-          <label for="predmet">
-          </label>
-          <textarea name="predmet" id="predmet" cols="50" placeholder="Předmět"></textarea>
-          <br>
-          <label for="message"></label>
-          <textarea name="message" id="text" cols="50" placeholder="S čím Vám pomohu?"></textarea>
-        </fieldset>
-      </form>
+    <p><strong>Kontaktní formulář</strong></p>
+    <p>Potřebujete pomoc s grafikou? - <strong>Napište!</strong> </p>
+    {{ form(form) }}
 </div>
 {% endblock %}

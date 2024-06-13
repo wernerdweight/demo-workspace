@@ -4,11 +4,6 @@
     --background-color: grey;
     --third-color: #620721;
 }
-main {
-    background-color:var(background-color);
-    font-family: Arial, sans-serif;
-    flex-basis: 100%;
-}
 header {
     background-image: url("../image/nightsky_aurora.jpg");
     background-size: cover;
@@ -16,6 +11,11 @@ header {
     height: 70vh;
     font-family: arial;
     padding-top: 2vh;
+    flex-basis: 100%;
+}
+main {
+    background-color:var(--primary-color);
+    font-family: Arial, sans-serif;
     flex-basis: 100%;
 }
 body {
@@ -58,6 +58,7 @@ h2 {
     background-color: rgba(255, 255, 255, 0.588);
     z-index: 1000;
     border-radius: 50px;
+    cursor:pointer;
 }
 .menu1 ul{
     margin-top: 0;
@@ -81,22 +82,25 @@ h2 {
     flex-basis: 400px;
     text-shadow: black;
 }
+/* Služby */
 .flex-container {
     display: flex;
-    gap: 10 20;
-    max-width: 100%;
+    align-items: stretch;
     flex-wrap: wrap;
+    margin: 2%;
 }
-.Graficky_Design, .Webdesign, .Produktove_Fotografie {
+.flex-container > .Graficky_Design, .flex-container > .Webdesign, .flex-container > .Produktove_Fotografie {
     background-color: lightgrey;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     text-align: center;
-    max-width: 316px;
+    width: 31%;
+    max-height: 500px;
 }
-.Graficky_Design, .Webdesign, .Produktove_Fotografie > img {
-    width: 200px;
+.Graficky_Design > img, .Webdesign > img, .Produktove_Fotografie > img {
+    width: 300px;
 }
+/* Služby-konec */
 .form {
     background-color: var(--third-color);
     color: var(--primary-color);
@@ -119,14 +123,15 @@ footer {
 }
 .jazyk {
     display: flex;
-    flex:wrap
+    flex: wrap;
 }
 .copyright {
     margin-left: 70vh;
 }
 .Portfolio_karta {
     background-color: var(--background-color);
-    place-content: center;
+    border-radius: 5px;
+    margin:1vw
 }
 .karta {
     display: flex; 
@@ -134,18 +139,16 @@ footer {
     flex-wrap: wrap;
 }
 .Packing_box > img {
-    width: 500px;
+    width: 300px;
     padding: 2vh;
-    
 }
 .Packing_text {
     max-width: 300px;
-    max-height: 200px;
     text-align: justify;
 }
 
 .Packing_box2 > img {
-    width: 500px;
+    max-width: 300px;
     padding: 2vh;
 }
 .kontakt > img {   
@@ -158,6 +161,7 @@ footer {
 }
 .kontaktblok {
     display: flex; 
+    flex-wrap: wrap;
 }
 .Portfolio-menu{
     width: 100vw;
@@ -182,7 +186,7 @@ footer {
     left: calc(50% - 50vw/2);
     top: 0;
 }
-@media (max-width:768px) 
+@media (max-width:1000px) 
 {
     header {
         flex: 100%;
@@ -194,15 +198,23 @@ footer {
     main, aside {
         flex-basis: 100%;
     }
+    .menu1 {
+        width: 375px;
+        color: var(--primary-color);
+        background-color: rgba(255, 255, 255, 0.588);
+        border-radius: 50px;
+        cursor: pointer;
+        position: absolute;
+    }
     .flex-container > div {
         flex-basis: 100%;
     }
-    .Packing_box > img {
-        width: 98vw;
-        padding: 1vw;
+    .Graficky_Design > img, .Webdesign > img, .Produktove_Fotografie > img {
+        flex-basis: 100%;
     }
-    .Packing_box2 > img {
-        width: 98vw;
-        padding: 1vw;
+    .map > iframe {
+        width:350px;
+        height:250px;
+        padding: 3vh;
     }
 }
