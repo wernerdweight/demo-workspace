@@ -3,6 +3,8 @@
     --secondary-color: black;
     --background-color: grey;
     --third-color: #620721;
+
+    --circle-size: 35vw;
 }
 header {
     background-image: url("../image/nightsky_aurora.jpg");
@@ -68,7 +70,7 @@ h2 {
     justify-content: space-around;
 }
 .menu1 li {
-    list-style-type: none ; 
+    list-style-type: none ;
     align-self: center;
     justify-self: center;
     display: inline-block;
@@ -128,13 +130,8 @@ footer {
 .copyright {
     margin-left: 70vh;
 }
-.Portfolio_karta {
-    background-color: var(--background-color);
-    border-radius: 5px;
-    margin:1vw
-}
 .karta {
-    display: flex; 
+    display: flex;
     gap: 10px 20px;
     flex-wrap: wrap;
 }
@@ -151,7 +148,7 @@ footer {
     max-width: 300px;
     padding: 2vh;
 }
-.kontakt > img {   
+.kontakt > img {
     width:5vh
 }
 .map > iframe {
@@ -160,33 +157,121 @@ footer {
     padding: 7vh;
 }
 .kontaktblok {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
 }
 .Portfolio-menu{
     width: 100vw;
-    height: 60vw;
+    height: calc(var(--circle-size));
     position: relative;
+    overflow: hidden;
 }
 .inner-circle {
     background-color: var(--third-color);
     border-radius: 50%;
-    width: 25vw;
-    height: 25vw;
+    width: var(--circle-size);
+    height: var(--circle-size);
     position: absolute;
-    left: calc(50% - 25vw/2);
-    top: 0;
+    left: calc(50% - var(--circle-size)/2);
+    top: calc(-1 * var(--circle-size) / 2);
+    z-index: 2;
+}
+.inner-circle h3 {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--primary-color);
 }
 .outer-circle {
     background-color: var(--background-color);
     border-radius: 50%;
-    width: 50vw;
-    height: 50vw;
+    width: calc(2 * var(--circle-size));
+    height: calc(2 * var(--circle-size));
     position: absolute;
-    left: calc(50% - 50vw/2);
-    top: 0;
+    left: calc(50% - 2 * var(--circle-size)/2);
+    top: calc(-1 * var(--circle-size));
+    z-index: 1;
+    transition: transform 0.5s ease-in-out;
 }
-@media (max-width:1000px) 
+.menu2 {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - var(--circle-size)/4);
+  height: var(--circle-size);
+  width: calc(var(--circle-size)/2);
+  transform: rotate(45deg);
+  transform-origin: top center;
+}
+.menu2:nth-child(1) {
+  transform: rotate(0deg);
+}
+.menu2:nth-child(2) {
+  transform: rotate(30deg);
+}
+.menu2:nth-child(3) {
+  transform: rotate(60deg);
+}
+.menu2:nth-child(4) {
+  transform: rotate(90deg);
+}
+.menu2:nth-child(5) {
+  transform: rotate(120deg);
+}
+.menu2:nth-child(6) {
+  transform: rotate(150deg);
+}
+.menu2:nth-child(7) {
+  transform: rotate(180deg);
+}
+.menu2:nth-child(8) {
+  transform: rotate(210deg);
+}
+.menu2:nth-child(9) {
+  transform: rotate(240deg);
+}
+.menu2:nth-child(10) {
+  transform: rotate(270deg);
+}
+.menu2:nth-child(11) {
+  transform: rotate(300deg);
+}
+.menu2:nth-child(12) {
+  transform: rotate(330deg);
+}
+
+.menu2 p {
+  position: absolute;
+  bottom: 1rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.portfolio-viewport {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.portfolio-container {
+  display: flex;
+  width: 1200vw;
+  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-1100vw);
+}
+
+.portfolio-item {
+  flex-basis: 100vw;
+}
+.portfolio-item > div {
+  background-color: var(--background-color);
+  border-radius: 5px;
+  margin: 1rem;
+}
+
+@media (max-width:1000px)
 {
     header {
         flex: 100%;
@@ -194,7 +279,7 @@ footer {
     .content {
         padding: 0 1rem;
         flex-wrap: wrap;
-    }       
+    }
     main, aside {
         flex-basis: 100%;
     }
