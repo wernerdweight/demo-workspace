@@ -27,13 +27,12 @@
 
     {% endblock %}
     <footer>
-    <div class="inner-footer">
-            <h2>Have a question?</h2>
-            {{ form(form) }}
-    </div>
-            
+      <div class="inner-footer">
+        <h2>Have a question?</h2>
+        {{ form(question_form_provider.getForm().createView(), {'action': path('app_add_question')}) }}
+      </div>
     </footer>
-    
+
 </body>
         {% endblock %}
     </body>
