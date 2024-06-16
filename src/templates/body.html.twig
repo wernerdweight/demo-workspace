@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% block body %}
+        <div class="header">
+    <div class="image-wrapper">
+    <img
+    src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/Art/Untitled_Artwork%203.png?raw=true"
+    class="img outlined-image-text"
+    alt="Grizzly's lair"
+    href="https://grizzly.s.cz"
+    />
+    </div>
+</div>
+<div id="menu">
+{% if menuItems is defined %}
+    <ul class="menu">
+{% for menuItem in menuItems %}
+    <li class="menu-item">
+        <a href="#main">{{menuItem}}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+</body>
+{% endblock %}
