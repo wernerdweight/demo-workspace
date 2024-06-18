@@ -14,11 +14,11 @@ class QuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('email')
-            ->add('subject')
-            ->add('text')
-            ->add('submit', SubmitType::class)
+            ->add('name', null,['attr' => ['placeholder'=> 'Jméno a Příjmení']])
+            ->add('email', null,['attr' => ['placeholder'=> 'E-mail']])
+            ->add('subject', null,['attr' => ['placeholder'=> 'Předmět']])
+            ->add('text', null,['attr' => ['placeholder'=> 'Text']])
+            ->add('Poslat', SubmitType::class)
         ;
     }
 

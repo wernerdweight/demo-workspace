@@ -44,6 +44,10 @@ h2 {
     font-size: 30pt;
     font-weight: bolder;
 }
+.active {
+background-color: #04AA6D;
+color: white;
+}
 #O_mne {
     background-color: var(--third-color);
     color:var(--primary-color);
@@ -110,11 +114,11 @@ h2 {
     padding: 10vh;
     font-family: arial;
 }
-#predmet{
-    font-family: arial;
+.form > div {
+
 }
-#text {
-    font-family: arial;
+.form label {
+    display: none;
 }
 footer {
     display: flex;
@@ -177,12 +181,12 @@ footer {
     z-index: 2;
 }
 .inner-circle h3 {
-  position: absolute;
-  top: 50%;
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--primary-color);
 }
 .outer-circle {
     background-color: var(--background-color);
@@ -196,79 +200,79 @@ footer {
     transition: transform 0.5s ease-in-out;
 }
 .menu2 {
-  position: absolute;
-  top: 50%;
-  left: calc(50% - var(--circle-size)/4);
-  height: var(--circle-size);
-  width: calc(var(--circle-size)/2);
-  transform: rotate(45deg);
-  transform-origin: top center;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - var(--circle-size)/4);
+    height: var(--circle-size);
+    width: calc(var(--circle-size)/2);
+    transform: rotate(45deg);
+    transform-origin: top center;
 }
 .menu2:nth-child(1) {
-  transform: rotate(0deg);
+    transform: rotate(0deg);
 }
 .menu2:nth-child(2) {
-  transform: rotate(30deg);
+    transform: rotate(30deg);
 }
 .menu2:nth-child(3) {
-  transform: rotate(60deg);
+    transform: rotate(60deg);
 }
 .menu2:nth-child(4) {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 .menu2:nth-child(5) {
-  transform: rotate(120deg);
+    transform: rotate(120deg);
 }
 .menu2:nth-child(6) {
-  transform: rotate(150deg);
+    transform: rotate(150deg);
 }
 .menu2:nth-child(7) {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 .menu2:nth-child(8) {
-  transform: rotate(210deg);
+    transform: rotate(210deg);
 }
 .menu2:nth-child(9) {
-  transform: rotate(240deg);
+    transform: rotate(240deg);
 }
 .menu2:nth-child(10) {
-  transform: rotate(270deg);
+    transform: rotate(270deg);
 }
 .menu2:nth-child(11) {
-  transform: rotate(300deg);
+    transform: rotate(300deg);
 }
 .menu2:nth-child(12) {
-  transform: rotate(330deg);
+    transform: rotate(330deg);
 }
 
 .menu2 p {
-  position: absolute;
-  bottom: 1rem;
-  display: block;
-  width: 100%;
-  text-align: center;
+    position: absolute;
+    bottom: 1rem;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .portfolio-viewport {
-  width: 100vw;
-  overflow: hidden;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .portfolio-container {
-  display: flex;
-  width: 1200vw;
-  flex-wrap: wrap;
-  transition: transform 0.5s ease-in-out;
-  transform: translate(-1100vw);
+    display: flex;
+    width: 1200vw;
+    flex-wrap: wrap;
+    transition: transform 0.5s ease-in-out;
+    transform: translate(-1100vw);
 }
 
 .portfolio-item {
-  flex-basis: 100vw;
+    flex-basis: 100vw;
 }
 .portfolio-item > div {
-  background-color: var(--background-color);
-  border-radius: 5px;
-  margin: 1rem;
+    background-color: var(--background-color);
+    border-radius: 5px;
+    margin: 1rem;
 }
 
 @media (max-width:1000px)
@@ -300,6 +304,37 @@ footer {
     .map > iframe {
         width:350px;
         height:250px;
-        padding: 3vh;
+        position: center;
     }
+    .mobilmenu {
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+        }
+        
+        .mobilmenu #myLinks {
+        display: none;
+        }
+        
+        .mobilmenu a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+        }
+        
+        .mobilmenu a.icon {
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        }
+        
+        .mobilmenu a:hover {
+        background-color: #ddd;
+        color: black;
+        }
 }
+
