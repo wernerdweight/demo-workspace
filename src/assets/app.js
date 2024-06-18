@@ -7,6 +7,8 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
+console.log('aaaaa')
+
 document.addEventListener('DOMContentLoaded', function() {
     const portfolioMenuItems = document.querySelectorAll('.menu2 a')
     const outerCircle = document.querySelector('.outer-circle')
@@ -26,5 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
           portfolioContainer.style.transform = 'translate(-' + translation  + 'vw)'
           currentRotation = rotation
         })
+    })
+
+    console.log('tttt')
+    const hamburgerMenu = document.querySelector('.hamburger-menu')
+    const menu = document.querySelector('.menu1')
+    hamburgerMenu.addEventListener('click', function() {
+      console.log('clicked HB menu')
+      event.preventDefault()
+      menu.classList.toggle('active')
+      hamburgerMenu.classList.toggle('active')
+    })
+    menu.addEventListener('click', function() {
+      console.log('clicked menu')
+
+      menu.classList.remove('active')
+      hamburgerMenu.classList.remove('active')
     })
 })
