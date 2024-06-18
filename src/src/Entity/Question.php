@@ -57,12 +57,12 @@ class Question
 
     public function getSubject(): ?string
     {
-        return $this->name;
+        return $this->subject;
     }
 
     public function setSubject(string $subject): static
     {
-        $this->name = $subject;
+        $this->subject = $subject;
 
         return $this;
     }
