@@ -15,6 +15,7 @@
     <body>
         {% block body %}
         <header>
+    <a href="#" class="hamburger-menu"></a>
     <nav class="menu1">
       <ul>
         <li><a href="{{path('app_home')}}#O_mne">O mně</a></li>
@@ -31,24 +32,13 @@
         {% endif %}
       </ul>
     </nav>
-    <div class="mobilmenu">
-      <div id="myLinks">
-        <a href="#about_me">O mně</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#services">Služby</a>
-        <a href="#contact">Kontakt</a>
-      </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
     <div class="czepl_logo">
       <img src="{{ asset('image/czepl_logo.png') }}" alt="czepl_logo">
     </div>
     <h1>ROMAN ČEPL</h1>
     <h2>GRAFICKÝ <br> DESIGNER</h2>
   </header>
-  
+
   <main>
   {% block main %}
   {% endblock %}
