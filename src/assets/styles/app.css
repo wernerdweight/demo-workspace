@@ -141,6 +141,10 @@ footer {
     max-width: 300px;
     padding: 2vh;
 }
+.kontakt{
+    padding: 3rem;
+    padding-top: 9rem;
+}
 .kontakt > img {
     width:5vh
 }
@@ -152,6 +156,7 @@ footer {
 .kontaktblok {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .Portfolio-menu{
     width: 100vw;
@@ -311,57 +316,57 @@ h3 {
         z-index: 1001;
     }
     .menu1 ul {
-      background-color: var(--primary-color);
-      z-index: 1002;
-      position: relative;
+        background-color: var(--primary-color);
+        z-index: 1002;
+        position: relative;
     }
     .menu1 li {
-      display: block;
+        display: block;
     }
     .menu1 a {
-      font-size: 150%;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      color: var(--secondary-color);
+        font-size: 150%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: var(--secondary-color);
     }
     .hamburger-menu {
-      display: block;
-      position: absolute;
-      right: 1rem;
-      top: 2rem;
-      background-color: var(--primary-color);
-      width: 2rem;
-      height: 0.2rem;
-      z-index: 1002;
-      opacity: 1;
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 2rem;
+        background-color: var(--primary-color);
+        width: 2rem;
+        height: 0.2rem;
+        z-index: 1002;
+        opacity: 1;
     }
     .hamburger-menu.active {
-      position: fixed;
-      transform: rotate(45deg);
-      top: 1.5rem;
+        position: fixed;
+        transform: rotate(45deg);
+        top: 1.5rem;
     }
     .hamburger-menu::before,
     .hamburger-menu::after {
-      content: '';
-      display: block;
-      background-color: var(--primary-color);
-      width: 2rem;
-      height: 0.2rem;
-      position: absolute;
-      opacity: 1;
+        content: '';
+        display: block;
+        background-color: var(--primary-color);
+        width: 2rem;
+        height: 0.2rem;
+        position: absolute;
+        opacity: 1;
     }
     .hamburger-menu::before {
-      top: -0.5rem;
+        top: -0.5rem;
     }
     .hamburger-menu::after {
-      top: -1rem;
+        top: -1rem;
     }
     .hamburger-menu.active::before {
-      opacity: 0;
+        opacity: 0;
     }
     .hamburger-menu.active::after {
-      transform: rotate(90deg);
-      top: 0;
+        transform: rotate(90deg);
+        top: 0;
     }
     .flex-container > div {
         flex-basis: 100%;
@@ -370,9 +375,19 @@ h3 {
         flex-basis: 100%;
     }
     .map > iframe {
-        width:350px;
+        width:320px;
         height:250px;
+        padding: 2vh;
         position: center;
+    }
+    .kontakt{
+        padding: 3rem;
+        padding-top: 4rem;
+    }
+}
+@media (max-width:700px) {
+    .kontakt{
+        padding-top: 1rem;
     }
 }
 
