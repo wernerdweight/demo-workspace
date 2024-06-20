@@ -7,7 +7,7 @@
 
 
     <div class="inner-calculator">
-        <h2>Calculator</h2>
+        <h2 class="calculator-head">Calculator</h2>
         <form action="{{ path('app_calculator') }}" method="post">
             <input type="number" name="number1" id="number1" placeholder="Enter a number">
             <select name="operator" id="operator">
@@ -20,11 +20,11 @@
             <button type="submit">Calculate</button>
         </form>
         
-
+    <div class="calculator-result">
         {% if result is not null %}
             <p>Result: {{ result }}</p>
         {% endif %}
-
+    </div>
         
     </div>
 

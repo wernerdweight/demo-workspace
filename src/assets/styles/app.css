@@ -137,3 +137,19 @@ form label {
     display: none;
 }
 
+.calculator-head {
+    text-align: center;
+    padding: 1rem;
+    align-items: center;
+}
+
+.calculator-result {
+    text-align: center;
+    padding: 1rem;
+}
+
+.inner-calculator {
+    padding: 5vh 0;
+}
+
+

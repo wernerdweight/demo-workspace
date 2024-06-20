@@ -83,13 +83,19 @@ form[type="submit"]{
     width: 5rem;
 }
 
-
-.inner-calculator {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
-    padding: 1rem;
+.calculator-head {
     text-align: center;
+    padding: 1rem;
+    align-items: center;
 }
 
+.calculator-result {
+    text-align: center;
+    background-color: #28444D;
+}
+
+.inner-calculator {
+    padding: 1rem;
+    background-color: #6A817C;
+}
 

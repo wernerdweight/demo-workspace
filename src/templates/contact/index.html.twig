@@ -1,20 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Kontaktujte ma{% endblock %}
+{% block title %}Contact me{% endblock %}
 
 {% block main %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="Contact-page">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/dominikf/projects/demo-workspace/src/src/Controller/ContactController.php</code></li>
-        <li>Your template at <code>/Users/dominikf/projects/demo-workspace/src/templates/contact/index.html.twig</code></li>
-    </ul>
+<h1>Contact me</h1>
+<p>Feel free to contact me on the following socials!</p>
+
+<div class="socials">
+    <a href="https://www.linkedin.com/in/dominik-fabián-9351a829b" target="_blank">
+        <img src="src/assets/images/linkedin.png" alt="linkedin">
+    </a>
+    <a href="https://github.com/Dmnk99" target="_blank">
+        <img src="src/assets/images/github.png" alt="github">
+    </a>
+    </div>
+
+    <div class="contact-form">
+        <h2>Or send me a message thtough this form here!</h2>
+        <img src="src/assets/images/envelope.png" alt="envelope">
+    </div>
+        
+
+
 </div>
 {% endblock %}
