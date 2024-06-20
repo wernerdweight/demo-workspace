@@ -114,7 +114,6 @@
     font-size: x-large;
     color: rgb(138, 103, 28);
     flex-wrap: wrap;
-    background-image: url(https://grizzly.s.cz/img/MENU.png);
   }
 
   .menu-item {
@@ -144,6 +143,21 @@
 .scroll img {
 max-height: 100px;
 margin: -20px 0;
+}
+
+.menu-container::after, .menu-container::before {
+  
+  display: block;
+  width: 100%;
+  height: 5rem;
+  background-size: contain;
+}
+.menu-container::before {
+  background: url("https://raw.githubusercontent.com/SignumDiabolicum/Whispercrow-session/a1b90446b9d878c0cf2f8148e36487ce8a083cf5/New_Menu_Top.png") no-repeat center;
+}
+
+.menu-container::after {
+background: url("https://raw.githubusercontent.com/SignumDiabolicum/Whispercrow-session/a1b90446b9d878c0cf2f8148e36487ce8a083cf5/New_Menu_Bottom.png") no-repeat center;
 }
 
   @media (max-width:768px) {

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% block body %}
+    {% include 'header.html.twig' %}
+    <body>
+        {% block body %}
         <div class="header">
     <div class="image-wrapper">
     <img
@@ -11,15 +13,20 @@
     />
     </div>
 </div>
-<div id="menu">
-{% if menuItems is defined %}
+<div id="menu" class="menu-container">
+{% if menu_items is defined %}
     <ul class="menu">
-{% for menuItem in menuItems %}
+{% for menuItem in menu_items %}
     <li class="menu-item">
-        <a href="#main">{{menuItem}}</a></li>
+        <a href="/{{loop.index0 ? menuItem|lower : ''}}">{{menuItem}}</a></li>
     {% endfor %}
     </ul>
     {% endif %}
 </div>
+  {% block main %}
+  
+  {% endblock main %}
+  {% include 'footer.html.twig' %}
 </body>
 {% endblock %}
+</html>
