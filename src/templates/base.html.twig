@@ -12,8 +12,12 @@
     href="https://grizzly.s.cz"
     />
     </div>
+    
 </div>
 <div id="menu" class="menu-container">
+  <div class="menu-button">
+      <a href="#">Menu</a>
+    </div>
 {% if menu_items is defined %}
     <ul class="menu">
 {% for menuItem in menu_items %}
@@ -26,7 +30,21 @@
   {% block main %}
   
   {% endblock main %}
-  {% include 'footer.html.twig' %}
-</body>
-{% endblock %}
+  <div>
+  {# footer add #}
+  <form  method="get" action="#">
+    <fieldset>
+      <legend>Oi wanker! Rate me!</legend>
+      <label for="toptier">Top tier shit!</label>
+      <input type="radio" id="top" name="top" value="toptier" >
+      <label for="love">I love it!</label>
+      <input type="radio" id="love" name="love" value="love">
+      <label for="absolute">Absolutely love it!</label>
+      <input type="radio" id="absolute name="absolute" value="absolute">
+      <input type="submit" value="Bear with">
+    </fieldset>
+  </form>
+</div>
+        {% endblock %}
+    </body>
 </html>

@@ -20,4 +20,11 @@ document.addEventListener ("DOMContentLoaded", event=>{
             imageWrapper.classList.remove ("scroll")
         }
     })
+
+    const menuButton = document.querySelector(".menu-button")
+    const menu = document.querySelector(".menu")
+    menuButton.addEventListener("click", event => {
+      event.preventDefault()
+      menu.classList.toggle("open")
+    })
 })
