@@ -153,6 +153,15 @@ footer {
   position: relative;
 }
 
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: x-large;
+    color: rgb(138, 103, 28);
+    flex-wrap: wrap;
+  }
+
 .menu-container::after, .menu-container::before {
   content: "";
   display: block;
@@ -217,3 +226,35 @@ footer {
     background-size: var(--menu-bg-width-phone);
   }
 }
+
+.scroll img {
+max-height: 100px;
+margin: -20px 0;
+}
+
+.menu-container::after, .menu-container::before {
+  
+  display: block;
+  width: 100%;
+  height: 5rem;
+  background-size: contain;
+}
+.menu-container::before {
+  background: url("https://raw.githubusercontent.com/SignumDiabolicum/Whispercrow-session/a1b90446b9d878c0cf2f8148e36487ce8a083cf5/New_Menu_Top.png") no-repeat center;
+}
+
+.menu-container::after {
+background: url("https://raw.githubusercontent.com/SignumDiabolicum/Whispercrow-session/a1b90446b9d878c0cf2f8148e36487ce8a083cf5/New_Menu_Bottom.png") no-repeat center;
+}
+
+  @media (max-width:768px) {
+    .outlined-image-text {
+      width: 100%;
+    }
+    .menu-item {
+      flex-basis: 100%;
+    }
+    .header {
+      max-height: 50vh;
+    }
+  }
