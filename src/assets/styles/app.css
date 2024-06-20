@@ -14,7 +14,14 @@
     --main-font: 'Inter', sans-serif;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -30,6 +37,10 @@ header {
     text-align: center;
     background-color: var(--neutral-light);
     border-bottom: 2px solid black;
+}
+
+main{
+    flex-grow: 1;
 }
 
 nav a {
