@@ -4,25 +4,31 @@
 
 {% block main %}
 
-<div class="Contact-page">
 
-<h1>Contact me</h1>
-<p>Feel free to contact me on the following socials!</p>
-
-<div class="socials">
-    <a href="https://www.linkedin.com/in/dominik-fabián-9351a829b" target="_blank">
-        <img src="{{ asset ('images/linkedin.png') }}" alt="linkedin">
-    </a>
-    <a href="https://github.com/Dmnk99" target="_blank">
-        <img src="{{ asset ('images/github.png') }}" alt="github">
-    </a>
+<div class="contact-header">
+        <h1>Contact me</h1>
+        <p>On this page, you can find all ways to contact me!</p>
     </div>
 
+
+
+<div class="contacts-page">
+    <div class="socials">
+        <h2>My socials</h2>    
+            <a href="https://www.linkedin.com/in/dominik-fabián-9351a829b" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                Linked-in
+            </a>
+            <a href="https://github.com/Dmnk99" target="_blank">
+                <i class="fab fa-github"></i>
+                Github
+            </a>
+    </div>
     <div class="contact-form">
-        <h2>Or send me a message thtough this form here!</h2>
-        <img src="{{ asset ('images/envelope.png') }}" alt="envelope">
+        <h2>Or send me a message through form below!</h2>
+        <i class = "fas fa-envelope"></i>
     </div>
-        
+    
 
 
 </div>

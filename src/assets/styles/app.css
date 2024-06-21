@@ -1,3 +1,6 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+
 @font-face {
     font-family: 'Imper';
     src: url(/src/assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf);
@@ -163,4 +166,51 @@ form label {
     padding: 5vh 0;
 }
 
+.contacts-page {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 15px;
+}
 
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex-grow: 0.5;
+}
+
+.socials a {
+    color: var(--secondary-color-2);
+    text-decoration: none;
+    font-size: 0,8rem;
+    transition: font-size 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+i {
+    font-size: 2rem;
+    color: var(--secondary-color-2)
+}
+
+.contact-header {
+    margin: 1rem;
+    text-align: center;
+}
+
+.contact-form {
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex-shrink: 0.5;
+    width: 30%;
+    word-wrap: break-word;
+}
