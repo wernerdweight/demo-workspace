@@ -5,14 +5,15 @@
         {% block body %}
         <div class="header">
     <div class="image-wrapper">
-    <img
-    src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/Art/Untitled_Artwork%203.png?raw=true"
-    class="img outlined-image-text"
-    alt="Grizzly's lair"
-    href="https://grizzly.s.cz"
-    />
+      <div class="overlay">
+        <img
+        src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/Art/Untitled_Artwork%203.png?raw=true"
+        class="img outlined-image-text"
+        alt="Grizzly's lair"
+        href="#"
+        />
+      </div>
     </div>
-    
 </div>
 <div id="menu" class="menu-container">
   <div class="menu-button">
@@ -28,22 +29,16 @@
     {% endif %}
 </div>
   {% block main %}
-  
+
   {% endblock main %}
+  <button 
+    onclick="topFunction()" 
+    id="topbtn" 
+    title="Uppies"
+    src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/main/arm-skelly.png?raw=true">
+</button>  
   <div>
-  {# footer add #}
-  <form  method="get" action="#">
-    <fieldset>
-      <legend>Oi wanker! Rate me!</legend>
-      <label for="toptier">Top tier shit!</label>
-      <input type="radio" id="top" name="top" value="toptier" >
-      <label for="love">I love it!</label>
-      <input type="radio" id="love" name="love" value="love">
-      <label for="absolute">Absolutely love it!</label>
-      <input type="radio" id="absolute name="absolute" value="absolute">
-      <input type="submit" value="Bear with">
-    </fieldset>
-  </form>
+  {% include 'footer.html.twig' %}
 </div>
         {% endblock %}
     </body>

@@ -24,7 +24,20 @@ document.addEventListener ("DOMContentLoaded", event=>{
     const menuButton = document.querySelector(".menu-button")
     const menu = document.querySelector(".menu")
     menuButton.addEventListener("click", event => {
-      event.preventDefault()
-      menu.classList.toggle("open")
+    event.preventDefault()
+    menu.classList.toggle("open")
     })
 })
+let topbutton = document.getElementById("topbtn")
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topbutton.style.display = "block";
+    } else {
+        topbutton.style.display = "none"; 
+        }
+    }
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}

@@ -136,6 +136,7 @@ footer {
 
 .scroll img {
   max-height: 100px;
+  max-width: fit-content;
   margin: -20px 0;
 }
 
@@ -160,6 +161,7 @@ footer {
     font-size: x-large;
     color: rgb(138, 103, 28);
     flex-wrap: wrap;
+    position: center;
   }
 
 .menu-container::after, .menu-container::before {
@@ -172,19 +174,23 @@ footer {
   background-position: center;
 }
 .menu-container::before {
-  background-image: url('../images/menu-top.png');
+  background-image: url('../images/New_Menu_Top.png');
+  max-width: 400px;
 }
 .menu-container::after {
-  background-image: url('../images/menu-bottom.png');
-  height: calc(var(--menu-bg-width) * (335 / 2520));
+  background-image: url('../images/New_Menu_Bottom.png');
+  height: calc(var(--menu-bg-width));
+  max-width: 400px;
 }
 .menu {
-  background-image: url('../images/menu-middle.png');
+  background-image: url('../images/New_Menu_Mid.png');
   background-size: var(--menu-bg-width);
+  max-width: fit-content;
   background-repeat: repeat-y;
   background-position: top center;
   margin: 0;
   padding: 0;
+  position: center;
   list-style: none;
   font-size: x-large;
   color: rgb(138, 103, 28);
@@ -246,7 +252,26 @@ margin: -20px 0;
 .menu-container::after {
 background: url("https://raw.githubusercontent.com/SignumDiabolicum/Whispercrow-session/a1b90446b9d878c0cf2f8148e36487ce8a083cf5/New_Menu_Bottom.png") no-repeat center;
 }
+container:hover .overlay {
+position:relative;
+opacity: 0.5;
 
+}
+
+#topbtn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+#topbtn:hover {
+  color: rgb(111, 93, 67);
+}
   @media (max-width:768px) {
     .outlined-image-text {
       width: 100%;
