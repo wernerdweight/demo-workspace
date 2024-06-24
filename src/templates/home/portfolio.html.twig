@@ -7,7 +7,7 @@
           {% for portfolioItem in portfolioItems %}
             <div class="menu2">
               <p>
-                <a href="#Item-{{ loop.index }}">{{ portfolioItem }}</a>
+                <a href="#Item-{{ loop.index }}">{{ portfolioItem.title }}</a>
               </p>
             </div>
           {% endfor %}
@@ -18,19 +18,22 @@
           {% for portfolioItem in portfolioItems|reverse %}
             <div class="portfolio-item">
               <div>
-                <h3>{{ portfolioItem }}</h3>
+                <h3>{{ portfolioItem.title }}</h3>
                 <div class="karta">
                   <div class="Packing_box">
-                  {{PortfolioItem.title}}{{PortfolioItem.FirstImage}}{{PortfolioItem.text}}{{PortfolioItem.SecondImage}}
-                    <img src="{{ asset('image/snb_box.jpg') }}"
+                  {% if portfolioItem.FirstImage is not null %}
+                    <img src="{{ asset(portfolioItem.FirstImage[0]) }}"
                     alt="Packing_box">
+                  {% endif %}
                   </div>
                   <div class="Packing_text">
-                    <p>Při tvorbě podkladů na obalový materiál je vždy důležité zohlednit nejen vizuální stránku, ale také funkčnost obalu. Použití vhodných materiálů zajistí bezpečný transport, zatímco design se postará o zaujmutí zákazníka a o předaní potřebných informací. Pro tvorbu této krabičky jsem zvolil pevnější kartoný materiál, který udrží snowboardové brýle v bezpečí i při náročnějším transportu. Byla nachystána, tak aby se do ní věšly všeshny typy brýlí včetně příslušenství. Součástí designu měli být základní informace o vlastnostech brýlí. Tyto informace jsou umístěny na vrchní části obalu v podobě jednoduchých nákresů s popiskami. Pro každou krabičku se chystal individuální nákres obrysu brýlí, který je nejdominantnějším na celé krabičce. Tento obrys, stejně tak i nálepka s barvou brýlí, pomáhá k lepší orientaci skladníků a prodavčů.</p>
+                    <p>{{portfolioItem.text}}</p>
                   </div>
                   <div class="Packing_box2">
-                    <img src="{{ asset('image/snb_box_2.jpg') }}"
+                  {% if portfolioItem.SecondImage is not null %}
+                    <img src="{{ asset(portfolioItem.SecondImage[0]) }}"
                     alt="Packing_box2">
+                  {% endif %}
                   </div>
                 </div>
               </div>
