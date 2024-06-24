@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Prints;
+use App\Entity\PortfolioItem;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Prints>
+ * @extends ServiceEntityRepository<PortfolioItem>
  */
-class PrintsRepository extends ServiceEntityRepository
+class PortfolioItemRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Prints::class);
+        parent::__construct($registry, PortfolioItem::class);
     }
 
     //    /**
-    //     * @return Prints[] Returns an array of Prints objects
+    //     * @return PortfolioItem[] Returns an array of PortfolioItem objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class PrintsRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Prints
+    //    public function findOneBySomeField($value): ?PortfolioItem
     //    {
     //        return $this->createQueryBuilder('p')
     //            ->andWhere('p.exampleField = :val')
