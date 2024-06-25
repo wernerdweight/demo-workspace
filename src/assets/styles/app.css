@@ -201,13 +201,14 @@ footer {
 }
 .menu2 {
     position: absolute;
-    font-size: 25pt;
+    font-size: 23pt;
     top: 50%;
     left: calc(50% - var(--circle-size)/4);
     height: var(--circle-size);
     width: calc(var(--circle-size)/2);
     transform: rotate(45deg);
     transform-origin: top center;
+    color: var(--secondary-color);
 }
 .menu2:nth-child(1) {
     transform: rotate(0deg);
@@ -248,7 +249,7 @@ footer {
 
 .menu2 p {
     position: absolute;
-    bottom: 1rem;
+    bottom: 3rem;
     display: block;
     width: 100%;
     text-align: center;
@@ -284,7 +285,7 @@ h3 {
     display: none;
 }
 
-@media (max-width:1000px)
+@media (max-width:1280px)
 {
     header {
         flex: 100%;
@@ -389,10 +390,23 @@ h3 {
         padding: 3rem;
         padding-top: 4rem;
     }
+    .menu2 {
+        font-size: 19pt;
+    }
+    .menu2 p {
+        bottom: 1.5rem;
+}
+@media (max-width:900px) {
+    .menu2 {
+        font-size: 18pt;
+    }
 }
 @media (max-width:700px) {
     .kontakt{
         padding-top: 1rem;
+    }
+    .flex-container > .Graficky_Design, .flex-container > .Webdesign, .flex-container > .Produktove_Fotografie {
+        max-height: 600px;
     }
 }
 
