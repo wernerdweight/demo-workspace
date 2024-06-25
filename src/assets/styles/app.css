@@ -30,7 +30,14 @@ h2 {
 
 h5 {
   color: rgb(215, 211, 171);
-  size: 200px;
+}
+
+footer {
+  color:#ab9852;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -101,12 +108,6 @@ fieldset {
   position: center;
 }
 
-footer {
-  color: rgb(122, 120, 99);
-  font-size: 30px;
-  background-color: rgb(18, 17, 10);
-}
-
 .guru {
   font-size: 200px;
   color: rgb(172, 172, 4);
@@ -166,7 +167,7 @@ footer {
 
 .menu-container::after, .menu-container::before {
   content: "";
-  display: block;
+  display: flex;
   width: 100%;
   height: calc(var(--menu-bg-width) * (335 / 2500));
   background-size: var(--menu-bg-width);
@@ -175,12 +176,11 @@ footer {
 }
 .menu-container::before {
   background-image: url('../images/New_Menu_Top.png');
-  max-width: 400px;
+  max-width: 300px;
 }
 .menu-container::after {
   background-image: url('../images/New_Menu_Bottom.png');
-  height: calc(var(--menu-bg-width));
-  max-width: 400px;
+  max-width: 300px;
 }
 .menu {
   background-image: url('../images/New_Menu_Mid.png');
@@ -203,7 +203,6 @@ footer {
   max-height: 50rem;
 }
 
-
 @media (max-width:768px) {
   .outlined-image-text {
     width: 100%;
@@ -218,56 +217,28 @@ footer {
   .menu-button {
     top: 1rem;
   }
-  .menu-container::after,
-  .menu-container::before {
-    background-size: var(--menu-bg-width-phone);
-    height: calc(var(--menu-bg-width-phone) * (335 / 2500));
-  }
-
-  .menu-container::after {
-    height: calc(var--menu-bg-width-phone) * (335 / 2520));
-  }
-
-  .menu {
-    background-size: var(--menu-bg-width-phone);
-  }
-}
 
 .scroll img {
 max-height: 100px;
 margin: -20px 0;
 }
 
-.menu-container::after, .menu-container::before {
-  
-  display: block;
-  width: 100%;
-  height: 5rem;
-  background-size: contain;
-}
-.menu-container::before {
-  background: url("https://raw.githubusercontent.com/SignumDiabolicum/Whispercrow-session/a1b90446b9d878c0cf2f8148e36487ce8a083cf5/New_Menu_Top.png") no-repeat center;
-}
-
-.menu-container::after {
-background: url("https://raw.githubusercontent.com/SignumDiabolicum/Whispercrow-session/a1b90446b9d878c0cf2f8148e36487ce8a083cf5/New_Menu_Bottom.png") no-repeat center;
-}
 container:hover .overlay {
 position:relative;
 opacity: 0.5;
-
 }
 
 #topbtn {
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 60px;
+  right: 10px;
   z-index: 99;
   border: none;
   outline: none;
-  padding: 15px;
+  padding: 5px;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 20px;
+  
 }
 #topbtn:hover {
   color: rgb(111, 93, 67);
@@ -281,5 +252,8 @@ opacity: 0.5;
     }
     .header {
       max-height: 50vh;
+    }
+    .topbtn {
+      size-adjust: 30px;
     }
   }

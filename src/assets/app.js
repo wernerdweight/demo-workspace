@@ -29,6 +29,7 @@ document.addEventListener ("DOMContentLoaded", event=>{
     })
 })
 let topbutton = document.getElementById("topbtn")
+topbutton.addEventListener("click", topFunction)
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -37,7 +38,7 @@ function scrollFunction() {
         topbutton.style.display = "none"; 
         }
     }
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+function topFunction(event) {
+    event.preventDefault()
+    window.scrollTo({top:0, behavior:"smooth"})
 }
