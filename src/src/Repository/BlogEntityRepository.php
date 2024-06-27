@@ -2,39 +2,39 @@
 
 namespace App\Repository;
 
-use App\Entity\Album;
+use App\Entity\BlogEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Album>
+ * @extends ServiceEntityRepository<BlogEntity>
  */
-class AlbumRepository extends ServiceEntityRepository
+class BlogEntityRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Album::class);
+        parent::__construct($registry, BlogEntity::class);
     }
 
 //    /**
-//     * @return Album[] Returns an array of Album objects
+//     * @return BlogEntity[] Returns an array of BlogEntity objects
 //     */
 //    public function findByExampleField($value): array
 //    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
+//        return $this->createQueryBuilder('b')
+//            ->andWhere('b.exampleField = :val')
 //            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
+//            ->orderBy('b.id', 'ASC')
 //            ->setMaxResults(10)
 //            ->getQuery()
 //            ->getResult()
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Album
+//    public function findOneBySomeField($value): ?BlogEntity
 //    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
+//        return $this->createQueryBuilder('b')
+//            ->andWhere('b.exampleField = :val')
 //            ->setParameter('val', $value)
 //            ->getQuery()
 //            ->getOneOrNullResult()

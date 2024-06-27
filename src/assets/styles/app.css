@@ -84,6 +84,7 @@ footer {
 .align-center {
   align-items: center;
 }
+
 .image-wrapper{
   background-image: #151311;
   position: absolute;
@@ -93,6 +94,7 @@ footer {
   z-index: 2;
   transition: all 500ms ease-in-out;
 }
+
 .outlined-image-text {
   -webkit-filter: drop-shadow(1px 1px 0 #747166);
   filter: drop-shadow(-1px -1px 0 #747166)
@@ -137,7 +139,7 @@ fieldset {
 
 .scroll img {
   max-height: 100px;
-  max-width: fit-content;
+  max-width: 200px;
   margin: -20px 0;
 }
 
@@ -163,6 +165,7 @@ fieldset {
     color: rgb(138, 103, 28);
     flex-wrap: wrap;
     position: center;
+    text-align: center;
   }
 
 .menu-container::after, .menu-container::before {
@@ -188,6 +191,7 @@ fieldset {
   max-width: fit-content;
   background-repeat: repeat-y;
   background-position: top center;
+  text-align: center;
   margin: 0;
   padding: 0;
   position: center;
@@ -217,32 +221,33 @@ fieldset {
   .menu-button {
     top: 1rem;
   }
-
-.scroll img {
-max-height: 100px;
-margin: -20px 0;
 }
+.scroll img {
+  max-height: 100px;
+  margin: -20px 0;
+  }
 
 container:hover .overlay {
-position:relative;
-opacity: 0.5;
-}
+  position:relative;
+  opacity: 0.5;
+  }
 
-#topbtn {
+.topbtn {
   position: fixed;
   bottom: 60px;
   right: 10px;
-  z-index: 99;
+  z-index: 10;
   border: none;
   outline: none;
   padding: 5px;
   border-radius: 10px;
   font-size: 20px;
-  
 }
-#topbtn:hover {
-  color: rgb(111, 93, 67);
+
+.topbtn img {
+  max-height: 150px;
 }
+
   @media (max-width:768px) {
     .outlined-image-text {
       width: 100%;
@@ -254,6 +259,6 @@ opacity: 0.5;
       max-height: 50vh;
     }
     .topbtn {
-      size-adjust: 30px;
+      max-height: 100px;
     }
   }

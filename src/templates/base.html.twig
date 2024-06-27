@@ -4,41 +4,40 @@
     <body>
         {% block body %}
         <div class="header">
-    <div class="image-wrapper">
-      <div class="overlay">
-        <img
-        src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/Art/Untitled_Artwork%203.png?raw=true"
-        class="img outlined-image-text"
-        alt="Grizzly's lair"
-        href="#"
-        />
-      </div>
-    </div>
-</div>
-<div id="menu" class="menu-container">
-  <div class="menu-button">
-      <a href="#">Menu</a>
-    </div>
-{% if menu_items is defined %}
-    <ul class="menu">
-{% for menuItem in menu_items %}
-    <li class="menu-item">
-        <a href="/{{loop.index0 ? menuItem|lower : ''}}">{{menuItem}}</a></li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-</div>
-  {% block main %}
+          <div class="image-wrapper">
+            <div class="overlay">
+              <img
+                src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/Art/Untitled_Artwork%203.png?raw=true"
+                class="img outlined-image-text"
+                alt="Grizzly's lair"
+                href="#"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="menu" class="menu-container">
+          <div class="menu-button">
+            <a href="#">Menu</a>
+          </div>
+          {% if menu_items is defined %}
+            <ul class="menu">
+              {% for menuItem in menu_items %}
+                <li class="menu-item">
+                  <a href="/{{loop.index0 ? menuItem|lower : ''}}">{{menuItem}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
 
+  {% block main %}
   {% endblock main %}
+
   <a href="#"
-    id="topbtn" 
+    class="topbtn" 
     title="Uppies">
-    <img src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/main/arm-skelly.png?raw=true">
-</a>  
-  <div>
-  {% include 'footer.html.twig' %}
-</div>
-        {% endblock %}
-    </body>
+      <img src="https://github.com/SignumDiabolicum/Whispercrow-session/blob/main/arm-skelly.png?raw=true">
+  </a>  
+    {% endblock %}
+      </body>
 </html>

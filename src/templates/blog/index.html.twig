@@ -3,10 +3,12 @@
 {% block title %}Beary beast blog{% endblock %}
 
 {% block main %}
-
-<div class="example-wrapper">
-    <h1>Welcome to my traumasharing blog!</h1>
-    <p class="text">And this page is under construction, so kindly, fuck off</p>
+    <section>
+        <div class="example-wrapper">
+        <h1>Welcome to my traumasharing blog!</h1>
+        {% for post in posts %}
+            {{ post.title }} {% if not loop.last %}, {% endif %} {% endfor %}
+        <p class="text">And this page is under construction, so kindly, fuck off</p>
         <img src="{{asset('images/Tiefling_middle_finger.png')}}" alt="Tiefling Middle Finger" id="tiefling">
-</div>
+        </div>
 {% endblock %}
