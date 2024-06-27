@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}The Rolling Stones{% endblock %}</title>
+        <link rel="icon" href="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2023/11/the-rolling-stones-logo-1700033289.jpg" type="image/x-icon">
+        
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <div id="navbar">
+    <script src="{{ asset('js/navbar.js') }}"></script> 
+  </div>
+  <div class="header">
+    <div class="container"></div>
+    <div class="navbar"></div>
+    <nav>
+      <ul>
+        <li><a href="Project 2">Home</a></li>
+        <li><a href="Mick/mick_jagger.html">Mick Jagger</a></li>
+        <li><a href="#">Keith Richards</a></li>
+        <li><a href="#">Ron Wood</a></li>
+        <li><a href="#">Charlie Watts</a></li>
+      </ul>
+    </nav>
+    <img src="#" alt="">
+  </div>
+  <div class="">
+    <div class="col-2">
+      <h1>The Rolling Stones</h1>
+      <p>The Greatest Rock and Roll Band in the World Since 1962</p>
+      <a href="rolling_stones_about.html" class="btn">Find Out More &#8594;</a>
+    </div>
+    <div class="col-2">
+      <img src="{{ asset('images/rolling_stones_members.jpg') }}" alt="">
+    </div>
+  </div>
+  <div class="categories">
+    <div class="row">
+      <div class="col-3">
+        <img src="{{ asset('images/rs_clothing.jpg') }}" alt="">
+      </div>
+      <div class="col-3">
+        <img src="{{ asset('images/rs_albums.jpg') }}" alt="">
+      </div>
+      <div class="col-3">
+        <img src="{{ asset('images/rs_gifts.webp') }}" alt="">
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+    </body>
+</html>

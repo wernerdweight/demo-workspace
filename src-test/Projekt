@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rolling Stones</title>
+    <link rel="icon" href="https://preview.redd.it/vrimtpnrl3s41.png?auto=webp&s=e521bc57713a35ea3fddd9a53eb3d4c43a510f69" type="image/png">
+<style>
+    img {
+        display:block;
+        margin:0 auto;
+    }
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    .photo-tile {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .photo-tile img {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+}
+</style>
+</head>
+<body>
+    <article>
+        <h1>The Beginning</h1>
+    </article>
+    <nav>
+        <ul>
+    
+            <li><a href="mick.html">Mick Jagger</a></li>
+            <li><a href="keef.html">Keith Richards</a></li>
+            <li><a href="ronnie">Ron Wood</a></li>
+            <li><a href="charlie">Charlie Watts</a></li>
+            <li><a href="bill">Bill Wyman</a></li>
+            <li><a href="brian">Brian Jones</a></li>
+            <li><a href="mick">Mick Taylor</a></li>
+            <li><a href="darryl">Darryl Jones</a></li>
+        </ul>
+    </nav>
+ <p>In 1962, amidst the bustling music scene of London, a group of young men came together to form what would become one of the most iconic rock bands in history: The Rolling Stones. The story of how the band came together is a fascinating tale of chance encounters, shared passions, and a desire to make music that would resonate with generations to come.</p>
+    <p>It all began in 1960 when childhood friends Mick Jagger and Keith Richards bumped into each other at a train station in Dartford, England. Both were avid fans of rhythm and blues music, and they soon struck up a conversation about their shared love for artists like Muddy Waters, Chuck Berry, and Bo Diddley. Little did they know that this chance meeting would be the start of something legendary.
+    Jagger and Richards began jamming together, with Jagger on vocals and Richards on guitar. They were soon joined by mutual friend Dick Taylor on bass and Tony Chapman on drums. This early lineup, known as the Blue Boys, played mostly blues covers at local gigs around London.</p>
+   <p> In 1962, the lineup underwent some changes. Taylor left the band to attend art school, and Chapman was replaced by Mick Avory. It was also during this time that the band changed their name to The Rolling Stones, inspired by the title of a Muddy Waters song.
+    The final piece of the puzzle fell into place when Jagger and Richards met Brian Jones, a talented multi-instrumentalist, and blues enthusiast, at a blues club in London. Jones, who was already performing under the name Elmo Lewis, was impressed by Jagger and Richards' musical prowess and soon joined the band as a guitarist.
+    With the addition of Jones, The Rolling Stones solidified their lineup: Mick Jagger on vocals, Keith Richards on guitar, Brian Jones on guitar, Dick Taylor on bass, and Mick Avory on drums. However, Taylor would soon be replaced by Bill Wyman, and Avory would be replaced by Charlie Watts, completing the classic lineup of the band.</p>
+   <p> With their lineup finalized, The Rolling Stones began to make a name for themselves on the London club circuit, playing a mix of blues covers and original material. Their energetic live performances and rebellious attitude quickly garnered them a loyal following, and it wasn't long before they were signed to Decca Records.
+    In June 1963, The Rolling Stones released their debut single, a cover of Chuck Berry's "Come On," which reached number 21 on the UK Singles Chart. This was followed by a string of successful singles and albums, including "The Rolling Stones" (1964), "12 X 5" (1964), and "The Rolling Stones No. 2" (1965).
+    By the mid-1960s, The Rolling Stones had become one of the biggest bands in the world, known for their raw energy, provocative lyrics, and rebellious image. Over the next six decades, they would go on to release countless hit singles and albums, solidifying their legacy as one of the greatest rock bands of all time.</p>
+    
+    <figure><img src="https://static.dw.com/image/17582609_1004.webp" alt="The Rolling Stones in 1962 in Their Lineup Until Brian Jones' Death in 1969">
+    <figcaption style="text-align: center; font-style: italic;">The Rolling Stones in 1962 in Their Lineup Until Brian Jones' Untimely Death in 1969</figcaption>   
+    </figure>
+
+    <div class="grid-container">
+        <div class="photo-tile"><img src="https://townsquare.media/site/295/files/2015/07/GettyImages-72591466.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89" alt="Photo 1"></div>
+        <div class="photo-tile"><img src="https://cdn.artphotolimited.com/images/60913d60bd40b85323893a87/1000x1000/the-rolling-1962.jpg" alt="Photo 2"></div>
+        <div class="photo-tile"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbpEUrVHR1pKp0XeWu0DLLh4bKYIjVMbYgb79cb7xIvw&s" alt="Photo 3"></div>
+        <div class="photo-tile"><img src="https://lh6.googleusercontent.com/proxy/kxGDPfU6Whiyik4eTxjRt8RpQhAz6VYzTl4k8qHw98WAH8SW8ReNDHxQeY6hNcZs9HtGYcMrDs9_lRxXvvhyjXgUOR-l2CmaJZVVNDT1Yl5OXNjoBxBWp4Aa4wPKQy6xLccjkwsTCyM4sp7E6rjA-megy1l-W6pOQ9aMJ_5-uRT-ANJcamT6s40VM3tqDwq1nhfRSyHwpZFID3FCpNTKJzojfA" alt="Photo 4"></div>
+        <div class="photo-tile"><img src="https://img.resized.co/hotpress/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLmhvdHByZXNzLmNvbVxcXC91cGxvYWRzXFxcLzIwMTlcXFwvMDdcXFwvMTIxMTUyNDZcXFwvcm9sbGluZy1zdG9uZXMtMTk2Mi1lMTU2MjkyODc4NjY0OS5wbmdcIixcIndpZHRoXCI6NzAwLFwiaGVpZ2h0XCI6MzcwLFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cuaG90cHJlc3MuY29tXFxcL2lcXFwvbm8taW1hZ2UucG5nP3Y9OVwiLFwib3B0aW9uc1wiOltdfSIsImhhc2giOiIxOWNhYWQ1NWE2MzJjNGI2YzM3Mzg1ZmJkMzY2OGQ0YzBjOTAzMTY1In0=/rolling-stones-1962-e1562928786649.png" alt="Photo 5"></div>
+        <div class="photo-tile"><img src="https://entertainment.time.com/wp-content/uploads/sites/3/2012/07/rolling-stones-1962-b.jpg?w=720" alt="Photo 6"></div>
+    </div>
+                
+</body>
