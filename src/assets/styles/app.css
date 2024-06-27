@@ -103,11 +103,6 @@ footer {
     margin: 5vh 0;
 }
 
-.project {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 0;
-}
 .inner-projects>h2 {
     text-align: center;
 }
@@ -213,4 +208,26 @@ i {
     flex-shrink: 0.5;
     width: 30%;
     word-wrap: break-word;
+}
+
+.project {
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.project > h3 {
+    margin: 0;
+}
+
+.project > i {
+    font-size: 2rem;
+    color: var(--secondary-color-2);
+}
+
+.project-text {
+    padding: 1rem;
+    text-align: center;
+    width: 50%; /* Adjust as needed */
+    margin: auto;
 }
