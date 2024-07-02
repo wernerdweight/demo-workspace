@@ -29,15 +29,19 @@ document.addEventListener ("DOMContentLoaded", event=>{
     })
 })
 let topbutton = document.getElementById("topbtn")
-topbutton.addEventListener("click", topFunction)
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
+
+topbutton.addEventListener("click", (event) => topFunction (event))
+
+window.onscroll = scrollFunction;
+
+function scrollFunction() {
     if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         topbutton.style.display = "block";
     } else {
         topbutton.style.display = "none"; 
         }
     }
+    
 function topFunction(event) {
     event.preventDefault()
     window.scrollTo({top:0, behavior:"smooth"})

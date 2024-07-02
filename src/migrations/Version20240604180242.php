@@ -14,7 +14,7 @@ final class Version20240604180242 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return 'create album entity';
+        return 'FormEntityTable';
     }
 
     public function up(Schema $schema): void

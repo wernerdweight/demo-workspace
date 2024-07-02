@@ -1,6 +1,7 @@
 :root {
   --menu-bg-width: 50rem;
   --menu-bg-width-phone: 320px;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -51,7 +52,7 @@ footer {
 }
 
 .menu a {
-  color: rgb(194, 140, 59);
+  color: rgb(59, 49, 32);
 }
 
 .container {
@@ -145,7 +146,7 @@ fieldset {
 
 .menu-button {
   position: absolute;
-  top: 2rem;
+  top: 5rem;
   left: 0;
   width: 100%;
   display: block;
@@ -158,43 +159,42 @@ fieldset {
 }
 
 .menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    font-size: x-large;
-    color: rgb(138, 103, 28);
-    flex-wrap: wrap;
-    position: center;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-size: x-large;
+  color: rgb(138, 103, 28);
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+}
 
 .menu-container::after, .menu-container::before {
   content: "";
   display: flex;
   width: 100%;
-  height: calc(var(--menu-bg-width) * (335 / 2500));
+  height: 185px;
   background-size: var(--menu-bg-width);
   background-repeat: no-repeat;
   background-position: center;
 }
 .menu-container::before {
   background-image: url('../images/New_Menu_Top.png');
-  max-width: 300px;
 }
 .menu-container::after {
   background-image: url('../images/New_Menu_Bottom.png');
-  max-width: 300px;
 }
 .menu {
   background-image: url('../images/New_Menu_Mid.png');
   background-size: var(--menu-bg-width);
-  max-width: fit-content;
   background-repeat: repeat-y;
   background-position: top center;
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  position: center;
+  width: 514px;
+  position: relative;
+  left: 4px;
   list-style: none;
   font-size: x-large;
   color: rgb(138, 103, 28);
@@ -202,6 +202,7 @@ fieldset {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
+  border-right: 8px solid #6a6448;
 }
 .menu.open {
   max-height: 50rem;
@@ -219,7 +220,7 @@ fieldset {
   }
 
   .menu-button {
-    top: 1rem;
+    top: 5rem;
   }
 }
 .scroll img {
