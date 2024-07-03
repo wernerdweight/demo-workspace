@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <header>
+        <div>
+            <a href="{{path('app_home')}}"><img src="{{asset('images/UNL.jpg.jpg')}}" alt="unl" style="width:200px;height:142px;"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{path('app_us')}}">UNLIMITED STORY</a></li><li><a href="{{path('app_events')}}">AKCE</a></li><li><a href="{{path('app_diskografie')}}">DISKOGRAFIE</a></li>
+            </ul>
+        </nav>
+        </header>
+        <img src="{{asset('images/crow.jpg')}}" alt="crow" class="crow" align="right">
+    <main>{% block main %}{% endblock %}</main> 
+        <footer>
+    <nav>
+        <ul>
+            <li><a href="{{path('app_o_p')}}">OBCHODNÍ PODMÍNKY</a></li><li><a href="{{path('app_contacts')}}">KONTAKTY</a></li><li><a href="#">LINKS</a></li><li><a href="#">Booking</a></li>
+        </ul>
+    </nav>  
+    </footer>
+{% endblock %}
+    </body>
+</html>

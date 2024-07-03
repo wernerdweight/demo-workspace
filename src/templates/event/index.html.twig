@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Akce{% endblock %}
+
+{% block main %}
+<table>
+<thead>
+<tr>
+<th>Datum a čas</th>
+<th>Akce</th>
+<th>místo</th>
+<th>cena</th>
+
+</tr>
+
+</thead>
+<tbody>
+
+{% for event in events %}
+<tr>
+<td>{{event.startsAt|date("j. n. Y G.i")}}</td>
+<td>{{event.title}}</td>
+<td>{{event.venue}}</td>
+<td>{{event.price}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

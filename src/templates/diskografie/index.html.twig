@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Diskografie{% endblock %}
+
+{% block main %}
+ <a href="https://www.youtube.com/watch?v=jBNqgYMpjiQ&list=PLE_ikERzs9xtFbGESvYuUHUZu9mzgAS-U" target="_blank"><img src="{{asset('images/STREET.jpg')}}" alt="street" class="street"></a>
+        <a href="https://www.youtube.com/watch?v=UgbGPlZjQAw" target="_blank"><img src="{{asset('images/walla.jpg')}}" alt="walla" class="walla"></a>
+        <p>Instrumental</p>
+        <audio src="{{asset('music/64Scnd.mp3')}}" controls>  
+{% endblock %}

@@ -1,0 +1,104 @@
+:root{
+    --secondary-bg: #000;
+    --secondary-fg: #fff;
+}
+.box {
+    color: white;
+    margin: 20px auto;
+    /*padding: 10px;*/
+    text-align: center;
+    line-height: 1.5;
+}
+
+.fixed-box {
+    width: 200px;
+    height: 100px;
+    background-color: #3366ff;
+}
+
+header, footer {
+    background-color: var(--secondary-bg);
+    color:var(--secondary-fg) ;
+    
+} 
+nav a, footer a{
+    color:var(--secondary-fg);
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+nav li {
+    list-style-type: none;
+    display: inline-block;}
+    nav ul {
+        padding: 0;
+        font-size:20px;
+        font-family: Impact, Haettenschweiler, sans-serif;
+        background-color: grey; 
+        opacity: 0.7;
+    }
+    nav a {
+        display:block;
+        padding: 10px;
+        border: 2px solid var(--secondary-bg);
+        background-color: grey;
+        opacity: 0.9;
+        }
+    .header {
+        grid-row: 1 / 2;
+        grid-column: 1 / 6;
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    body {
+        margin: 0;
+        padding-bottom: 100px;
+        position: relative;
+        min-height: calc(100vh - 100px);        
+    }
+    p {
+        font-size:27px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+        color: #000000;
+        padding-left: 20px;
+    }
+    .crow {
+        width: 60px;
+        position:absolute;
+        bottom: 0;
+        right: 0;
+    }
+    main {
+        position: relative;
+    }
+    .street {
+        width: 250px;
+        height: 250px;
+        border-radius: 25px;
+        margin: 20px;
+    }
+    .walla
+    {
+        width: 250px;
+        height: 250px;
+        border-radius: 25px;   
+        margin: 20px;
+    }
+    .fire {
+        width: 300px;
+        height: 500px;
+        margin: 20px;
+       
+    }
+    .chill {
+width: 300px;
+height: 500px;
+margin: 20px;
+    }
+    .nero {
+        width: 480px;
+        height: 500px;
+        margin: 20px;
+    }
