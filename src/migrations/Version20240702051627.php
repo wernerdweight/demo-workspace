@@ -14,7 +14,7 @@ final class Version20240702051627 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'FormEntity';
     }
 
     public function up(Schema $schema): void

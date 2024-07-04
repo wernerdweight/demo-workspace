@@ -12,20 +12,17 @@
         <img src="{{asset('images/Tiefling_middle_finger.png')}}" alt="Tiefling Middle Finger" id="tiefling">
         <p class="text">...</p>
     </div>
-    {% block footer %}
-<p class="text"> Bear with me </p>
-<form  method="post">
-    <fieldset>
-    <legend>Oi wanker! Rate me!</legend>
-        <label for="ratings">Top tier shit!</label>
-            <input type="radio" id="top" name="rating">
-        <label for="ratings">I love it!</label>
-            <input type="radio" id="love" name="rating">
-        <label for="ratings">Absolutely love it!</label>
-            <input type="radio" id="absolutely" name="rating">
-        <input type="submit" value="Bear with">
-    </fieldset> 
-</form>
-</div>
+{% block footer %}
+    {{ form_start(form) }}
+        <p class="text"> Bear with me </p>
+            <legend>Oi wanker! Rate me!</legend>
+                <label for="ratings">Top tier shit!</label>
+                    <input type="radio" id="top" name="rating">
+                <label for="ratings">I love it!</label>
+                    <input type="radio" id="love" name="rating">
+                <label for="ratings">Absolutely love it!</label>
+                    <input type="radio" id="absolutely" name="rating">
+                <button type="submit">Bear with</button>
+    {{ form_end(form) }}
 {% endblock footer %}
 {% endblock %}
