@@ -5,24 +5,40 @@
 {% block main %}
     <div style="text-align: center">
         <h2>Hell-o, I'm Gris and a baby web developer, so let's code together!</h2>
-        <p class="text">The one and only Vitex is the IT guru of mine!</p>
+            <p class="text">The one and only Vitex is the IT guru of mine!</p>
         <img src="https://www.vitexsoftware.com/img/vitexlovetux.jpg" alt="Vitex Software" style="max-width: 100%; height: 400px;">
-        <p class="text">Im disabled hobby artist who wants to make at least a little dent in your world by telling you about living as a disabled person.</p>
-        <p class="text">And this page is under construction so... kindly, fuck off</p>
+            <p class="text">Im disabled hobby artist who wants to make at least a little dent in your world by telling you about living as a disabled person.</p>
+            <p class="text">And this page is under construction so... kindly, fuck off</p>
         <img src="{{asset('images/Tiefling_middle_finger.png')}}" alt="Tiefling Middle Finger" id="tiefling">
-        <p class="text">...</p>
+            <p class="text">...</p>
     </div>
 {% block footer %}
-    {{ form_start(form) }}
         <p class="text"> Bear with me </p>
-            <legend>Oi wanker! Rate me!</legend>
-                <label for="ratings">Top tier shit!</label>
-                    <input type="radio" id="top" name="rating">
-                <label for="ratings">I love it!</label>
-                    <input type="radio" id="love" name="rating">
-                <label for="ratings">Absolutely love it!</label>
-                    <input type="radio" id="absolutely" name="rating">
-                <button type="submit">Bear with</button>
-    {{ form_end(form) }}
+            <div id="formcontainer">
+            <form action="FormEntity.php" method="POST">
+            <p>Oi wanker! Rate me!</p>
+                <br>
+                <form action="FormEntity.php" method="post">
+                    <div class="ratings">
+                        <input type="radio" name="ratings" id="ratings0" value="0"><div class="ratings" id="top" name="rating">
+                            <label for="ratings0">
+                                <code>Top tier shit!</code>
+                            </label>
+                    </div>
+                    <div class="ratings">
+                        <input type="radio" name="ratings" id="ratings1" value="1"><div class="ratings" id="top" name="rating">
+                            <label for="ratings1">
+                                <code>F*ckin love it!</code>
+                            </label>
+                    </div>
+                    <div class="ratings">
+                        <input type="radio" name="ratings" id="ratings2" value="2"><div class="ratings" id="top" name="rating">
+                            <label for="ratings2">
+                                <code>I love it!</code>
+                            </label>
+                    </div>
+                </br>
+                <button type="submit" class="ws-btn">Bear with</button>
+            </form>
 {% endblock footer %}
 {% endblock %}
