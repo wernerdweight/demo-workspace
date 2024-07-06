@@ -1,19 +1,21 @@
  <section class="projects">
             <div class="inner-projects">
                 <h2>My projects</h2>
+                
                 <div class="project">
-                        <h3>{{ projects.0.title }}</h3>
-                        <div class='year-created'> Created: {{ projects.0.year }}</div>
-                </div>
-                <div class="project-text">
-                    <p>
+                {% for project in projects %}
+                    <h3>{{ project.title }}</h3>
+                        <div class='year-created'> Created: {{ project.year }}</div>
+                {% endfor %}
+                        
+                    </div>
+                    <div class="project-text">
+                        <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit id veritatis quos dolores obcaecati repellat delectus, vero fugiat voluptatum voluptas inventore doloremque sit minus ratione similique, tempore suscipit harum?
-
                         </p>
                         <i class="work-icon fas fa-code"></i>
-
                     </div>
                 </div>
        {#         <div class="project">
