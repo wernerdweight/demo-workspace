@@ -15,29 +15,27 @@
 {% block footer %}
         <p class="text"> Bear with me </p>
             <div id="formcontainer">
-            <form action="FormEntity.php" method="POST">
+            <form action="{{ path('app_home') }}" method="POST">
             <p>Oi wanker! Rate me!</p>
                 <br>
                 <form action="FormEntity.php" method="post">
                     <div class="ratings">
-                        <input type="radio" name="ratings" id="ratings0" value="0"><div class="ratings" id="top" name="rating">
+                        <input type="radio" name="ratings" id="ratings0" value="top tier shit!"><div class="ratings" id="top" name="rating">
                             <label for="ratings0">
                                 <code>Top tier shit!</code>
                             </label>
                     </div>
                     <div class="ratings">
-                        <input type="radio" name="ratings" id="ratings1" value="1"><div class="ratings" id="top" name="rating">
+                        <input type="radio" name="ratings" id="ratings1" value="f*ckin love it!"><div class="ratings" id="top" name="rating">
                             <label for="ratings1">
                                 <code>F*ckin love it!</code>
                             </label>
                     </div>
                     <div class="ratings">
-                        <input type="radio" name="ratings" id="ratings2" value="2"><div class="ratings" id="top" name="rating">
+                        <input type="radio" name="ratings" id="ratings2" value="I love it!"><div class="ratings" id="top" name="rating">
                             <label for="ratings2">
                                 <code>I love it!</code>
                             </label>
-                    </div>
-                </br>
                 <button type="submit" class="ws-btn">Bear with</button>
             </form>
 {% endblock footer %}
