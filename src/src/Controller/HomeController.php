@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('FormEntityRepository.php', name: 'app_home')]
+    #[Route('/', name: 'app_home')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
     if ($request->getMethod() === Request::METHOD_POST) {
