@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('tttt')
     const hamburgerMenu = document.querySelector('.hamburger-menu')
     const menu = document.querySelector('.menu1')
-    hamburgerMenu.addEventListener('click', function() {
+    hamburgerMenu.addEventListener('click', function(event) {
       console.log('clicked HB menu')
       event.preventDefault()
       menu.classList.toggle('active')

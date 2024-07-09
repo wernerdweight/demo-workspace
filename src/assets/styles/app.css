@@ -3,7 +3,7 @@
     --secondary-color: black;
     --background-color: grey;
     --third-color: #620721;
-
+    
     --circle-size: 35vw;
     --circle-position: 45vw
 }
@@ -89,7 +89,7 @@ h2 {
     margin: 2%;
 }
 .flex-container > .Graficky_Design, .flex-container > .Webdesign, .flex-container > .Produktove_Fotografie {
-    background-color: lightgrey;
+    background-color: rgb(234, 234, 234);
     padding: 10px;
     margin: 5px;
     text-align: center;
@@ -120,10 +120,6 @@ footer {
     height: 70px;
     font-family: arial;
 }
-.jazyk {
-    display: flex;
-    flex: wrap;
-}
 .copyright p {
     text-align: center;
     padding-top: 10px;
@@ -132,6 +128,8 @@ footer {
     display: flex;
     gap: 10px 20px;
     flex-wrap: wrap;
+    place-content: center;
+    align-items: center;
 }
 .Packing_box > img {
     width: 300px;
@@ -151,7 +149,7 @@ footer {
     padding-top: 9rem;
 }
 .kontakt img {
-    width:5vh
+    width:5vh;
 }
 .map > iframe {
     width:500px;
@@ -165,7 +163,7 @@ footer {
 }
 .Portfolio-menu{
     width: 100vw;
-    height: calc(var(--circle-size));
+    height: calc(var(--circle-size)/1.3);
     position: relative;
     overflow: hidden;
 }
@@ -254,7 +252,6 @@ footer {
     width: 100%;
     text-align: center;
 }
-
 .portfolio-viewport {
     width: 100vw;
     overflow: hidden;
@@ -278,13 +275,14 @@ footer {
     padding: 1rem;
 }
 h3 {
-    margin: 0
+    margin: 0;
 }
-
-.hamburger-menu {
+.portfolio-menu2 button{
     display: none;
 }
-
+.portfolio-menu2 a {
+    display: none;
+}
 @media (max-width:1280px)
 {
     header {
@@ -395,10 +393,34 @@ h3 {
     }
     .menu2 p {
         bottom: 1.5rem;
+    }
 }
 @media (max-width:900px) {
     .menu2 {
         font-size: 18pt;
+    }
+    h3 {
+        text-align: center;
+        margin-left: 0;
+    }
+    .portfolio-menu2 button{
+        display: block;
+        background-color: var(--third-color);
+        color: var(--primary-color);
+        width: 350px;
+        height: 50px;
+        font-size: 18pt;
+        padding: 0;
+        border: none;
+
+    }
+    .portfolio-menu2 a {
+        display: none;
+        color: var(--secondary-color);
+        padding: 10px 15px;
+    }
+    .portfolio-menu2:hover a{
+        display: block;
     }
 }
 @media (max-width:700px) {
@@ -407,6 +429,10 @@ h3 {
     }
     .flex-container > .Graficky_Design, .flex-container > .Webdesign, .flex-container > .Produktove_Fotografie {
         max-height: 600px;
+    }
+    .portfolio-container {        
+        transform: translate(-106vw);
+        position: center;
     }
 }
 

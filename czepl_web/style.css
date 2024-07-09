@@ -118,6 +118,7 @@ h2 {
     padding: 1rem;
     background-size: contain;
     flex-wrap: wrap;
+    align-items: center;
 }
 .container2 > div {
     flex-basis: 100%;
@@ -172,13 +173,11 @@ footer {
 }
 #Portfolio_karta {
     background-color: var(--background-color);
-    place-content: center;
 }
 .karta {
     display: flex; 
     gap: 10px 20px;
     flex-wrap: wrap;
-    
 }
 .Packing_box > img {
     width: 500px;

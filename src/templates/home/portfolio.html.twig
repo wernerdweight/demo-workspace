@@ -1,4 +1,4 @@
-<section id="Portfolio">
+    <section id="Portfolio">
       <div class="Portfolio-menu">
         <div class ="inner-circle">
           <h3>Portfolio</h3>
@@ -6,6 +6,18 @@
         <div class="outer-circle">
           {% for portfolioItem in portfolioItems %}
             <div class="menu2">
+              <p>
+                <a href="#Item-{{ loop.index }}">{{ portfolioItem.title }}</a>
+              </p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="portfolio-menu2">
+          <button>Portfolio</button>
+        <div class="itemsx">
+          {% for portfolioItem in portfolioItems %}
+            <div class="Itemx">
               <p>
                 <a href="#Item-{{ loop.index }}">{{ portfolioItem.title }}</a>
               </p>
