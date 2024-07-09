@@ -45,4 +45,18 @@ document.addEventListener('DOMContentLoaded', function() {
       menu.classList.remove('active')
       hamburgerMenu.classList.remove('active')
     })
+    console.log('bbbb')
+    const portfolioMenu2 = document.querySelector('.portfolio-menu2')
+    const itemsx = document.querySelector('.itemsx')
+    portfolioMenu2.addEventListener('click', function(event) {
+      console.log('clicked PR menu')
+      event.preventDefault()
+      itemsx.classList.toggle('active')
+    })
+    itemsx.addEventListener('click', function() {
+      console.log('clicked menu')
+
+      itemsx.classList.remove('active')
+      portfolioMenu2.classList.remove('active')
+    })
 })

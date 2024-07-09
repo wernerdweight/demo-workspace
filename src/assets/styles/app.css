@@ -277,10 +277,7 @@ footer {
 h3 {
     margin: 0;
 }
-.portfolio-menu2 button{
-    display: none;
-}
-.portfolio-menu2 a {
+.portfolio-menu2{
     display: none;
 }
 @media (max-width:1280px)
@@ -396,6 +393,9 @@ h3 {
     }
 }
 @media (max-width:900px) {
+    .Portfolio-menu{
+        display: none;
+    }
     .menu2 {
         font-size: 18pt;
     }
@@ -403,8 +403,11 @@ h3 {
         text-align: center;
         margin-left: 0;
     }
-    .portfolio-menu2 button{
+    .portfolio-menu2{
         display: block;
+        text-align: center;
+    }
+    .portfolio-menu2 button{
         background-color: var(--third-color);
         color: var(--primary-color);
         width: 350px;
@@ -412,14 +415,14 @@ h3 {
         font-size: 18pt;
         padding: 0;
         border: none;
-
     }
-    .portfolio-menu2 a {
+    .itemx {
+        text-align: center;
+    }
+    .itemsx{
         display: none;
-        color: var(--secondary-color);
-        padding: 10px 15px;
     }
-    .portfolio-menu2:hover a{
+    .itemsx.active{
         display: block;
     }
 }
