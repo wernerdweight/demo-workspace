@@ -1,0 +1,109 @@
+body {
+    background-color: rgb(229, 229, 229);
+    background-image:url(brick.jpg);
+    background-size: cover;
+    background-image: url('../images/brick.jpg');
+    
+
+ }
+  
+  h1 {
+      margin: 0;
+    color: rgb(255, 255, 255);
+    text-align: justify;
+  }
+  
+  
+  .topnav {
+    background-color: #000000;
+    overflow: hidden;
+    font-family: aAnotherTag;
+    src: url(aAnotherTag.ttf);
+    font-size: larger;
+    
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  
+  text-decoration: none;
+  font-size: 29px;
+  
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+  background-color: #ddd;
+  color: black;
+    
+  }
+  
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+  background-color: #158ee500;
+  color: white;
+  }
+  
+  /* Right-aligned section inside the top navigation */
+  .topnav-right {
+  float: right;
+  }
+  
+  p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 23px;
+    font-display:swap;
+    font-style: oblique;
+    color: #000000da;
+    background-color: #000000f4; width: 29%;height: 30%
+    
+  }
+  .container-audio {
+    width: 40%;;
+    height: 70%;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: #000000;
+    color: #000000;
+    margin: 13px;
+    overflow: scroll;
+    
+  }
+  audio {
+  width:50%;
+  }
+  audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
+    margin: 0;
+  }
+  .container-audio .colum1 {
+    width: 10px;
+    height: 5em;
+    border-radius: 5px;
+    margin: 0 10px 0 0;
+    display: inline-block;
+    position: relative;
+  } 
+  .container-audio .colum1:last-child 
+
+  {
+
+  }
+  .button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+    
+  
+  
+  
