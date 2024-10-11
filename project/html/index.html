@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WUC - Week under control</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav id="navigation">
+            <ul>
+                <li>My account</li>
+                <li>New task</li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li>Sign in</li>
+                <li>Sign up</li>            
+            </ul>
+        </nav>
+
+    </header>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Osobní informace</legend>
+            <label for="name">Jméno</label>
+            <br>
+            <input type="text" id="name" name="user_name" required>
+            <br>
+            <br>
+            <label>Pohlaví</label>
+            <br>
+            <label for="man">Muž</label>
+            <input type="radio" name="sex" id="man" value="Muž">
+            <label for="woman"><input type="radio" name="sex" id="woman" value="Žena">Žena</label>
+            <br>
+            <label for="birth_date">Datum narození</label>
+            <br>
+            <input type="datetime-local" id="birth_date" name="birth_date"required>
+            <br>
+            <label for="password">Heslo</label>
+            <br>
+            <input type="password" id="password" name="password" required minlength="8">
+        </fieldset>
+        <fieldset>
+            <legend>Kontaktní informace</legend>
+            <label for="country">Stát</label>
+            <select name="country" id="country">
+                <optgroup label="Evropa">
+                    <option value="cz">ČR</option>
+                    <option value="sk">SK</option>
+                    <option value="hu">HU</option>
+                </optgroup>
+                <optgroup label="Svět">
+                    <option value="ca">Kanada</option>
+                    <option value="br">Brazílie</option>
+                </optgroup>
+            </select>
+        </fieldset>
+        <input type="submit" value="Odeslat">
+    </form>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 60.7 28.7 32 64 32l448 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM128 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm32-128a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM128 384a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm96-248c-13.3 0-24 10.7-24 24s10.7 24 24 24l224 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-224 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l224 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-224 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l224 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-224 0z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l224 0 0-112c0-26.5 21.5-48 48-48l112 0 0-224c0-35.3-28.7-64-64-64L64 32zM448 352l-45.3 0L336 352c-8.8 0-16 7.2-16 16l0 66.7 0 45.3 32-32 64-64 32-32z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"/></svg>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Users/lukasvoplakal/coding-school/demo-workspace/project/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#"><img id="logo" src="img/wuc.png" alt="Week under control logo"></a>
+            <form><fieldset id="search"><input id="search_field" type="search" name="search_field" required placeholder="What are you looking for?"><input id="search_button" name="search_button" type="button" value="Search"></fieldset></form>
+            <ul id="sign_tabs">
+                <li class="sign_tab"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg></a></li>
+                <li class="sign_tab">Sign up</li>            
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <h1>Registration</h1>
+        <section id="web_purpouse">
+            <h2>General info</h2>
+            <p>This is my first poject. I don't know if it's really works in the end. But for now, i have clear concept.</p>
+            <p>This app sould be helpful with daily, weekly or mounthly task. You can sort task into two different groups <strong>Personal</strong> and <strong>Work</strong>.</p>
+
+        </section>
+        <section id="registration_form">
+        <h2>Sing up</h2>
+        <form action="#" method="post">
+            <fieldset id="registration">
+                <legend>Registration</legend>
+                <label for="user_e-mail">User e-amil</label>
+                <input type="text" id="user_e-mail" name="user_e-mail" placeholder="example@organization.com">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+                <label for="password_again">Password again</label>
+                <input type="password" id="password_again" name="password_again" required minlength="8">
+                <label for="password_again">Captcha</label>
+                <input type="number" id="captcha" name="captcha" required>
+            </fieldset>
+            <input type="submit" value="Odeslat">
+        </form>
+    </section>
+    </main>
+</body> 
+</html>

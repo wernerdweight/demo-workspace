@@ -1,0 +1,37 @@
+#logo {
+    width: 100px;
+    padding: 10px 10px 5px 0px;
+}
+
+header {
+    background-color: color-mix(in srgb, black 70%, grey 30%);
+}
+
+nav {
+    display: flex;
+}
+
+.sign_tab {
+    border: 1px solid;
+    color: black;
+    list-style: none;
+    background-color: white;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#search {
+    align-self: center;
+}
+
+#web_purpouse {
+    display: flex;
+    width: 50%;
+    padding: 5px 15px 5px 15px;
+}
+
+#registration_form {
+    display: flex;
+    width: 50%;
+    padding: 5px 15px 5px 15px;
+}
