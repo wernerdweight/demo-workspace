@@ -35,3 +35,9 @@ nav {
     width: 50%;
     padding: 5px 15px 5px 15px;
 }
+
+.icon {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.125em;
+}
