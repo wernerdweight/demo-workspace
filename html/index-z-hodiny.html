@@ -8,6 +8,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--  -->
+
+    <style>
+        nav * {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1rem;
+        }
+        .first_nav {
+            background-image: url("Unknown.png");
+        }
+        .first_nav a {
+            color: white;
+            padding: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,11 +33,11 @@
         <nav>
             <!-- odkazy -->
             <ul>
-                <li> <a href="#"> recepty </a> </li>
-                <li>
+                <li class="first_nav"> <a href="#"> recepty </a> </li>
+                <li class="second_nav">
                     <a href="#"> kontakty</a>
                 </li>
-                <li>
+                <li class="third_nav">
                     <a href="#"> eshop</a>
                 </li>
             </ul>
