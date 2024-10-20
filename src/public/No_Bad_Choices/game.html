@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hra - No Bad Choices</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Odkaz na tvůj CSS soubor -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>No Bad Choices</h1>
+    </header>
+
+    <main>
+        <section class="game-text">
+            <p>Vítej ve hře "No Bad Choices"! Dnes se dostaneš do světa, kde se tvá rozhodnutí stávají klíčovými pro další vývoj příběhu.</p>
+            <p>Jaké rozhodnutí učiníš, určí, jak se tvá cesta vyvine. Jsi připraven?</p>
+        </section>
+
+        <section class="choices">
+            <button onclick="chooseOption1()">Jdi na sever</button>
+            <button onclick="chooseOption2()">Jdi na jih</button>
+        </section>
+    </main>
+
+    <script>
+        function chooseOption1() {
+            alert("Zvolil(a) jsi jít na sever. Tvá cesta teď začíná!");
+            // Zde můžeš přesměrovat na další stránku nebo scénář
+            // window.location.href = "north.html"; // příklad
+        }
+
+        function chooseOption2() {
+            alert("Zvolil(a) jsi jít na jih. Nové dobrodružství tě čeká!");
+            // Zde můžeš přesměrovat na další stránku nebo scénář
+            // window.location.href = "south.html"; // příklad
+        }
+    </script>
+</body>
+</html>

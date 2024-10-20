@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #FFA500; /* Oranžová barva pro tlačítka */   
+    --secondary-color: #FFDDC1; /* Jemná oranžová pro pozadí */
+    --text-color: #2E8B57; /* Tmavě zelená barva pro text */
+    --hover-color: #FF6347; /* Tomato pro hover efekt */
+    --heading-color: #FF8C00; /* Tmavě oranžová barva pro nadpisy */
+}
+
+body {
+    font-family: 'Press Start 2P', cursive; /* Používá retro font pro všechny texty */
+    background-color: var(--secondary-color);
+    color: var(--text-color); /* Tmavě zelená barva pro text */
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3em;
+    color: var(--heading-color); /* Tmavě oranžová barva pro nadpisy */
+    font-family: 'Press Start 2P', cursive; /* Používá retro font pro nadpis */
+    transition: transform 0.2s ease; /* Přidání přechodu pro transformaci */
+}
+
+h1:hover {
+    transform: translateY(-2px) rotate(1deg); /* Změna pozice a rotace při hoveru */
+}
+
+.menu button,
+.login-button,
+.login-form button {
+    font-family: 'Press Start 2P', cursive; /* Používá retro font pro všechny texty */
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease; /* Přidání přechodu pro transformaci */
+    width: 80%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.menu button:hover,
+.login-button:hover,
+.login-form button:hover {
+    background-color: var(--hover-color); 
+    transform: translateY(-2px) rotate(1deg); /* Změna pozice a rotace při hoveru */
+}
+
+/* Tlačítko pro přihlášení (menší verze ostatních tlačítek) */
+.login-button {
+    font-size: 0.8em; /* O něco menší písmo než u hlavních tlačítek */
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease; /* Přidání přechodu pro transformaci */
+    width: 60%; /* Užší než hlavní tlačítka */
+    max-width: 250px;
+}
+
+/* MEDIA QUERIES pro mobilní zařízení */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .menu button {
+        font-size: 1.2em;
+        padding: 8px 15px;
+        width: 90%;
+    }
+
+    .login-button {
+        font-size: 1em; /* Zmenší přihlašovací tlačítko na mobilu */
+        width: 70%;
+    }
+}
+
+.login-form {
+    background-color: var(--secondary-color); /* Pozadí formuláře */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Maximální šířka formuláře */
+    margin: 20px auto; /* Střed formuláře na stránce */
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color); /* Tmavě zelená pro popisky */
+}
+
+.login-form input {
+    width: 100%; /* Šířka vstupních polí */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    font-family: 'Press Start 2P', cursive; /* Používá retro font pro všechny texty */
+    background-color: var(--primary-color); /* Oranžové tlačítko */
+    color: var(--text-color); /* Světle zelený text */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%; /* Tlačítko na celou šířku */
+    transition: background-color 0.3s, transform 0.2s ease; /* Přidání přechodu pro transformaci */
+}
+
+.login-form button:hover {
+    background-color: var(--hover-color); /* Tlačítko při najetí */
+}
+
+.register-link {
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: var(--primary-color); /* Oranžová barva pro odkaz */
+    text-decoration: none; /* Odstranění podtržení */
+}
+
+.register-link a:hover {
+    text-decoration: underline; /* Podtržení při najetí */
+}
+
+
+
+

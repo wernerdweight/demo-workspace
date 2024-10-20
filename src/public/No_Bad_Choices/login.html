@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přihlášení - No Bad Choices</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Zde by měl být odkaz na tvůj CSS soubor -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Přihlášení</h1>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <form action="dashboard.html" method="POST"> <!-- Akce formuláře směřuje na další stránku -->
+                <label for="username">Uživatelské jméno:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Heslo:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Přihlásit se</button>
+            </form>
+
+            <p class="register-link">Nemáš účet? <a href="register.html">Zaregistruj se!</a></p>
+        </section>
+    </main>
+</body>
+</html>

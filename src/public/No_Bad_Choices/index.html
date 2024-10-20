@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Bad Choices - Úvod</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>No Bad Choices</h1>
+    </header>
+
+    <main>
+        <section class="menu">
+            <button onclick="startNewGame()">Nová hra</button>
+            <button onclick="continueGame()">Pokračovat</button>
+        </section>
+
+        <!-- Přihlašovací tlačítko namísto odkazu -->
+        <section class="login">
+            <button class="login-button" onclick="window.location.href='login.html'">Přihlásit se</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 No Bad Choices. Všechna práva vyhrazena.</p>
+        <p><a href="privacy.html">Ochrana osobních údajů</a> | <a href="terms.html">Podmínky použití</a></p>
+    </footer>
+
+    <script>
+        function startNewGame() {
+            window.location.href = "game.html";
+        }
+
+        function continueGame() {
+            window.location.href = "game.html";
+        }
+    </script>
+</body>
+</html>
