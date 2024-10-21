@@ -1,9 +1,11 @@
 :root {
-    --primary-color: #273f5f;
+    --primary-color: #142630;
     --secondary-color: #6e7997;
-    --bgcolor: #6e7997;
-    --main-bgcolor: ;
+    --footer-bgcolor: #272727;
+    --sidebar-bgcolor: #5E5E5E;
+    --main-bgcor: #9C9C9C;
     --font-color: #e8e8e8;
+    --font: Kalam, cursive, sans-serif;
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -16,8 +18,9 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background-color: var(--bgcolor);
-    color: var(--font-color);
+    max-width: 100%;
+    font-family: var(--font);
+    word-spacing: -0.15rem;
 }
 
 img {
@@ -25,38 +28,39 @@ img {
 }
 
 #logo {
-    width: 100%;
-    max-height: 80px;
     align-self: center;
-    flex: 0 1 33.333333%;
+    flex: 0 1 50%;
 }
 
-header {
-    background-color: var(--primary-color);
+#logo img {
+    max-height: 60px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    height: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 0 20px 0 20px;
+    /* height: auto; */
+    margin: 0 20px 0 10px;
+    height: 70px;
 }
 
 .sign_tab {
-    color: var(--font-color);
-    list-style: none;
     align-self: center;
-    flex: 0 1 33.333333%;
+    flex: 0 1 50%;
+    text-align: right;
 }
+.account_svg {
+    background-image: url(/Users/lukasvoplakal/coding-school/demo-workspace/project/html/img/account.svg);
+    padding: 1rem;
+}
+    
 
-#search {
+/* #search {
     align-self: center;
-    flex: 0 1 33.333333%;
-}
+    flex: 0 1 50%;
+} */
 
-#web_purpouse {
+/* #web_purpouse {
     display: flex;
     width: 50%;
     padding: 5px 15px 5px 15px;
@@ -66,7 +70,7 @@ nav {
     display: flex;
     width: 50%;
     padding: 5px 15px 5px 15px;
-}
+} */
 
 .icon {
     width: 2em;
@@ -75,4 +79,113 @@ nav {
 
 h1, h2 {
     color: var(--primary-color);
+}
+
+.layout {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+
+    
+}
+
+.login_layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    grid-template-areas: 
+    "header"
+    "main_content"
+    "footer ";
+}
+
+.index_layout {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    grid-template-areas: 
+    "header header"
+    "sidebar main_content"
+    "footer footer ";
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    position: sticky;
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--sidebar-bgcolor);
+    position: sticky;
+}
+.main_content {
+    grid-area: main_content;
+    background-color: var(--main-bgcor);
+}
+.footer {
+    grid-area: footer;
+    background-color: var(--footer-bgcolor);
+    position: sticky;
+}
+
+h1 {
+    text-align: center;
+}
+
+.useful_links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.useful_links li a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.sidebar_links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_links li {
+    padding: 0.5rem;
+}
+
+.settings {
+    margin-left: auto;
+}
+
+.sign_tab img {
+    max-height: 30px;
+}
+
+.main_content {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.web_purpose {
+    width: 50%;
+}
+
+.content {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.registration_form {
+    flex: 0 1 50%;
+}
+
+.web_purpouse {
+    flex: 0 1 50%;
+}
+
+.sign_up * {
+    display: flex;
+    flex-direction: column;
 }

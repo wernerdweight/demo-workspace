@@ -2,68 +2,67 @@
 <html>
 
 <head>
-    <title>WUC - Week under control</title>
+    <title>Task listing</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Users/lukasvoplakal/coding-school/demo-workspace/project/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav id="navigation">
-            <ul>
-                <li>My account</li>
-                <li>New task</li>
-                <li></li>
-                <li></li>
-            </ul>
-            <ul>
-                <li>Sign in</li>
-                <li>Sign up</li>            
-            </ul>
+    <div class="layout index_layout">
+    <header class="header">
+        <nav>
+            <a href="/" id="logo"><img src="img/wuc-logo.png" alt="Week under control logo"></a>
+            <!-- <form id="search"><fieldset><input id="search_field" type="search" name="search_field" required placeholder="What are you looking for?"><input id="search_button" name="search_button" type="button" value="Search"></fieldset></form> -->
+            <a href="account.html" class="sign_tab"><img src="img/account.svg" alt="Account icon"></span></a>
         </nav>
-
     </header>
-    <form action="#" method="post">
-        <fieldset>
-            <legend>Osobní informace</legend>
-            <label for="name">Jméno</label>
-            <br>
-            <input type="text" id="name" name="user_name" required>
-            <br>
-            <br>
-            <label>Pohlaví</label>
-            <br>
-            <label for="man">Muž</label>
-            <input type="radio" name="sex" id="man" value="Muž">
-            <label for="woman"><input type="radio" name="sex" id="woman" value="Žena">Žena</label>
-            <br>
-            <label for="birth_date">Datum narození</label>
-            <br>
-            <input type="datetime-local" id="birth_date" name="birth_date"required>
-            <br>
-            <label for="password">Heslo</label>
-            <br>
-            <input type="password" id="password" name="password" required minlength="8">
-        </fieldset>
-        <fieldset>
-            <legend>Kontaktní informace</legend>
-            <label for="country">Stát</label>
-            <select name="country" id="country">
-                <optgroup label="Evropa">
-                    <option value="cz">ČR</option>
-                    <option value="sk">SK</option>
-                    <option value="hu">HU</option>
-                </optgroup>
-                <optgroup label="Svět">
-                    <option value="ca">Kanada</option>
-                    <option value="br">Brazílie</option>
-                </optgroup>
-            </select>
-        </fieldset>
-        <input type="submit" value="Odeslat">
-    </form>
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 60.7 28.7 32 64 32l448 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM128 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm32-128a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM128 384a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm96-248c-13.3 0-24 10.7-24 24s10.7 24 24 24l224 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-224 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l224 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-224 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l224 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-224 0z"/></svg>
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l224 0 0-112c0-26.5 21.5-48 48-48l112 0 0-224c0-35.3-28.7-64-64-64L64 32zM448 352l-45.3 0L336 352c-8.8 0-16 7.2-16 16l0 66.7 0 45.3 32-32 64-64 32-32z"/></svg>
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"/></svg>
-</body>
+    <div class="sidebar">
+        <ul class="sidebar_links">
+            <li class="home"><a href=""><img src="img/home_hover.svg" alt="Home icon"></a></li>
+            <li class="personal"><a href=""><img src="img/personal_hover.svg" alt="Personal icon"></a></li>
+            <li class="work"><a href=""></a><img src="img/work_hover.svg" alt="Work icon"></li>
+            <li class="search"><a href=""></a><img src="img/search_hover.svg" alt="Search icon"></li>
+            <li class="settings"><a href=""></a><img src="img/settings_hover.svg" alt="Settings icon"></li>
+        </ul>
+    </div>
+    <main class="main_content">
+        <h1>Task listing</h1>
+        <div class="content">
+        <section class="web_purpouse">
+            <h2>Current week</h2>
+            <p>This is my first poject. I don't know if it's really works in the end. But for now, i have clear concept.</p>
+            <p>This app sould be helpful with daily, weekly or mounthly task. You can sort task into two different groups <strong>Personal</strong> and <strong>Work</strong>.</p>
+
+        </section>
+        <section class="registration_form">
+        <h2>Next week</h2>
+        <form action="#" method="post" class="sign_up">
+            <fieldset id="registration">
+                <legend>Registration</legend>
+                <label for="user_e-mail">User e-amil</label>
+                <input type="text" id="user_e-mail" name="user_e-mail" placeholder="example@organization.com">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+                <label for="password_again">Password again</label>
+                <input type="password" id="password_again" name="password_again" required minlength="8">
+                <label for="password_again">Captcha</label>
+                <input type="number" id="captcha" name="captcha" required>
+            </fieldset>
+            <input type="submit" value="Odeslat">
+        </form>
+    </section>
+    </div>
+    </main>
+    <footer class="footer">
+        <ul class="useful_links">
+            <li><a href="">Terms</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Donate</a></li>
+        </ul>
+    </footer>
+</div>
+</body> 
 </html>

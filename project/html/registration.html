@@ -6,29 +6,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Users/lukasvoplakal/coding-school/demo-workspace/project/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <div class="layout login_layout">
+    <header class="header">
         <nav>
-            <a href="#"><img id="logo" src="img/wuc.png" alt="Week under control logo"></a>
-            <form id="search"><fieldset><input id="search_field" type="search" name="search_field" required placeholder="What are you looking for?"><input id="search_button" name="search_button" type="button" value="Search"></fieldset></form>
-            <ul id="sign_tabs">
-                <li class="sign_tab"><a href="login.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg></a></li>           
-            </ul>
+            <a href="/" id="logo"><img src="img/wuc-logo.png" alt="Week under control logo"></a>
+            <!-- <form id="search"><fieldset><input id="search_field" type="search" name="search_field" required placeholder="What are you looking for?"><input id="search_button" name="search_button" type="button" value="Search"></fieldset></form> -->
+            <a href="login.html" class="sign_tab"><img src="img/account.svg" alt="Account icon"></span></a>
         </nav>
     </header>
-    <main>
-    <span><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"/></svg><h1>Registration</h1></span>
-        <section id="">
-        <section id="web_purpouse">
+    <main class="main_content">
+        <h1>Registration</h1>
+        <div class="content">
+        <section class="web_purpouse">
             <h2>General info</h2>
             <p>This is my first poject. I don't know if it's really works in the end. But for now, i have clear concept.</p>
             <p>This app sould be helpful with daily, weekly or mounthly task. You can sort task into two different groups <strong>Personal</strong> and <strong>Work</strong>.</p>
 
         </section>
-        <section id="registration_form">
+        <section class="registration_form">
         <h2>Sing up</h2>
-        <form action="#" method="post">
+        <form action="#" method="post" class="sign_up">
             <fieldset id="registration">
                 <legend>Registration</legend>
                 <label for="user_e-mail">User e-amil</label>
@@ -43,7 +45,15 @@
             <input type="submit" value="Odeslat">
         </form>
     </section>
-</section>  
+    </div>
     </main>
+    <footer class="footer">
+        <ul class="useful_links">
+            <li><a href="">Terms</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Donate</a></li>
+        </ul>
+    </footer>
+</div>
 </body> 
 </html>
