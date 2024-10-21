@@ -9,23 +9,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <div class="layout index_layout">
     <header class="header">
-        <nav>
-            <a href="/" id="logo"><img src="img/wuc-logo.png" alt="Week under control logo"></a>
+        <nav class="navigation">
+            <div class="logo"><a href="/"><img src="img/wuc-logo.png" alt="Week under control logo"></a></div>
             <!-- <form id="search"><fieldset><input id="search_field" type="search" name="search_field" required placeholder="What are you looking for?"><input id="search_button" name="search_button" type="button" value="Search"></fieldset></form> -->
-            <a href="account.html" class="sign_tab"><img src="img/account.svg" alt="Account icon"></span></a>
+            <div class="sign_tab"><a href="account.html"><img src="img/account.svg" alt="Account icon"></a></div>
         </nav>
     </header>
     <div class="sidebar">
+        <!-- <ul class="sidebar_links">
+            <li class="home"><a href=""><img src="img/home_hover.svg" alt="Home icon"></a></li>
+            <li class="personal"><a href=""><img src="img/personal_hover.svg" alt="Personal icon"></a></li>
+            <li class="work"><a href=""><img src="img/work_hover.svg" alt="Work icon"></a></li>
+            <li class="search"><a href=""><img src="img/search_hover.svg" alt="Search icon"></a></li>
+            <li class="settings"><div><a href=""><img src="img/settings_hover.svg" alt="Settings icon"></a></div></li>
+        </ul> -->
         <ul class="sidebar_links">
             <li class="home"><a href=""><img src="img/home_hover.svg" alt="Home icon"></a></li>
             <li class="personal"><a href=""><img src="img/personal_hover.svg" alt="Personal icon"></a></li>
-            <li class="work"><a href=""></a><img src="img/work_hover.svg" alt="Work icon"></li>
-            <li class="search"><a href=""></a><img src="img/search_hover.svg" alt="Search icon"></li>
-            <li class="settings"><a href=""></a><img src="img/settings_hover.svg" alt="Settings icon"></li>
+            <li class="work"><a href=""><img src="img/work_hover.svg" alt="Work icon"></a></li>
+            <li class="search"><a href=""><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e8e8e8" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></a></li>
+            <li class="settings"><div><a href=""><img src="img/settings_hover.svg" alt="Settings icon"></a></div></li>
         </ul>
     </div>
     <main class="main_content">
@@ -33,13 +41,12 @@
         <div class="content">
         <section class="web_purpouse">
             <h2>Current week</h2>
-            <p>This is my first poject. I don't know if it's really works in the end. But for now, i have clear concept.</p>
-            <p>This app sould be helpful with daily, weekly or mounthly task. You can sort task into two different groups <strong>Personal</strong> and <strong>Work</strong>.</p>
-
+            <!-- <p>This is my first poject. I don't know if it's really works in the end. But for now, i have faith.</p>
+            <p>This app sould be helpful with daily, weekly or mounthly tasks. You can sort task into two different groups <strong>Personal</strong> and <strong>Work</strong>.</p> -->
         </section>
         <section class="registration_form">
         <h2>Next week</h2>
-        <form action="#" method="post" class="sign_up">
+        <!-- <form action="#" method="post" class="form">
             <fieldset id="registration">
                 <legend>Registration</legend>
                 <label for="user_e-mail">User e-amil</label>
@@ -52,7 +59,7 @@
                 <input type="number" id="captcha" name="captcha" required>
             </fieldset>
             <input type="submit" value="Odeslat">
-        </form>
+        </form> -->
     </section>
     </div>
     </main>
@@ -64,5 +71,6 @@
         </ul>
     </footer>
 </div>
+<script src="/Users/lukasvoplakal/coding-school/demo-workspace/project/js/script.js"></script>
 </body> 
 </html>
