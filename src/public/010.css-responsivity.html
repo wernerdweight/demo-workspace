@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries Example</title>
+  <style>
+    :root {
+      --gap: 1rem;
+      --box-padding: 2rem;
+      --num-columns-mobile: 1;
+      --num-columns-tablet: 2;
+      --num-columns-desktop: 3;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap);
+    }
+
+    .box {
+      background-color: #f4f4f4;
+      padding: var(--box-padding);
+      /* Default to 3 columns */
+      flex-grow: 1;
+      /*flex-basis: calc((100% - var(--gap) * (var(--num-columns-desktop) - 1)) / var(--num-columns-desktop) - 2*var(--box-padding));*/
+      /*flex-basis: calc((100% - 2rem) / 3 - 4rem);*/
+    }
+
+    .box-3 {
+      flex-basis: calc((100% - var(--gap) * (var(--num-columns-desktop) - 1)) / var(--num-columns-desktop) - 2*var(--box-padding));
+    }
+
+    .box-4 {
+      flex-basis: calc((100% - var(--gap) * (var(--num-columns-desktop) - 1)) / (var(--num-columns-desktop) + 1) - 2*var(--box-padding));
+    }
+
+    @media (max-width: 1024px) {
+      .box {
+        /* 2 columns for tablets */
+        background-color: #f00;
+        flex-basis: calc((100% - var(--gap) * (var(--num-columns-tablet) - 1)) / var(--num-columns-tablet) - 2*var(--box-padding));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .box {
+        /* 1 column for phones */
+        background-color: #5AF;
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Responsive Media Queries</h1>
+  </header>
+  <div class="container">
+    <div class="box box-3">Box 1</div>
+    <div class="box box-4">Box 2</div>
+    <div class="box box-3">Box 3</div>
+    <div class="box box-4">Box 4</div>
+    <div class="box box-3">Box 5</div>
+    <div class="box box-4">Box 6</div>
+  </div>
+</body>
+
+</html>
