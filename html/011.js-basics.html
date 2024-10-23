@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic JS Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+  <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Basic JS example</h1>
+          <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, quae.</p>
+          <p>
+            <a href="#" id="button-1" class="btn btn-primary my-2">Main call to action</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div id="recipes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        </div>
+      </div>
+    </div>
+
+    <textarea id="recepty" class="form-control" rows="10"></textarea>
+
+    <dialog id="modal" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <footer></footer>
+
+  </main>
+
+  <script type="text/javascript">
+
+    /*const button1 = document.getElementById('button-1');
+    //console.log(button1);
+
+    const buttons = document.getElementsByClassName('btn');
+    //console.log(buttons)
+
+    const h1 = document.getElementsByTagName('div');
+//    console.log(h1)
+
+    const mutedParagraph = document.querySelector('p.text-muted')
+    //console.log(mutedParagraph)
+
+    const mutedParagraphs = document.querySelectorAll('div')
+    //console.log(mutedParagraphs)*/
+
+    setTimeout(() => {
+      const greyButton = document.querySelector('.btn-secondary')
+      greyButton.style.display = 'none'
+      greyButton.remove()
+
+      const footer = document.querySelector('footer')
+      footer.appendChild(greyButton)
+      greyButton.style.display = 'block'
+    }, 5000)
+
+
+    const yetAnotherButton = document.createElement('button')
+    yetAnotherButton.textContent = 'Chcete se na něco zeptat?'
+    yetAnotherButton.classList.add('btn', 'btn-primary')
+    yetAnotherButton.style.position = 'fixed'
+    yetAnotherButton.style.bottom = '1rem'
+    yetAnotherButton.style.right = '1rem'
+
+    document.body.appendChild(yetAnotherButton)
+
+    yetAnotherButton.addEventListener('click', () => {
+      const modal = document.getElementById('modal')
+      modal.style.display = 'block'
+    })
+
+    const closeButtons = document.querySelectorAll('[data-bs-dismiss="modal"]')
+    closeButtons.forEach((closeButton) => {
+      closeButton.addEventListener('click', () => {
+        const modal = document.getElementById('modal')
+        modal.style.display = 'none'
+      })
+    })
+
+    const saveButton = document.querySelector('dialog .btn-primary')
+    saveButton.addEventListener('click', () => {
+      //alert('Změny byly uloženy')
+      const confirmed = confirm('Chcete opravdu zničit celý svět?')
+      if (confirmed === true) {
+        const modal = document.getElementById('modal')
+        modal.style.display = 'none'
+      }
+    })
+
+
+
+
+
+
+
+
+
+    const recepty = [
+    {
+      name: 'Palačinky',
+      difficulty: 5,
+      ingredients: ['Brambory', 'Mouka', 'Vejce'],
+    },
+    {
+      name: 'Svíčková',
+      difficulty: 4,
+      ingredients: ['Maso', 'Mouka', 'Brusinky'],
+    },
+    {
+      name: 'Smažák',
+      difficulty: 1,
+      ingredients: ['Sýr', 'Hranolky', 'Tatarka'],
+    },
+    {
+      name: 'Česnečka',
+      difficulty: 2,
+      ingredients: ['Česnek', 'Brambory', 'Voda'],
+    },
+    {
+      name: 'Špagety Bolognese',
+      difficulty: 3,
+      ingredients: ['Špagety', 'Olej', 'Maso'],
+    },
+    ];
+
+
+    const recipes = document.getElementById('recipes')
+    recepty.forEach(recept => {
+      const recipeElement = document.createElement('div')
+      recipeElement.innerHTML = `
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://picsum.photos/400/300.jpg" alt="recept">
+          </svg>
+
+          <div class="card-body">
+            <p class="card-text">${recept.name}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">${recept.difficulty * 10} mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      const viewButton = recipeElement.querySelector('.btn:first-child')
+      viewButton.addEventListener('click', () => {
+        /*let formattedIngredients = ''
+        recept.ingredients.forEach(ingredient => {
+          if (formattedIngredients === '') {
+            formattedIngredients += ingredient
+          } else {
+            formattedIngredients += ',\n' + ingredient
+          }
+        })
+        alert(formattedIngredients)*/
+        alert(recept.ingredients.join(',\n'))
+      })
+      recipes.appendChild(recipeElement)
+    })
+
+
+
+    let output = '';
+
+    let index = 0
+    index++
+    ++index
+    index = index + 1
+
+    //output += index
+
+    output += `Máme ${recepty.length} receptů\n\n`;
+
+    for (let index = 0; index < recepty.length; index++) {
+      const recept = recepty[index]
+      output += index + ':' + recept.name + ' (obtížnost: ' + recept.difficulty + ')' +'\n';
+    }
+
+    output += '\n';
+
+    recepty.forEach((recept) => {
+      output += recept.name + ' (obtížnost: ' + recept.difficulty + ')' +'\n';
+    });
+
+    recepty.sort((a, b) => {
+      return a.difficulty - b.difficulty
+    })
+
+    output += '\n';
+
+    for (let poradoveCisloPrvku = 0; poradoveCisloPrvku < recepty.length; poradoveCisloPrvku++) {
+      const recept = recepty[poradoveCisloPrvku]
+
+      output += recept.name + ' '
+      for (let index = 0; index < recept.difficulty; index++) {
+        output += '⭐'
+      }
+      output += '\n'
+    }
+
+    document.getElementById('recepty').value = output;
+  </script>
+
+</body>
+</html>
