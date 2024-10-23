@@ -124,6 +124,7 @@ h1, h2 {
     grid-area: sidebar;
     background-color: var(--sidebar-bgcolor);
     position: sticky;
+    box-shadow: 0.1rem 0 0.5rem var(--primary-color);
 }
 .main_content {
     grid-area: main_content;

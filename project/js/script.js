@@ -1,12 +1,13 @@
-const sideLinksId = ['settings', 'home', 'personal', 'work', 'search']
+const sideLinksId = ['home', 'task', 'personal', 'work', 'search', 'settings']
 
 sideLinksId.forEach ((sideLinkId) => {
     const url = '/Users/lukasvoplakal/coding-school/demo-workspace/project/html/img/'
     document.querySelector('#' + sideLinkId + '_icon').addEventListener('mouseenter', function() {
-        this.src = url + sideLinkId + '.svg'
+        this.src = url + sideLinkId + '_hover' + '.svg'
+        console.log(url + sideLinkId + '_hover' + '.svg')
     });
     document.querySelector('#' + sideLinkId + '_icon').addEventListener('mouseleave', function() {
-        this.src = url + sideLinkId + '_hover' + '.svg'
+        this.src = url + sideLinkId + '.svg'
     });
 });
 
