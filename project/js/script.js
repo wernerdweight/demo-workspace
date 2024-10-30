@@ -4,13 +4,14 @@ sideLinksId.forEach ((sideLinkId) => {
     const url = '/Users/lukasvoplakal/coding-school/demo-workspace/project/html/img/'
     document.querySelector('#' + sideLinkId + '_icon').addEventListener('mouseenter', function() {
         this.src = url + sideLinkId + '_hover' + '.svg'
-        console.log(url + sideLinkId + '_hover' + '.svg')
     });
     document.querySelector('#' + sideLinkId + '_icon').addEventListener('mouseleave', function() {
         this.src = url + sideLinkId + '.svg'
     });
 });
 
+
+// const task = document.querySelector('#task_icon').addEventListener(click) 
 // document.querySelector('#settings_icon').addEventListener('mouseenter', function() {
 //     this.src = '/Users/lukasvoplakal/coding-school/demo-workspace/project/html/img/settings.svg';
 // });

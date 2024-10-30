@@ -89,6 +89,7 @@ img {
 
 h1, h2 {
     color: var(--primary-color);
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 .layout {
@@ -172,6 +173,7 @@ h1 {
 
 .sidebar_hover_links:hover {
     background-color: var(--font-color);
+    transition: all 0.3s ease-in-out;
 }
 
 /* .sidebar_links:hover .icon  {
@@ -204,10 +206,19 @@ h1 {
 
 .registration_form {
     flex: 0 1 50%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .web_purpouse {
     flex: 0 1 50%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+#registration {
+    border: none;
+    padding: 0;
 }
 
 .form * {
