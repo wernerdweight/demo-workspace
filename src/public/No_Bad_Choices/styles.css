@@ -135,6 +135,12 @@ h1, h2, h3, h4, h5, h6 {
 .register-link a:hover {
     text-decoration: underline; 
 }
+.error {
+    font-size: 0.8em;
+    color: #FF6347;
+    margin-top: 10px;
+    opacity: 0;
+}
 
 
 
