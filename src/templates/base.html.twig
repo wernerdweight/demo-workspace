@@ -17,27 +17,26 @@
     </head>
     <body>
         {% block body %}
-           <div class="layout index_layout">
+    <div class="layout index_layout">
     <header class="header">
         <nav class="navigation">
-            <div class="logo"><a href="/"><img src="/Users/lukasvoplakal/coding-school/demo-workspace/src/assets/img/wuc-logo.png" alt="Week under control logo"></a></div>
-            <div class="sign_tab"><a href="account.html"><img src="/Users/lukasvoplakal/coding-school/demo-workspace/src/assets/img/account.svg" alt="Account icon"></a></div>
+            <div class="logo"><a href="/"><img src="{{ asset('img/wuc-logo.png') }}" alt="Week under control logo"></a></div>
+            <div class="sign_tab"><a href="account.html"><img src="{{ asset('img/account.svg') }}" alt="Account icon"></a></div>
         </nav>
     </header>
     <div class="sidebar">
         <ul class="sidebar_links">
-            <li class="home sidebar_hover_links"><a href=""><img id="home_icon" src="../assets/img/home.svg" alt="Home icon"></a></li>
-            <li class="task sidebar_hover_links"><a href=""><img id="task_icon" src="/Users/lukasvoplakal/coding-school/demo-workspace/src/assets/img/task.svg" alt="Task icon"></a></li>
-            <li class="personal sidebar_hover_links"><a href=""><img id="personal_icon" src="/Users/lukasvoplakal/coding-school/demo-workspace/src/assets/img/personal.svg" alt="Personal icon"></a></li>
-            <li class="work sidebar_hover_links"><a href=""><img id="work_icon" src="/Users/lukasvoplakal/coding-school/demo-workspace/src/assets/img/work.svg" alt="Work icon"></a></li>
-            <li class="search sidebar_hover_links"><a href=""><img id="search_icon" src="/Users/lukasvoplakal/coding-school/demo-workspace/src/assets/img/search.svg" alt="Search icon"></a></li>
+            <li class="home sidebar_hover_links"><a href=""><img id="home_icon" src="{{ asset('img/home.svg') }}" alt="Home icon"></a></li>
+            <li class="task sidebar_hover_links"><a href=""><img id="task_icon" src="{{ asset('img/task.svg') }}" alt="Task icon"></a></li>
+            <li class="personal sidebar_hover_links"><a href=""><img id="personal_icon" src="{{ asset('img/personal.svg') }}" alt="Personal icon"></a></li>
+            <li class="work sidebar_hover_links"><a href=""><img id="work_icon" src="{{ asset('img/work.svg') }}" alt="Work icon"></a></li>
+            <li class="search sidebar_hover_links"><a href=""><img id="search_icon" src="{{ asset('img/search.svg') }}" alt="Search icon"></a></li>
             <li class="empty"><div></div></li>
-            <li class="settings sidebar_hover_links"><div><a href=""><img id="settings_icon" src="/Users/lukasvoplakal/coding-school/demo-workspace/src/assets/img/settings.svg" alt="Settings icon"></a></div></li>
+            <li class="settings sidebar_hover_links"><div><a href=""><img id="settings_icon" src="{{ asset('img/settings.svg') }}" alt="Settings icon"></a></div></li>
         </ul>
     </div>
     <main class="main_content">
     {% block main_content %}{% endblock %}
-    </div>
     </main>
     <footer class="footer">
         <ul class="useful_links">
@@ -46,7 +45,6 @@
             <li><a href="">Donate</a></li>
         </ul>
     </footer>
-</div>
         {% endblock %}
     </body>
 </html>

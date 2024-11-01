@@ -12,7 +12,7 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 const sideLinksId = ['home', 'task', 'personal', 'work', 'search', 'settings']
 
 sideLinksId.forEach ((sideLinkId) => {
-    const url = '/Users/lukasvoplakal/coding-school/demo-workspace/project/html/img/'
+    const url = 'assets/img/'
     document.querySelector('#' + sideLinkId + '_icon').addEventListener('mouseenter', function() {
         this.src = url + sideLinkId + '_hover' + '.svg'
     });
