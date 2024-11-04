@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalatérské práce</title>
+    <link rel="stylesheet" href="styly.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        *{
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            outline: none; border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+
+        html{
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            overflow-x: hidden;
+        }
+
+        section{
+            padding: 2rem 9%;
+        }
+
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #fff;
+            padding: 2rem 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1 );
+        }
+        header .logo{
+            font-size: 3rem;
+            color: #333;
+            font-weight: bolder;
+        }
+        header .logo span{
+            color: blue;
+        }
+        header .navbar a{
+            font-size: 2rem;
+            padding: 0 1.5rem;
+            color: #666;
+        }
+        header .navbar a:hover{
+            color: blue;
+        }
+        header #toggler{
+            display: none;
+        }
+        header .fa-bars{
+            font-size: 3rem;
+            color: #333;
+            border-radius: .5rem;
+            padding: .5rem 1.5rem;
+            cursor: pointer;
+            border: .1rem solid rgba(0,0,0,.3);
+            display: none;
+        }
+
+        .home{
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            background: url(../uvodni\ fotka.jpg) no-repeat;
+            background-size: cover; 
+            background-position: center;
+        }
+
+        .home .content{
+            max-width: 50rem;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       @media (max-width:991px){
+
+        html{
+            font-size: 55%;   
+       }
+    }
+
+       header{
+        padding: 2rem;
+       }
+
+
+       @media (max-width:768px){
+
+        html .fa-bars{
+            display: block;
+        }
+
+        header .navbar{
+            position: absolute;
+            top: 100; left: 0; right: 0;
+            background: #eee;
+            border-top: .1rem solid rgba(0,0,0,.1 );
+            clip-path: polygon(0 0, 100% 0, 0 0);
+        }
+
+        header #toggler:checked ~ .navbar{
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        header .navbar a{
+            margin: 1.5rem;
+            padding: 1.5rem;
+            background: #fff;
+            border: .1rem solid rgba(0,0,0,.1 );
+            display: block;
+        }
+
+
+        @media (max-width:450px) {
+
+        html{
+            font-size: 50%;   
+            }
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    </head>
+    <body>
+
+
+        <header>
+            <input type="checkbox" name="" id="toggler">
+            <label for="toggler" class="fas fa-bars"></label>
+
+            <a href="#" class="logo">Instalater Master<span>.</span></a>
+             
+            <nav class="navbar">
+                <a href="domů">domů</a>
+                <a href="o nás">o nás</a>
+                <a href="kontakty">kontakty</a>
+                <a href="galerie">galerie</a>
+            </nav>
+
+            <div class="icons">
+            <a href="#" class="fa fa-home"></a>
+            <a href="#" class="fa fa-user"></a>  
+            </div>
+        </header>
+
+        <section class="domů" id="domů">
+
+            <div class="content">
+                <h3>fresh flowers</h3>
+                <span> natural & beautiful flowers </span>
+                <p>dfgjndfgddddddddddddddddddddiksgvv fbvijkbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdfbjndfffffffffffffffffffffffn rnojgbbbbbbbbbbbbbbb bgfrnojdbdo  ognbrognrob bonrbodwonfgwno o on or</p>
+                <a href="#" class="btn">shop now</a> 
+            </div>
+
+        </section>
+    </body>

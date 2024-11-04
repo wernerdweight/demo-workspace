@@ -10,7 +10,7 @@ services:
   php:
     image: wernerdweight/php8.3-fpm
     volumes:
-      - ./src:/var/www/public
+      - ./src:/var/www/public:delegated
     ports:
       - 9000:9000
 
@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydatabase
     volumes:
-      - ./pgsql/data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     ports:
       - 5432:5432
 
@@ -35,3 +35,7 @@ services:
     ports:
       - 1025:1025
       - 8025:8025
+
+volumes:
+  pgdata:
+    driver: local

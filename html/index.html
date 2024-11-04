@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Palacinky
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  -->
+    <style >
+        :root {
+            --primarycolor: blueviolet;
+        }
+        header {
+            background-color: var(--primarycolor);
+        }
+
+        body{
+            margin: 0px;
+        }
+
+       nav ul {
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            list-style: none;
+            display: inline-block;
+            
+        }
+        header a {
+            color: white;
+            padding: 20px;
+            display: block;
+        }
+
+        img {
+            border: 2px solid var(--primarycolor);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .circle {
+            background-color: var(--primarycolor);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            border: 1px solid white;
+            transition: 1s;
+            &:hover{
+                box-shadow: 0 0 10px 0 yellow;
+                transform: rotate(180deg);
+                width: 200px;
+                height: 200px;
+            }
+            p {
+                margin: 0;
+            }
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        
+        
+        <nav>
+            <!-- odkazy -->
+            <ul>
+                <li> <a href="#"> recepty </a> </li>
+                <li>
+                    <a href="#"> kontakty</a>
+                </li>
+                <li>
+                    <a href="#"> eshop</a>
+                </li>
+            </ul>
+        </nav>
+        
+        
+    </header>
+    <main>
+<article>
+    <h1>
+        Palacinky
+    </h1>
+    <img width="250" src="https://www.toprecepty.cz/fotky/recepty/0118/palacinky-s-dzemem-192251-677-508-nw.jpg" alt="palacinky">
+    <section>
+        <h2>
+            ingredience
+        </h2>
+    </section>
+    <section>
+        <h2>
+            postup
+        </h2>
+   
+   
+   
+   
+   
+        <ol> <!-- seznam s cislovanim -->
+<li>
+   <h3> testo </h3>
+<ul> <!-- seznam bez cislovani -->
+    <li>
+        miska
+    </li>
+    <li>
+        metla
+    </li>
+</ul>
+</li>
+<li>
+    <h3> smazeni </h3>
+</li>
+    </ol>
+<p> <!-- paragraf -->
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse posuere ac augue vitae bibendum. Curabitur 
+    <strong> laoreet </strong>, <b> urna </b> ac dapibus tristique, dui massa malesuada urna, in venenatis quam ex et nunc.
+    <br> <br> <!-- take se da jinym upravenim  -->
+    <u> Pellentesque facilisis </u> justo eu dolor finibus viverra. Phasellus quis ante sit amet nunc pulvinar dignissim a vitae metus. 
+    <br>
+    <em> Suspendisse </em> <i> potenti. </i> Etiam id dapibus ipsum. 
+    <hr>  Mauris non hendrerit lorem, vitae condimentum ligula.
+</p>
+    </section>
+</article>
+    </main>
+    <footer>
+        <p class="footer-header">
+            kontakt
+        </p>
+        <address>
+            Navsi 1234
+            <br> Cesky Tesin
+        </address>
+        <p>
+            Email:
+            <a href="mailto: email@email.cz">
+                mail@mail.cz
+            </a>
+        </p>
+        <p>
+            Tel:
+            <a href="tel:3625550100">
+                3625550100
+            </a>
+        </p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
