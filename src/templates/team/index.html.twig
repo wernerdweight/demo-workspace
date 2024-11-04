@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% import 'macros/team_macros.html.twig' as teamMacros %}
+
+{% block title %}Hello TeamController!{% endblock %}
+
+{% block content %}
+    <h1>{{ team_name }}</h1>
+
+    {{ teamMacros.teamTable([team]) }}
+{% endblock %}

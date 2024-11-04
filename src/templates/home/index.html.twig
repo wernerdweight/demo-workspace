@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% import 'macros/team_macros.html.twig' as teamMacros %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block content %}
+  {#% apply markdown_to_html %}
+    # Heading 1
+
+    ## Heading 2
+
+    ### Heading 3
+
+    Bold	**bold text**
+
+    Italic	*italicized text*
+
+    > Blockquote
+    > asjhdajhsdkjahsdkjahsdkjahakjshdakjshdksajhddhajkdashkjahd asd gasjdga skdgai sgak
+
+    1. First item
+    2. Second item
+    3. Third item
+
+    - First item
+    - Second item
+    - Third item
+
+    Code	`code`
+
+    ---
+
+    [title](https://www.example.com)
+
+    Image	![alt text](https://mdg.imgix.net/assets/images/book-cover.jpg?auto=format&fit=clip&q=40&w=1080)
+
+    ```python
+    print("Hello, World!")
+
+    def add(a, b):
+      return a + b
+    ```
+
+  {% endapply %#}
+
+  {{ teamMacros.teamTable(teams) }}
+{% endblock %}

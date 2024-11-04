@@ -1,0 +1,37 @@
+{% macro teamTable(teams) %}
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>Team</th>
+      <th>Established</th>
+      <th>No. of Players</th>
+      <th>Best player</th>
+      <th>Worst player</th>
+      <th>All Players</th>
+      <th>Numbers</th>
+      <th>Actions</th>
+    </tr>
+    {% for team in teams %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td><a href="{{ path('app_team', {'teamName': team.name}) }}">{{ team.name }}</a></td>
+        <td>{{ team.established|date('j. n. Y') }}</td>
+        <td>{{ team.players|length }}</td>
+        <td>{{ team.players|first.firstName|first }}. {{ team.players|first.lastName }}</td>
+        <td>{{ team.players|reverse|first.firstName|first }}. {{ team.players|reverse|first.lastName }}</td>
+        <td>
+          {# both of the below is equivalent #}
+          {% for player in team.players %}
+            {{ player.firstName }} {{ player.lastName }}{% if loop.revindex0 != 0 %},{% endif %}
+          {% endfor %}<br>
+          {{ team.players|map(player => "#{player.firstName} #{player.lastName}")|join(', ') }}
+        </td>
+        <td>{{ 513625.128|number_format(2, ',', ' ') }}</td>
+        <td>
+          <a href="{{ path('app_team', {'teamName': team.name}) }}">View</a>
+          <a href="{{ path('app_team', {'teamName': team.name}) }}">Edit</a>
+          <a href="{{ path('app_team', {'teamName': team.name}) }}">Delete</a>
+      </tr>
+    {% endfor %}
+  </table>
+{% endmacro %}
