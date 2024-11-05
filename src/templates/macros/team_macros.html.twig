@@ -14,7 +14,7 @@
     {% for team in teams %}
       <tr>
         <td>{{ loop.index }}</td>
-        <td><a href="{{ path('app_team', {'teamName': team.name}) }}">{{ team.name }}</a></td>
+        <td><a href="{{ path('app_team', {'teamName': team.canonical}) }}">{{ team.name }}</a></td>
         <td>{{ team.established|date('j. n. Y') }}</td>
         <td>{{ team.players|length }}</td>
         <td>{{ team.players|first.firstName|first }}. {{ team.players|first.lastName }}</td>
@@ -24,13 +24,13 @@
           {% for player in team.players %}
             {{ player.firstName }} {{ player.lastName }}{% if loop.revindex0 != 0 %},{% endif %}
           {% endfor %}<br>
-          {{ team.players|map(player => "#{player.firstName} #{player.lastName}")|join(', ') }}
+          {#{ team.players|map(player => "#{player.firstName} #{player.lastName}")|join(', ') }#}
         </td>
         <td>{{ 513625.128|number_format(2, ',', ' ') }}</td>
         <td>
-          <a href="{{ path('app_team', {'teamName': team.name}) }}">View</a>
-          <a href="{{ path('app_team', {'teamName': team.name}) }}">Edit</a>
-          <a href="{{ path('app_team', {'teamName': team.name}) }}">Delete</a>
+          <a href="{{ path('app_team', {'teamName': team.canonical}) }}">View</a>
+          <a href="{{ path('app_team', {'teamName': team.canonical}) }}">Edit</a>
+          <a href="{{ path('app_team', {'teamName': team.canonical}) }}">Delete</a>
       </tr>
     {% endfor %}
   </table>

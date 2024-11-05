@@ -9,9 +9,9 @@
       </li>
       {% for team in teams %}
         <li class="nav-item">
-          <a class="nav-link" href="{{ path('app_team', {'teamName': team.name}) }}">
+          <a class="nav-link" href="{{ path('app_team', {'teamName': team.canonical}) }}">
             {{ team.name }}
-            {% if app.current_route == 'app_team' and app.current_route_parameters.teamName == team.name %}
+            {% if app.current_route == 'app_team' and app.current_route_parameters.teamName == team.canonical %}
               <span class="sr-only">(current)</span>
             {% endif %}
           </a>
