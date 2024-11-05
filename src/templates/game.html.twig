@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Přihlášení - No Bad Choices{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hra - No Bad Choices</title>
+
+</head>
+<body>
+    <header>
+        <h1>{{ 'No Bad Choices'|upper }}</h1>
+    </header>
+
+    <main>
+        <section class="game-text">
+            <p>Vítej ve hře "No Bad Choices"! Dnes se dostaneš do světa, kde se tvá rozhodnutí stávají klíčovými pro další vývoj příběhu.</p>
+            <p>Jaké rozhodnutí učiníš, určí, jak se tvá cesta vyvine. Jsi připraven?</p>
+        </section>
+
+        <section class="game-text">
+            <p>Jsi na souřadnicích: {{ latitude }}, {{ longitude }}</p>
+        </section>
+        {% set options = {'sever':[1,0], 'jih':[-1,0], 'východ':[0,1], 'západ': [0,-1]} %}
+        <section class="choices">
+            {% for key,option in options %}
+                <a href="{{path('game', {'latitude':latitude + option[0],'longitude':longitude + option[1]} )}}"> Jdi na {{ key }} </a>
+                {{ loop.index0 }}
+            {% endfor %}
+        </section>
+
+        {% set currentDate = "now"|date("d.m.Y H:i") %}
+        <p>Dnešní datum: {{ currentDate }}</p>
+    </main>
+
+</body>
+</html>
+{% endblock %}

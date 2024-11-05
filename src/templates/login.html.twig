@@ -1,0 +1,77 @@
+{# templates/login.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Přihlášení - No Bad Choices{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Přihlášení</h1>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <form action="{{ path('login') }}" method="POST"> 
+                <div>
+                    <label for="username">Uživatelské jméno:</label>
+                    <input type="text" id="username" name="username" required>
+                    <span id="nameError" class="error">Input your username</span> 
+
+                    <label for="password">Heslo:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span id="passwordError" class="error">Password must be at least 8 characters long</span>   
+
+                    <button type="submit">Přihlásit se</button>
+                </div>
+            </form>
+            <p class="register-link">Nemáš účet? <a href="{{ path('register') }}">Zaregistruj se!</a></p>
+        </section>
+
+        <script>
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (event) => {    
+                event.preventDefault();
+
+                let isValid = true;
+
+                const inputs = form.querySelectorAll('input');
+                inputs.forEach(input => {
+                    if (input.name === 'username' ) {
+                        const error = form.querySelector('#nameError');
+                        if (input.value.length < 5) {
+                            isValid = false;
+                            error.style.opacity = 1;
+                            if (input.value.length === 0) {
+                                error.textContent = 'Input your username';
+                            } else {
+                                error.textContent = 'Username must be at least 5 characters long';
+                            }
+                        } else {
+                            error.style.opacity = 0;
+                        }
+                    }
+
+                    if (input.name === 'password') {
+                        const error = form.querySelector('#passwordError');
+                        if (input.value.match(/^.{1,7}$/)) {
+                            isValid = false;
+                            error.style.opacity = 1;
+                            error.textContent = 'Password must be at least 8 characters long';
+                        } else {
+                            error.style.opacity = 0;
+                        }
+                    }
+                });
+
+                if (isValid) {
+                    event.target.submit();
+                }
+            });
+        </script>
+    </main>
+{% endblock %}

@@ -1,0 +1,41 @@
+{# templates/home.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}No Bad Choices - Úvod{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>No Bad Choices</h1>
+    </header>
+
+    <main>
+        <section class="menu">
+            <button onclick="startNewGame()">Nová hra</button>
+            <button onclick="continueGame()">Pokračovat</button>
+        </section>
+
+        <section class="login">
+            <button class="login-button" onclick="window.location.href='{{ path('login') }}'">Přihlásit se</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 No Bad Choices. Všechna práva vyhrazena.</p>
+        <p>
+            <a href="{{ path('privacy') }}">Ochrana osobních údajů</a> | 
+            <a href="{{ path('terms') }}">Podmínky použití</a>
+        </p>
+    </footer>
+
+    <script>
+        function startNewGame() {
+            window.location.href = "{{ path('game',{'latitude':0,'longitude':0}) }}";
+        }
+    </script>
+{% endblock %}
