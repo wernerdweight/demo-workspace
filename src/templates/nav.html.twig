@@ -7,7 +7,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="{{ path('app_home') }}">All teams {% if app.current_route == 'app_home'  %}<span class="sr-only">(current)</span>{% endif %}</a>
       </li>
-      {% for team in teams %}
+      {#% for team in teams %}
         <li class="nav-item">
           <a class="nav-link" href="{{ path('app_team', {'teamName': team.canonical}) }}">
             {{ team.name }}
@@ -16,7 +16,8 @@
             {% endif %}
           </a>
         </li>
-      {% endfor %}
+      {% endfor %#}
     </ul>
+    <a href="{{ path('app_team_create') }}" class="btn btn-primary ml-auto">Create Team</a>
   </div>
 </nav>

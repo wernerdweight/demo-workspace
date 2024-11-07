@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use function Symfony\Component\String\s;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: TeamRepository::class)]
 class Team
@@ -17,6 +18,8 @@ class Team
   #[ORM\Column]
   private ?int $id = null;
 
+  #[Assert\NotBlank]
+  #[Assert\Length(min: 4, max: 255)]
   #[ORM\Column(length: 255)]
   private ?string $name = null;
 
@@ -47,7 +50,7 @@ class Team
     return $this->name;
   }
 
-  public function setName(string $name): static
+  public function setName(?string $name): static
   {
     $this->name = $name;
     $this->canonical = s($name)->ascii()->lower()->replace(' ', '-');
