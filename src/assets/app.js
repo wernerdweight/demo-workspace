@@ -20,3 +20,19 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 //         this.src = url + sideLinkId + '.svg'
 //     });
 // });
+
+const sideLinksId = ['home', 'task', 'personal', 'work', 'search', 'settings'];
+
+sideLinksId.forEach((sideLinkId) => {
+    const iconElement = document.querySelector('#' + sideLinkId + '_icon');
+    
+    if (iconElement) {
+        iconElement.addEventListener('mouseenter', function() {
+            this.src = this.getAttribute('data-hover');
+        });
+
+        iconElement.addEventListener('mouseleave', function() {
+            this.src = this.getAttribute('data-default');
+        });
+    }
+});

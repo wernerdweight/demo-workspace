@@ -26,13 +26,49 @@
     </header>
     <div class="sidebar">
         <ul class="sidebar_links">
-            <li class="home sidebar_hover_links"><a href=""><img id="home_icon" src="{{ asset('img/home.svg') }}" alt="Home icon"></a></li>
-            <li class="task sidebar_hover_links"><a href=""><img id="task_icon" src="{{ asset('img/task.svg') }}" alt="Task icon"></a></li>
-            <li class="personal sidebar_hover_links"><a href=""><img id="personal_icon" src="{{ asset('img/personal.svg') }}" alt="Personal icon"></a></li>
-            <li class="work sidebar_hover_links"><a href=""><img id="work_icon" src="{{ asset('img/work.svg') }}" alt="Work icon"></a></li>
-            <li class="search sidebar_hover_links"><a href=""><img id="search_icon" src="{{ asset('img/search.svg') }}" alt="Search icon"></a></li>
+            <li class="home sidebar_hover_links">
+                <a href=""><img id="home_icon" 
+                        src="{{ asset('img/home.svg') }}" 
+                        data-hover="{{ asset('img/home_hover.svg') }}" 
+                        data-default="{{ asset('img/home.svg') }}" 
+                        alt="Home icon"></a>
+            </li>
+            <li class="task sidebar_hover_links">
+                <a href="{{ path('app_task_create') }}"><img id="task_icon" 
+                        src="{{ asset('img/task.svg') }}" 
+                        data-hover="{{ asset('img/task_hover.svg') }}" 
+                        data-default="{{ asset('img/task.svg') }}" 
+                        alt="Task icon"></a>
+            </li>
+            <li class="personal sidebar_hover_links">
+                <a href=""><img id="personal_icon" 
+                        src="{{ asset('img/personal.svg') }}" 
+                        data-hover="{{ asset('img/personal_hover.svg') }}" 
+                        data-default="{{ asset('img/personal.svg') }}" 
+                        alt="Personal icon"></a>
+            </li>
+            <li class="work sidebar_hover_links">
+                <a href=""><img id="work_icon" 
+                        src="{{ asset('img/work.svg') }}" 
+                        data-hover="{{ asset('img/work_hover.svg') }}" 
+                        data-default="{{ asset('img/work.svg') }}" 
+                        alt="Work icon"></a>
+            </li>
+            <li class="search sidebar_hover_links">
+                <a href=""><img id="search_icon" 
+                        src="{{ asset('img/search.svg') }}" 
+                        data-hover="{{ asset('img/search_hover.svg') }}" 
+                        data-default="{{ asset('img/search.svg') }}" 
+                        alt="Search icon"></a>
+            </li>
             <li class="empty"><div></div></li>
-            <li class="settings sidebar_hover_links"><div><a href=""><img id="settings_icon" src="{{ asset('img/settings.svg') }}" alt="Settings icon"></a></div></li>
+            <li class="settings sidebar_hover_links">
+                <div><a href=""><img id="settings_icon" 
+                             src="{{ asset('img/settings.svg') }}" 
+                             data-hover="{{ asset('img/settings_hover.svg') }}" 
+                             data-default="{{ asset('img/settings.svg') }}" 
+                             alt="Settings icon"></a></div>
+            </li>
         </ul>
     </div>
     <main class="main_content">

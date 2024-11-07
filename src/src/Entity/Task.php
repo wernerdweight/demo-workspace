@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\TaskRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: TaskRepository::class)]
 class Task
@@ -14,6 +15,7 @@ class Task
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank()]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
@@ -27,13 +29,13 @@ class Task
     private ?\DateTimeInterface $updatedDate = null;
 
     #[ORM\Column]
-    private ?bool $currentWeek = null;
+    private ?bool $currentWeek = false;
 
     #[ORM\Column]
-    private ?bool $nextWeek = null;
+    private ?bool $nextWeek = false;
 
     #[ORM\Column]
-    private ?bool $archived = null;
+    private ?bool $archived = false;
 
     public function getId(): ?int
     {
