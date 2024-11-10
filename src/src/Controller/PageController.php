@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\LocationText;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,13 +29,25 @@ class PageController extends AbstractController
     }
 
     #[Route('/game/{latitude}/{longitude}', name: 'game')]
-    public function game(int $latitude, int $longitude): Response
+    public function game(float $latitude, float $longitude, EntityManagerInterface $em): Response
     {
-        return $this->render('game.html.twig', [
+        // Vyhledáme text pro konkrétní souřadnice
+        $locationText = $em->getRepository(LocationText::class)->findOneBy([
             'latitude' => $latitude,
             'longitude' => $longitude,
         ]);
+
+        // Pokud text pro dané souřadnice není nalezen, použijeme výchozí text
+        $text = $locationText ? $locationText->getExt() : 'Text pro tuto lokaci nebyl nalezen.';
+
+        // Předáme souřadnice a text do šablony
+        return $this->render('game.html.twig', [
+            'latitude' => $latitude,
+            'longitude' => $longitude,
+            'text' => $text,
+        ]);
     }
+
     #[Route('/register', name: 'register')]
     public function register(): Response
     {
