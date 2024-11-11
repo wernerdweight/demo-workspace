@@ -10,7 +10,7 @@ services:
   php:
     image: wernerdweight/php8.3-fpm
     volumes:
-      - ./src:/var/www/public
+      - ./src:/var/www/public:delegated
     ports:
       - 9000:9000
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <link rel="stylesheet" href="C:\Users\petr5\pcsprojekty\demo-workspace\linking test\formstyle.css">
+</head>
+<body>
+
+    <div id="form" class="form-container">
+        <form>
+            <h2>kalkulačka</h2>
+            
+            <label for="cislo_1">cislo_1:</label>
+            <input type="cislo_1" id="cislo_1" name="cislo_1" required>
+
+            <label for="cislo_2">cislo_2:</label>
+            <input type="cislo_2" id="cislo_2" name="cislo_2" required>
+
+            <input type="radio" id="+" name="znamenko" value="+" required>
+            <label for="+">+</label><br>
+            <input type="radio" id="-" name="znamenko" value="-">
+            <label for="-">-</label><br>
+            <input type="radio" id="/" name="znamenko" value="/">
+            <label for="/">/</label> <br>
+            <input type="radio" id="*" name="znamenko" value="*">
+            <label for="*">*</label> 
+
+            <input id ="button" type="button" value="calculate">
+        </form>
+    </div>
+    <script src="C:\Users\petr5\pcsprojekty\demo-workspace\linking test\formjs.js"></script>
+</body>
+</html>

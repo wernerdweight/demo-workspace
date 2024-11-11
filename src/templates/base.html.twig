@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body> 
+    {% block header %}
+    <header>
+        
+<a href="#" class="icon">
+    <img src="{{ asset('images/kucharka_ikona.png') }}" width="100" height="100">
+</a>
+
+        <title>
+        base
+        </title>
+
+        <h1>
+            Kuchařka
+        </h1>       
+        
+        <nav>
+            <a href="{{path('app_home')}}"> Domov</a>
+            <a href="{{path('app_recepty')}}"> Recepty</a>
+            <a href="#"> Fotogalerie</a>
+            <a href="#"> Kontakty</a>
+        </nav>
+        
+    </header>
+{% endblock %}
+{% block body %}{% endblock %}
+    {% block Footer %}
+    <Footer>
+                        <h2><strong>Kontakty<strong></h2>
+                            <ul>
+                                <il>
+                                    <adress>Praha 1 </adress><br>
+                                </il>
+                                <il>
+                                    Email: <a href="mailto :pepazdepa@seznam.cz">pepazdepa@seznam.cz</a> <br>
+                                </il>
+                                <il>
+                                    Tel: <a href="Tel :+420 111 111 111 111 111">+420 111 111 111 111 111</a> <br>
+                                </il>
+                            </ul>
+                        </footer>
+        {% endblock %}
+    </body>
+</html>

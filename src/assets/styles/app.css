@@ -1,0 +1,54 @@
+   :root
+   {
+    --color1:#1B1B1E;
+    --color2:#373F51;
+    --color3:#58A4B0;
+    --color4:#A9BCD0;
+    --color5:#D8DBE2;
+}
+body
+{
+    background-color:var(--color4);
+    color:var(--color1);
+    margin:0;
+    padding:0px;
+}
+header
+{
+    background-color:var(--color1);
+    color:var(--color4);
+    margin:0px;
+}
+.icon
+{
+    display: block;
+    float: right;
+    clear: right;
+    padding-top: 10px;
+    filter: invert(1);
+}
+nav a
+{
+    color:var(--color4);
+    list-style:none;
+    display:inline-block;
+    padding:20px;
+    font-size: 20px;
+    text-align:center;
+    text-decoration: inherit;
+}
+h1
+{
+    margin:0;
+    margin-left:100px;
+    color:var(--color4);
+    font-size:50px;
+    text-align:center;
+}    
+h2
+{
+    margin:0;
+    color:var(--color1);
+    font-size:30px;
+    text-align:left;
+}

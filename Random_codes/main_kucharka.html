@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root
+    {
+        --color1:#1B1B1E;
+        --color2:#373F51;
+        --color3:#58A4B0;
+        --color4:#A9BCD0;
+        --color5:#D8DBE2;
+    }
+    body
+    {
+        background-color:var(--color4);
+        color:var(--color1);
+        margin:0;
+        padding:0px;
+    }
+    header
+    {
+        background-color:var(--color1);
+        color:var(--color4);
+        margin:0px;
+    }
+    nav a
+    {
+        color:var(--color4);
+        list-style:none;
+        display:inline-block;
+        padding:20px;
+        font-size: 20px;
+        text-align:center;
+        text-decoration: inherit;
+    }
+    h1
+    {
+        margin:0;
+        color:var(--color4);
+        font-size:50px;
+        text-align:center;
+    }    
+    h2
+    {
+        margin:0;
+        color:var(--color1);
+        font-size:50px;
+        text-align:center;
+    }
+    .imgmain {
+        border: 4px;
+        border-style: solid;
+        border-color: var(--color1);
+        border-radius: 2%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+        width: auto\9;
+        
+    }
+    table
+    {
+        border:4px;
+        font-size:1rem;
+        border-style:solid;
+        border-color:var(--color1);
+        border-radius:2%;
+        border-spacing: 2;
+        transition: border 0.5s, font-size 0.5s, border-radius 0.5s, border-spacing 0.5s ease-in;
+    }
+    table:hover
+    {
+        border:8px;
+        border-style:solid;
+        font-size:2rem;
+        border-radius:2%;
+        border-spacing: 5;
+    }
+    h3, h4
+    {
+        color:var(--color1);
+        font-size:30px;
+        text-align:left;        
+    }
+    
+    .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 0px auto;
+        padding: 10px;
+        width: 55%;
+    }
+    
+    .grid-item 
+    {
+        flex-basis: 30%;
+        box-sizing: border-box;
+        padding: 8px;
+        transition: transform .2s;
+    }
+    
+    .grid-item img
+    {
+        border: 5px;
+        border-style: solid;
+        border-color: var(--color3);
+        border-radius: 2%;
+        max-width: 300px;
+        margin:0;
+        padding:0;
+        object-fit: fill;
+        align-content: center;
+        object-position: center;
+    }
+    
+    .grid-item:hover
+    {
+        transform: rotate(5deg) scale(1.1);
+    }
+    
+    
+</style>
+
+<head>
+    
+    <title>    
+        Kuchařka
+    </title>
+    
+</head>
+
+<body>
+    
+    <header>
+        <h1>
+            Kuchařka
+        </h1>      
+        
+        <nav>
+            <a href="#"> Domov</a> 
+            <a href="#"> Recepty</a>
+            <a href="#"> Fotogalerie</a>
+            <a href="#"> Kontakty</a>
+        </nav>
+        
+    </header>   
+    <main>
+    </article>
+    <h2>
+        Palačinky
+    </h2>    
+    
+    <img class="imgmain" src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\palacinky.jpg" alt="palačinky" width="550" height="300"> <br>
+    
+    <div class="grid-container">
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\celozrnne-palacinky.jpg" alt="1"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\palacinky.jpg" alt="2"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\celozrnne-palacinky.jpg" alt="3"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\palacinky.jpg" alt="4"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\celozrnne-palacinky.jpg" alt="5"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\palacinky.jpg" alt="6"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\celozrnne-palacinky.jpg" alt="7"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\palacinky.jpg" alt="8"></div>
+        <div class="grid-item"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\hmtl\Obrazky\celozrnne-palacinky.jpg" alt="9"></div>
+    </div>
+    
+</article>
+<section>
+    <ol>   
+        <h3>
+            <li>
+                <strong>Suroviny</strong> <br>
+            </li>
+        </h3>
+        <table>
+            <thread>
+                <tr>
+                    <th>
+                        <b>Surovina</b>
+                    </th>
+                    <th>
+                        <b>Množství</b>
+                    </th>
+                </thread>
+                <tbody>
+                    <tr>
+                        <td>Vejce</td>
+                        <td>2ks</td>
+                    </tr>
+                    <tr>
+                        <td>Hladká mouka</td>
+                        <td>400g</td>
+                    </tr> 
+                    <tr>
+                        <td>Vanilkový cukr</td>
+                        <td>20g</td>
+                    </tr>
+                    <tr>
+                        <td>Mléko</td>
+                        <td>1L</td>
+                    </tr>
+                    <tr>
+                        <td>Slunečnicový olej</td>
+                        <td>200ml</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Marmeláda</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>
+                <li>
+                    <strong>Postup</strong>
+                </li>
+            </h4>
+            <ol>
+                <li>
+                    Nejdřív v míse smíchejte všechy ingredience na těsto. Pokud budete míchat ručně, 
+                    doporučujeme smíchat nejdřív suché a tekuté ingredience zvlášť. Jinak použijte klidně robot s metličkami nebo mixér. 
+                    Jde o hlavně o vytvoření co nejhladšího těsta.
+                </li>
+                <li>
+                    Na středně rozpálenou pánev pak nalijte trošku oleje a rozetřete ho mašlovačkou.
+                </li>
+                <li>
+                    Těsto nalijte na pánev a krouživými pohyby ho rovnoměrně rozprostřete. 
+                    Dávkování těsta samozřejmě musíte přizpůsobit velikosti pánve a naběračky. Snažte se vždycky dělat palačinky co nejtenčí.
+                </li>
+                <li>
+                    Trvá asi jednu až dvě palačinky, než se pánev rozpálí na ideální teplotu. 
+                    Pak už to jde samo a olej na pánev už není potřeba. Pokud teda používáte nepřilnavou pánev. <br>
+                    Každopádně první palačinka se nikdy nepovede, takže se na začátku určitě netrapte, kdyby se něco nedařilo.
+                </li>
+                <li>
+                    Palačinky jsou hotové dost rychle, takže doporučujeme neodcházet a pořád na ně koukat. 
+                    Většinou stačí tak půl minuta z každé strany, ale záleží na tloušťce těsta samozřejmě. 
+                    Sledujte hlavně barvu palačinek, ať se nepřipálí.
+                </li>
+                <li>
+                    Hotové palačinky servírujte podle chuti s domácí marmeládou nebo dalšími ingrediencemi.
+                </li>
+                <li>
+                    Pokud se rozhodnete pro omáčku z mraženého nebo čerstvého ovoce, stačí ho dát do kastrůlku, lehce podlít vodou a přidat cukr podle chuti. 
+                    Pak nechte provařit, dokud se ovoce nerozvaří na omáčku a do požadované konzistence. <br>
+                    Vyzkoušet můžete například domácí omáčku z malin a ostružin.
+                </li>
+            </ol>
+            <ol>
+            </ol>
+        </ol>
+    </section>   
+</main>
+<footer>
+    <p><b>Kontakty<b></p>
+        <ul>
+            <il>
+                <adress>Praha 1 </adress><br>
+            </il>
+            <il>
+                Email: <a href="mailto :pepazdepa@seznam.cz">pepazdepa@seznam.cz</a> <br>
+            </il>
+            <il>
+                Tel: <a href="Tel :+420 111 111 111 111 111">+420 111 111 111 111 111</a> <br>
+            </il>
+        </ul>
+    </footer>
+</body>
+</html>

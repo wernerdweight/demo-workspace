@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <title>
+        formulář
+    </title>
+    <h1>
+        <b>Formulář</b>
+    </h1>
+    
+</header>
+
+<style>
+    :root 
+    {
+        --primary-color: #FFFFFF;
+        --secondary-color: #3366ff;
+        --background-color: #FFFF66;
+    }
+    body
+    {
+    background-color: var(--background-color);
+    }
+    input:required
+    {
+        border-color: red;
+        border-width: 1rem;
+    }
+    label
+    {
+        font-weight: bold;
+        font-size: 1rem;
+        color: blue;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    label[for="name"]
+    {
+        color: red;
+    }
+    input[type="submit"]:hover
+    {
+        color: green;
+    }
+    input[type="reset"]:hover
+    {
+        color: red;
+    }
+    label[for="muž"], label[for="žena"], label[for="jiné"]
+    {
+        color: white;
+    }
+    label[for="O mně: "]
+    {
+        color: green;
+    }
+    </style>
+
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Osobní informace</legend>
+            <label for="name">jméno</label> <br>
+            <input type="text" id="name" name="name" required> <br>
+            
+            <label for="age">Datum narození</label> <br>
+            <input type="datetime-local" id="age" name="age" required> <br>
+            
+            <input type="radio" id="muž" name="pohlavi" value="m">
+            <label for="muž">muž</label><br>
+            <input type="radio" id="žena" name="pohlavi" value="f">
+            <label for="žena">žena</label><br>
+            <input type="radio" id="jiné" name="pohlavi" value="n">
+            <label for="jiné">jiné</label> <br>    
+            
+            <label for="password">Heslo</label> <br>
+            <input type="text" id="password" required> <br>
+            
+            <select name="country" id="country">
+                <optgroup label="Europe">
+                    <option value="cz">cz</option>
+                    <option value="de">de</option>
+                    <option value="au">au</option>
+                </optgroup>            
+                <optgroup label="Asia">
+                    <option value="cn">cn</option>
+                    <option value="kr">kr</option>
+                    <option value="jp">jp</option>
+                </select>
+                </optgroup>
+                <br>
+                        <label><input type="checkbox" id="interests" value="sachy">šachy</label> <br>
+                        <label><input type="checkbox" id="interests" value="rybareni">rybaření</label> <br>
+                        <label><input type="checkbox" id="interests" value="vareni">vaření</label> <br>
+                        <label><input type="checkbox" id="interests" value="sporty">sporty</label> <br>
+                        <label>O mně: <br><textarea id="bio" name="bio" rows="4" cols="50"></textarea></label> <br>
+        </fieldset>
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>

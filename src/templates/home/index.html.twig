@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+{% block stylesheets %}
+    <link href="/Styles/Home.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+<h3> Doporučujeme</h3>
+
+<div class="grid-container">
+    <div class="grid-item"><a href="{{path('app_palacinky')}}"><img src="C:\Users\petr5\pcsprojekty\demo-workspace\src\public\Images\Palacinky_1.jpg" alt="1"></a></div>
+    {#<div class="grid-item"><img src="{{ asset('Images/Palacinky_1.jpg') }}" alt="2"></div>
+    <div class="grid-item"><img src="{{ asset('Images/Palacinky_1.jpg') }}" alt="3"></div>
+    <div class="grid-item"><img src="{{ asset('Images/Palacinky_1.jpg') }}" alt="4"></div>
+    <div class="grid-item"><img src="{{ asset('Images/Palacinky_1.jpg') }}" alt="5"></div>
+    <div class="grid-item"><img src="{{ asset('Images/Palacinky_1.jpg') }}" alt="6"></div> #}
+</div>
+{% endblock %}
