@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Přihlášení - No Bad Choices{% endblock %}
+{% block title %}Hra - No Bad Choices{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -14,7 +14,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hra - No Bad Choices</title>
-
 </head>
 <body>
     <header>
@@ -23,25 +22,27 @@
 
     <main>
         <section class="game-text">
-            <p>Vítej ve hře "No Bad Choices"! Dnes se dostaneš do světa, kde se tvá rozhodnutí stávají klíčovými pro další vývoj příběhu.</p>
-            <p>Jaké rozhodnutí učiníš, určí, jak se tvá cesta vyvine. Jsi připraven?</p>
+            <p>{{ text }}</p> <!-- Zobrazení textu z databáze -->
         </section>
 
         <section class="game-text">
             <p>Jsi na souřadnicích: {{ latitude }}, {{ longitude }}</p>
         </section>
-        {% set options = {'sever':[1,0], 'jih':[-1,0], 'východ':[0,1], 'západ': [0,-1]} %}
+
+        {% set options = {'sever': [1, 0], 'jih': [-1, 0], 'východ': [0, 1], 'západ': [0, -1]} %}
         <section class="choices">
-            {% for key,option in options %}
-                <a href="{{path('game', {'latitude':latitude + option[0],'longitude':longitude + option[1]} )}}"> Jdi na {{ key }} </a>
-                {{ loop.index0 }}
+            {% for key, option in options %}
+                <a href="{{ path('game', {'latitude': latitude + option[0], 'longitude': longitude + option[1]}) }}">
+                    Jdi na {{ key }}
+                </a>
+                <br />
             {% endfor %}
         </section>
 
         {% set currentDate = "now"|date("d.m.Y H:i") %}
         <p>Dnešní datum: {{ currentDate }}</p>
     </main>
-
 </body>
 </html>
 {% endblock %}
+

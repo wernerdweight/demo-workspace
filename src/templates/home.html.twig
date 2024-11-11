@@ -21,7 +21,11 @@
         </section>
 
         <section class="login">
-            <button class="login-button" onclick="window.location.href='{{ path('login') }}'">Přihlásit se</button>
+        {% if app.user is null %}
+            <button class="login-button" onclick="window.location.href='{{ path('app_login') }}'">Přihlásit se</button>
+            {% else %}
+            <button class="login-button" onclick="window.location.href='{{ path('app_logout') }}'">Odhlásit se</button>
+            {% endif %}
         </section>
     </main>
 
@@ -30,6 +34,9 @@
         <p>
             <a href="{{ path('privacy') }}">Ochrana osobních údajů</a> | 
             <a href="{{ path('terms') }}">Podmínky použití</a>
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_admin') }}">Admin</a>
+            {% endif %}
         </p>
     </footer>
 

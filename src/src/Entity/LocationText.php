@@ -52,12 +52,12 @@ class LocationText
         return $this;
     }
 
-    public function getExt(): ?string
+    public function getText(): ?string
     {
         return $this->text;
     }
 
-    public function setExt(string $ext): static
+    public function setText(string $ext): static
     {
         $this->text = $text;
 

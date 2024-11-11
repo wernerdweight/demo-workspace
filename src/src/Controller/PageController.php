@@ -10,12 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PageController extends AbstractController
 {
-    #[Route('/login', name: 'login')]
-    public function login(): Response
-    {
-        return $this->render('login.html.twig');
-    }
-
     #[Route('/privacy', name: 'privacy')]
     public function privacy(): Response
     {
@@ -38,7 +32,7 @@ class PageController extends AbstractController
         ]);
 
         // Pokud text pro dané souřadnice není nalezen, použijeme výchozí text
-        $text = $locationText ? $locationText->getExt() : 'Text pro tuto lokaci nebyl nalezen.';
+        $text = $locationText ? $locationText->getText() : 'Text pro tuto lokaci nebyl nalezen.';
 
         // Předáme souřadnice a text do šablony
         return $this->render('game.html.twig', [
@@ -47,6 +41,7 @@ class PageController extends AbstractController
             'text' => $text,
         ]);
     }
+
 
     #[Route('/register', name: 'register')]
     public function register(): Response
