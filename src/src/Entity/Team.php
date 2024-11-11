@@ -35,9 +35,16 @@ class Team
   #[ORM\Column(length: 255, nullable: true)]
   private ?string $canonical = null;
 
+  /**
+   * @var Collection<int, User>
+   */
+  #[ORM\OneToMany(targetEntity: User::class, mappedBy: 'favouriteTeam')]
+  private Collection $fans;
+
   public function __construct()
   {
     $this->players = new ArrayCollection();
+    $this->fans = new ArrayCollection();
   }
 
   public function getId(): ?int
@@ -110,5 +117,35 @@ class Team
     $this->canonical = $canonical;
 
     return $this;
+  }
+
+  /**
+   * @return Collection<int, User>
+   */
+  public function getFans(): Collection
+  {
+      return $this->fans;
+  }
+
+  public function addFan(User $fan): static
+  {
+      if (!$this->fans->contains($fan)) {
+          $this->fans->add($fan);
+          $fan->setFavouriteTeam($this);
+      }
+
+      return $this;
+  }
+
+  public function removeFan(User $fan): static
+  {
+      if ($this->fans->removeElement($fan)) {
+          // set the owning side to null (unless already changed)
+          if ($fan->getFavouriteTeam() === $this) {
+              $fan->setFavouriteTeam(null);
+          }
+      }
+
+      return $this;
   }
 }

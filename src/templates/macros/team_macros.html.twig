@@ -36,8 +36,10 @@
         <td>{{ 513625.128|number_format(2, ',', ' ') }}</td>
         <td>
           <a href="{{ path('app_team', {'teamName': team.canonical}) }}">View</a>
-          <a href="{{ path('app_team_edit', {'teamName': team.canonical}) }}">Edit</a>
-          <a href="{{ path('app_team_delete', {'teamName': team.canonical}) }}">Delete</a>
+          {% if app.user is not null %}
+            <a href="{{ path('app_team_edit', {'teamName': team.canonical}) }}">Edit</a>
+            <a href="{{ path('app_team_delete', {'teamName': team.canonical}) }}">Delete</a>
+          {% endif %}
       </tr>
     {% endfor %}
   </table>

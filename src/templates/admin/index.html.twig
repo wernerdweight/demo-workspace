@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Hello {{ app.user.email }}! ✅</h1>
+
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+      <a href="{{ path('app_admin_users') }}" class="btn btn-primary">Manage users</a>
+    {% endif %}
+</div>
+{% endblock %}

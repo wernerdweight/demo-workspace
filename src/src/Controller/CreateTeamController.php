@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CreateTeamController extends AbstractController
 {
-  #[Route('/create/team', name: 'app_team_create')]
+  #[Route('/team/create', name: 'app_team_create')]
   public function index(EntityManagerInterface $entityManager, Request $request): Response
   {
     $form = $this->createForm(TeamType::class);

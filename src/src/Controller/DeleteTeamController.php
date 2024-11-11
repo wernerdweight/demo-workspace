@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class DeleteTeamController extends AbstractController
 {
-  #[Route('/delete/team/{teamName}', name: 'app_team_delete')]
+  #[Route('/team/{teamName}/delete', name: 'app_team_delete')]
   public function index(
     #[MapEntity(mapping: ['teamName' => 'canonical'])]
     Team $team,

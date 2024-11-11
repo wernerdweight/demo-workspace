@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class EditTeamController extends AbstractController
 {
-  #[Route('/edit/team/{teamName}', name: 'app_team_edit')]
+  #[Route('/team/{teamName}/edit', name: 'app_team_edit')]
   public function index(
     #[MapEntity(mapping: ['teamName' => 'canonical'])]
     Team $team,
