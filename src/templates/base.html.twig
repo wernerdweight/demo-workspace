@@ -16,16 +16,13 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
-    <div class="layout index_layout">
+    <div class="layout {% if block('sidebar') is empty %}no-sidebar{% endif %}">
     <header class="header">
-        <nav class="navigation">
-            <div class="logo"><a href="/"><img src="{{ asset('img/wuc-logo.png') }}" alt="Week under control logo"></a></div>
-            <div class="sign_tab"><a href="account.html"><img src="{{ asset('img/account.svg') }}" alt="Account icon"></a></div>
-        </nav>
+        {% include 'nav.html.twig' %}
     </header>
+    {% block sidebar %}
     <div class="sidebar">
-        <ul class="sidebar_links">
+        {# <ul class="sidebar_links">
             <li class="home sidebar_hover_links">
                 <a href=""><img id="home_icon" 
                         src="{{ asset('img/home.svg') }}" 
@@ -69,18 +66,55 @@
                              data-default="{{ asset('img/settings.svg') }}" 
                              alt="Settings icon"></a></div>
             </li>
+        </ul> #}
+        <ul class="sidebar_links">
+            <li class="sidebar_link">
+                <a href="#" class="sidebar_icon_link">
+                    {% include 'img/home.svg' %}
+                </a>
+            </li>
+            <li class="sidebar_link">
+                <a href="{{ path('app_task_create') }}" class="sidebar_icon_link">
+                    {% include 'img/task.svg' %}
+                </a>
+            </li>
+            <li class="sidebar_link">
+                <a href="#" class="sidebar_icon_link">
+                    {% include 'img/personal.svg' %}
+                </a>
+            </li>
+            <li class="sidebar_link">
+                <a href="#" class="sidebar_icon_link">
+                    {% include 'img/work.svg' %}
+                </a>
+            </li>
+            <li class="empty"><div></div></li>            
+            <li class="sidebar_link">
+                <a href="#" class="sidebar_icon_link">
+                    {% include 'img/search.svg' %}
+                </a>
+            </li>
+            <li class="sidebar_link">
+                <a href="#" class="sidebar_icon_link">
+                    {% include 'img/settings.svg' %}
+                </a>
+            </li>
         </ul>
     </div>
+    {% endblock %}
     <main class="main_content">
-    {% block main_content %}{% endblock %}
+    {% block main_content %}
+
+    {% endblock %}
     </main>
     <footer class="footer">
+        {% block footer %}
         <ul class="useful_links">
             <li><a href="">Terms</a></li>
             <li><a href="">Privacy</a></li>
             <li><a href="">Donate</a></li>
         </ul>
-    </footer>
         {% endblock %}
+    </footer>
     </body>
 </html>

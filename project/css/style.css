@@ -1,11 +1,11 @@
 :root {
     --primary-color: #142630;
-    --secondary-color: #6e7997;
+    --secondary-color: #e8e8e8;
     --footer-bgcolor: #272727;
     --sidebar-bgcolor: #5E5E5E;
-    --main-bgcor: #9C9C9C;
-    --font-color: #e8e8e8;
-    --font: Kalam, cursive, sans-serif;
+    --main-bgcolor: #9C9C9C;
+    --font-heading: Kalam, cursive, sans-serif;
+    --font-text: sans-serif;
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -43,45 +43,17 @@ img {
 .navigation {
     display: flex;
     justify-content: space-between;
-    /* margin: 0 20px 0 10px; */
-    /* height: 70px; */
 }
 
 .sign_tab {
     align-self: center;
     padding-right: 20px;
-    /* flex: 0 1 50%; */
-    /* justify-content: flex-end;
-    margin-left: auto; */
 }
 
 .sign_tab img {
     height: 30px;
     display: block;
 }
-
-/* .sign_tab a {
-    max-height: 30px;
-    margin-left: auto;
-    text-decoration: none;
-} */   
-
-/* #search {
-    align-self: center;
-    flex: 0 1 50%;
-} */
-
-/* #web_purpouse {
-    display: flex;
-    width: 50%;
-    padding: 5px 15px 5px 15px;
-}
-
-#registration_form {
-    display: flex;
-    width: 50%;
-    padding: 5px 15px 5px 15px;
-} */
 
 .icon {
     fill: var(--font-color);
@@ -90,6 +62,10 @@ img {
 h1, h2 {
     color: var(--primary-color);
     margin: 0.5rem 0 0.5rem 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
 }
 
 .layout {
@@ -129,7 +105,7 @@ h1, h2 {
 }
 .main_content {
     grid-area: main_content;
-    background-color: var(--main-bgcor);
+    background-color: var(--main-bgcolor);
 }
 .footer {
     grid-area: footer;
@@ -176,10 +152,6 @@ h1 {
     transition: all 0.3s ease-in-out;
 }
 
-/* .sidebar_links:hover .icon  {
-    fill: var(--primary-color);
-} */
-
 .empty {
     flex-grow: 1;
     display: flex;
@@ -191,8 +163,8 @@ h1 {
 }
 
 .main_content {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .web_purpose {

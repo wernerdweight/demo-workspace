@@ -21,18 +21,28 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 //     });
 // });
 
-const sideLinksId = ['home', 'task', 'personal', 'work', 'search', 'settings'];
+// const sideLinksId = ['home', 'task', 'personal', 'work', 'search', 'settings'];
 
-sideLinksId.forEach((sideLinkId) => {
-    const iconElement = document.querySelector('#' + sideLinkId + '_icon');
+// sideLinksId.forEach((sideLinkId) => {
+//     const iconElement = document.querySelector('#' + sideLinkId + '_icon');
     
-    if (iconElement) {
-        iconElement.addEventListener('mouseenter', function() {
-            this.src = this.getAttribute('data-hover');
-        });
+//     if (iconElement) {
+//         iconElement.addEventListener('mouseenter', function() {
+//             this.src = this.getAttribute('data-hover');
+//         });
 
-        iconElement.addEventListener('mouseleave', function() {
-            this.src = this.getAttribute('data-default');
-        });
-    }
+//         iconElement.addEventListener('mouseleave', function() {
+//             this.src = this.getAttribute('data-default');
+//         });
+//     }
+// });
+
+document.querySelectorAll('.sidebar_icon_link').forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove 'active' class from all links
+        document.querySelectorAll('.sidebar_icon_link').forEach(item => item.classList.remove('active'));
+
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+    });
 });

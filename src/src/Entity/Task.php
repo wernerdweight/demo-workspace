@@ -37,6 +37,9 @@ class Task
     #[ORM\Column]
     private ?bool $archived = false;
 
+    #[ORM\Column(type: Types::TEXT, length: 10, nullable: true)]
+    private ?string $periodSelection = 'current';
+
     public function getId(): ?int
     {
         return $this->id;
@@ -125,4 +128,17 @@ class Task
 
         return $this;
     }
+
+    public function getPeriodSelection(): ?string
+    {
+        return $this->periodSelection;
+    }
+
+    public function setPeriodSelection(string $periodSelection): static
+    {
+        $this->periodSelection = $periodSelection;
+
+        return $this;
+    }
+
 }
