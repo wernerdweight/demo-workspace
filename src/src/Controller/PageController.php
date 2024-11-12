@@ -23,7 +23,7 @@ class PageController extends AbstractController
     }
 
     #[Route('/game/{latitude}/{longitude}', name: 'game')]
-    public function game(float $latitude, float $longitude, EntityManagerInterface $em): Response
+    public function game(float $latitude, float $longitude, EntityManagerInterface $em): Response //tady to musíš opravit
     {
         // Vyhledáme text pro konkrétní souřadnice
         $locationText = $em->getRepository(LocationText::class)->findOneBy([
@@ -40,12 +40,5 @@ class PageController extends AbstractController
             'longitude' => $longitude,
             'text' => $text,
         ]);
-    }
-
-
-    #[Route('/register', name: 'register')]
-    public function register(): Response
-    {
-        return $this->render('register.html.twig');
     }
 }
