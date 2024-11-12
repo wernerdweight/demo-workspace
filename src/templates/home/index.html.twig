@@ -5,24 +5,5 @@
 {% block main_content %}
 <h1>Home</h1>
 
-<div class="content">
-<section class="current_week">
-<h2>Current week</h2>
-{% for task in tasksCurrent %}
-<div>
-<p>{{task.name}}</p>
-<p>{{task.description}}</p>
-</div>
-{% endfor %}
-</section>
-<section class="next week">
-<h2>Next week</h2>
-{% for task in tasksNext %}
-<div>
-<p>{{task.name}}</p>
-<p>{{task.description}}</p>
-</div>
-{% endfor %}
-</section>
-</div>
+<p>Please verified your email address before you can access the application.</p>
 {% endblock %}
