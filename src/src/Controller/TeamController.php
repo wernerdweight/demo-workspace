@@ -8,11 +8,13 @@ use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 
 class TeamController extends AbstractController
 {
   #[Route('/team/{teamName}', name: 'app_team')]
+  #[IsGranted('VERIFIED_USER')]
   public function index(
     #[MapEntity(mapping: ['teamName' => 'canonical'])]
     Team $team,
