@@ -4,14 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Team;
 use App\Form\TeamType;
+use App\Service\Mailer\TeamMailer;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -24,23 +23,14 @@ class EditTeamController extends AbstractController
     Request $request,
     EntityManagerInterface $entityManager,
     UserInterface $user,
-    MailerInterface $mailer,
+    TeamMailer $teamMailer,
   ): Response {
     $form = $this->createForm(TeamType::class, $team);
     $form->handleRequest($request);
     if ($form->isSubmitted() && $form->isValid()) {
       $entityManager->flush();
 
-      $email = new TemplatedEmail();
-      $email->from($user->getEmail());
-      $email->to('admin@mujweb.cz');
-      $email->subject('Team updated');
-      $email->htmlTemplate('email/team_updated.html.twig');
-      $email->context([
-        'team' => $team,
-      ]);
-
-      $mailer->send($email);
+      $teamMailer->sendUpdatedEmail($team, $user);
 
       $this->addFlash('success', 'Team updated successfully!');
       return $this->redirectToRoute('app_team', ['teamName' => $team->getCanonical()]);
