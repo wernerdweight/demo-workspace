@@ -1,0 +1,8 @@
+{% extends 'email/base.html.twig' %}
+
+{% block subject %}Team Updated{% endblock %}
+
+{% block content %}
+    <p>Hi Admin,</p>
+    <p>The team `<a href="{{ absolute_url(path('app_team', {'teamName': team.canonical})) }}">{{ team.name }}</a>` has been updated.</p>
+{% endblock %}
