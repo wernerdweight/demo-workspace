@@ -51,7 +51,7 @@ img {
 }
 
 .sign_tab img {
-    height: 30px;
+    height: 1.5rem;
     display: block;
 }
 
@@ -59,13 +59,13 @@ img {
     fill: var(--secondary-color);
 }
 
-h1, h2 {
+h1 {
     color: var(--primary-color);
-    margin: 0.5rem 0 0.5rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    margin: 0;
 }
 
 .layout {
@@ -114,18 +114,13 @@ h1, h2, h3, h4, h5, h6 {
 .main_content {
     grid-area: main_content;
     background-color: var(--main-bgcolor);
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 1rem;
 }
 .footer {
     grid-area: footer;
     background-color: var(--footer-bgcolor);
     position: sticky;
     border-top: 1px solid var(--secondary-color);
-}
-
-h1 {
-    text-align: center;
 }
 
 .useful_links {
@@ -183,6 +178,8 @@ h1 {
 .content {
     display:flex;
     flex-wrap: wrap;
+    color: var(--secondary-color);
+    gap: 0.5rem;
 }
 
 .registration_form {
@@ -223,8 +220,8 @@ h1 {
 }
 
 .sidebar_icon_link svg {
-    width: 24px;
-    height: 24px;
+    width: 1.25rem;
+    height: 1.25rem;
     margin: 0.5rem;
     fill: var(--secondary-color);
     /* transition: fill 0.1s ease-in-out; */
@@ -240,3 +237,42 @@ h1 {
 }
 /* End of try */
 
+.listing {
+    width: calc(50% - 1rem);
+    margin-right: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    background-color: var(--sidebar-bgcolor);
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tasks-table tr {
+    width: 100%;
+}
+
+.tasks-table td {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+.td-width {
+    width: 1rem;
+}
+
+.task-link {
+    display: block;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.bording-left {
+    border-left: 1px solid var(--main-bgcolor);
+}
+
+.padding-left {
+    padding-left: 0.5rem;
+}

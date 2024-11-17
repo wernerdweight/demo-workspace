@@ -3,118 +3,45 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+        <title>{% block title %}Week under control!{% endblock %}</title>
         {% block stylesheets %}
-        {% endblock %}
-
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+            <link href="{{ asset('fontawesome/css/fontawesome.css') }}" rel="stylesheet" />
+            <link href="{{ asset('fontawesome/css/brands.css') }}" rel="stylesheet" />
+            <link href="{{ asset('fontawesome/css/solid.css') }}" rel="stylesheet" />
         {% endblock %}
     </head>
     <body>
-    <div class="layout {% if block('sidebar') is empty %}no-sidebar{% endif %}">
+    <div class="layout">
+
+    {% for label, messages in app.flashes %}
+        {% for text in messages %}
+            <div class="alert alert-{{ label }}">
+                <p>{{ text }}</p>
+            </div>
+        {% endfor %}
+    {% endfor %}
+
     <header class="header">
         {% include 'nav.html.twig' %}
     </header>
-    {% block sidebar %}
     <div class="sidebar">
-        {# <ul class="sidebar_links">
-            <li class="home sidebar_hover_links">
-                <a href=""><img id="home_icon" 
-                        src="{{ asset('img/home.svg') }}" 
-                        data-hover="{{ asset('img/home_hover.svg') }}" 
-                        data-default="{{ asset('img/home.svg') }}" 
-                        alt="Home icon"></a>
-            </li>
-            <li class="task sidebar_hover_links">
-                <a href="{{ path('app_task_create') }}"><img id="task_icon" 
-                        src="{{ asset('img/task.svg') }}" 
-                        data-hover="{{ asset('img/task_hover.svg') }}" 
-                        data-default="{{ asset('img/task.svg') }}" 
-                        alt="Task icon"></a>
-            </li>
-            <li class="personal sidebar_hover_links">
-                <a href=""><img id="personal_icon" 
-                        src="{{ asset('img/personal.svg') }}" 
-                        data-hover="{{ asset('img/personal_hover.svg') }}" 
-                        data-default="{{ asset('img/personal.svg') }}" 
-                        alt="Personal icon"></a>
-            </li>
-            <li class="work sidebar_hover_links">
-                <a href=""><img id="work_icon" 
-                        src="{{ asset('img/work.svg') }}" 
-                        data-hover="{{ asset('img/work_hover.svg') }}" 
-                        data-default="{{ asset('img/work.svg') }}" 
-                        alt="Work icon"></a>
-            </li>
-            <li class="search sidebar_hover_links">
-                <a href=""><img id="search_icon" 
-                        src="{{ asset('img/search.svg') }}" 
-                        data-hover="{{ asset('img/search_hover.svg') }}" 
-                        data-default="{{ asset('img/search.svg') }}" 
-                        alt="Search icon"></a>
-            </li>
-            <li class="empty"><div></div></li>
-            <li class="settings sidebar_hover_links">
-                <div><a href=""><img id="settings_icon" 
-                             src="{{ asset('img/settings.svg') }}" 
-                             data-hover="{{ asset('img/settings_hover.svg') }}" 
-                             data-default="{{ asset('img/settings.svg') }}" 
-                             alt="Settings icon"></a></div>
-            </li>
-        </ul> #}
-        <ul class="sidebar_links">
-            <li class="sidebar_link">
-                <a href="#" class="sidebar_icon_link">
-                    {% include 'img/home.svg' %}
-                </a>
-            </li>
-            <li class="sidebar_link">
-                <a href="{{ path('app_task_create') }}" class="sidebar_icon_link">
-                    {% include 'img/task.svg' %}
-                </a>
-            </li>
-            <li class="sidebar_link">
-                <a href="#" class="sidebar_icon_link">
-                    {% include 'img/personal.svg' %}
-                </a>
-            </li>
-            <li class="sidebar_link">
-                <a href="#" class="sidebar_icon_link">
-                    {% include 'img/work.svg' %}
-                </a>
-            </li>
-            <li class="empty"><div></div></li>            
-            <li class="sidebar_link">
-                <a href="#" class="sidebar_icon_link">
-                    {% include 'img/search.svg' %}
-                </a>
-            </li>
-            <li class="sidebar_link">
-                <a href="#" class="sidebar_icon_link">
-                    {% include 'img/settings.svg' %}
-                </a>
-            </li>
-        </ul>
+            {% include 'sidebar.html.twig' %}
     </div>
-    {% endblock %}
     <main class="main_content">
-    {% block main_content %}
-
-    {% endblock %}
+    {% block main_content %}{% endblock %}
     </main>
     <footer class="footer">
-        {% block footer %}
-        <ul class="useful_links">
-            <li><a href="">Terms</a></li>
-            <li><a href="">Privacy</a></li>
-            <li><a href="">Donate</a></li>
-        </ul>
-        {% endblock %}
+        {% include 'footer.html.twig' %}
     </footer>
+        <div class="modal">
+        {% block modal %}{% endblock %}
+    </div>
+    </div>
+    {% block javascripts %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% endblock %}
     </body>
 </html>

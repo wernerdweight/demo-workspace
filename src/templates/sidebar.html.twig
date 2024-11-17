@@ -1,0 +1,33 @@
+<ul class="sidebar_links">
+    <li class="sidebar_link">
+        <a href="#" class="sidebar_icon_link">
+            {% include 'img-svg/home.svg' %}
+        </a>
+    </li>
+    <li class="sidebar_link">
+        <a href="{{ path('app_task_create') }}" class="sidebar_icon_link">
+            {% include 'img-svg/task.svg' %}
+        </a>
+    </li>
+    <li class="sidebar_link">
+        <a href="{{ path('app_listing_personal') }}" class="sidebar_icon_link">
+            {% include 'img-svg/personal.svg' %}
+        </a>
+    </li>
+    <li class="sidebar_link">
+        <a href="{{ path('app_listing_work') }}" class="sidebar_icon_link">
+            {% include 'img-svg/work.svg' %}
+        </a>
+    </li>
+    <li class="empty"><div></div></li>            
+    <li class="sidebar_link">
+        <a href="#" class="sidebar_icon_link">
+            {% include 'img-svg/search.svg' %}
+        </a>
+    </li>
+    <li class="sidebar_link">
+        <a href="#" class="sidebar_icon_link">
+            {% include 'img-svg/settings.svg' %}
+        </a>
+    </li>
+</ul>

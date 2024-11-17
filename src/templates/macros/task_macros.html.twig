@@ -1,3 +1,31 @@
-{% macro %}
+{% macro taskListingCurrent(tasksCurrent) %}
+<section class="listing current_week">
+<h2>Current week</h2>
+<table class="tasks-table">
+{% for task in tasksCurrent %}
+<tr>
+<td class="td-width task-drag-and-drop">{{ task.id }}</td>
+<td class="task-name bording-left padding-left"><a href="{{ path('app_task_update' )}}" class="task-link">{{ task.name }}</a></td>
+<td class="td-width bording-left padding-left"><a href="{{ path('app_task_delete' )}}" class="task-link"><i class="fas fa-trash-alt"></i></a></td>
+<td class="td-width bording-left padding-left"><a href="" class="task-link"><i class="fa-solid fa-circle-check"></i></a></td>
+</tr>
+{% endfor %}
+</table>
+</section>
+{% endmacro %}
 
+{% macro taskListingNext(tasksNext) %}
+<section class="listing next_week">
+<h2>Next week</h2>
+<table class="tasks-table">
+{% for task in tasksNext %}
+<tr>
+<td class="td-width task-drag-and-drop">{{ task.id }}</td>
+<td class="task-name bording-left"><a href="{{ path('app_task_update' )}}" class="task-link">{{ task.name }}</a></td>
+<td class="td-width bording-left"><a href="{{ path('app_task_delete' )}}" class="task-link"><i class="fas fa-trash-alt"></i></a></td>
+<td class="td-width bording-left"><a href="" class="task-link"><i class="fa-solid fa-circle-check"></i></a></td>
+</tr>
+{% endfor %}
+</table>
+</section>
 {% endmacro %}
