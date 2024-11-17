@@ -22,20 +22,19 @@
 
     <main>
         <section class="game-text">
-            <p>{{ text }}</p> <!-- Zobrazení textu z databáze -->
+            <p>{{ text }}</p>
         </section>
 
-<section class="choices">
-    <form method="post" action="{{ path('game') }}">
-        {% for option in options %}
-            <button type="submit" name="position" value="{{ option.position }}">
-                {{ option.text }}
-            </button>
-            <br />
-        {% endfor %}
-    </form>
-</section>
-
+        <section class="choices">
+            <form method="post" action="{{ path('game') }}">
+                {% for option in options %}
+                    <button type="submit" name="position" value="{{ option.position }}">
+                        {{ option.text }}
+                    </button>
+                    <br />
+                {% endfor %}
+            </form>
+        </section>
 
         {% set currentDate = "now"|date("d.m.Y H:i") %}
         <p>Dnešní datum: {{ currentDate }}</p>

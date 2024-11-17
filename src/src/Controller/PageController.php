@@ -26,13 +26,8 @@ class PageController extends AbstractController
     #[Route('/game', name: 'game', methods: ['GET', 'POST'])]
     public function game(Request $request, EntityManagerInterface $em): Response
     {
-        if ($request->isMethod('POST')) {
-            $position = $request->request->get('position', '0');
-        } else {
-            $position = '0';
-        }
+        $position = $request->request->get('position', '0');
 
-        // Načíst text a možnosti na základě pozice
         $location = $em->getRepository(Location::class)->findOneBy([
             'position' => $position,
         ]);
