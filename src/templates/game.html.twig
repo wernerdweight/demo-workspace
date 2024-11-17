@@ -25,19 +25,17 @@
             <p>{{ text }}</p> <!-- Zobrazení textu z databáze -->
         </section>
 
-        <section class="game-text">
-            <p>Jsi na souřadnicích: {{ latitude }}, {{ longitude }}</p>
-        </section>
+<section class="choices">
+    <form method="post" action="{{ path('game') }}">
+        {% for option in options %}
+            <button type="submit" name="position" value="{{ option.position }}">
+                {{ option.text }}
+            </button>
+            <br />
+        {% endfor %}
+    </form>
+</section>
 
-        {% set options = {'sever': [1, 0], 'jih': [-1, 0], 'východ': [0, 1], 'západ': [0, -1]} %}
-        <section class="choices">
-            {% for key, option in options %}
-                <a href="{{ path('game', {'latitude': latitude + option[0], 'longitude': longitude + option[1]}) }}">
-                    Jdi na {{ key }}
-                </a>
-                <br />
-            {% endfor %}
-        </section>
 
         {% set currentDate = "now"|date("d.m.Y H:i") %}
         <p>Dnešní datum: {{ currentDate }}</p>
@@ -45,4 +43,3 @@
 </body>
 </html>
 {% endblock %}
-

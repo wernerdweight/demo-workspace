@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\LocationText;
+use App\Entity\Location;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -22,20 +23,27 @@ class PageController extends AbstractController
         return $this->render('terms.html.twig');
     }
 
-    #[Route('/game/{latitude}/{longitude}', name: 'game')]
-    public function game(float $latitude, float $longitude, EntityManagerInterface $em): Response //tady to musíš opravit
+    #[Route('/game', name: 'game', methods: ['GET', 'POST'])]
+    public function game(Request $request, EntityManagerInterface $em): Response
     {
-        $locationText = $em->getRepository(LocationText::class)->findOneBy([
-            'latitude' => $latitude,
-            'longitude' => $longitude,
+        if ($request->isMethod('POST')) {
+            $position = $request->request->get('position', '0');
+        } else {
+            $position = '0';
+        }
+
+        // Načíst text a možnosti na základě pozice
+        $location = $em->getRepository(Location::class)->findOneBy([
+            'position' => $position,
         ]);
 
-        $text = $locationText ? $locationText->getText() : 'Text pro tuto lokaci nebyl nalezen.';
+        $text = $location ? $location->getLocationText() : 'Text pro tuto lokaci nebyl nalezen.';
+        $options = $location ? $location->getOptions() : [];
 
         return $this->render('game.html.twig', [
-            'latitude' => $latitude,
-            'longitude' => $longitude,
+            'position' => $position,
             'text' => $text,
+            'options' => $options,
         ]);
     }
 }

@@ -27,6 +27,14 @@
             <button class="login-button" onclick="window.location.href='{{ path('app_logout') }}'">Odhlásit se</button>
             {% endif %}
         </section>
+
+        <script>
+function startNewGame() {
+    // Tady můžeš provést nějakou logiku
+    window.location.href = '{{ path('game') }}';
+}
+</script>
+
     </main>
 
     <footer>
@@ -39,10 +47,4 @@
             {% endif %}
         </p>
     </footer>
-
-    <script>
-        function startNewGame() {
-            window.location.href = "{{ path('game',{'latitude':0,'longitude':0}) }}";
-        }
-    </script>
 {% endblock %}
