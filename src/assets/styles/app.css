@@ -5,7 +5,7 @@
     --sidebar-bgcolor: #5E5E5E;
     --main-bgcolor: #9C9C9C;
     --font-heading: Kalam, cursive, sans-serif;
-    --font-text: sans-serif;
+    --font-text: Roboto sans-serif;
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -115,6 +115,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-area: main_content;
     background-color: var(--main-bgcolor);
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 .footer {
     grid-area: footer;
@@ -175,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 50%;
 }
 
-.content {
+.content-flex {
     display:flex;
     flex-wrap: wrap;
     color: var(--secondary-color);
@@ -276,3 +277,125 @@ h1, h2, h3, h4, h5, h6 {
 .padding-left {
     padding-left: 0.5rem;
 }
+
+.content {
+    color: var(--secondary-color);
+    background-color: var(--sidebar-bgcolor);
+    width: 100%;
+    padding: 1rem;
+}
+
+.ql-toolbar {
+    background-color: var(--main-bgcolor);
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.ql-stroke {
+    stroke: var(--secondary-color);
+}
+
+.ql-container {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+
+/* BEWARE - Form styles */
+/* Formulářový textový vstup */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: var(--secondary-color);
+    background-clip: padding-box;
+    border: 1px solid var(--main-bgcolor);
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Zaměřený (focus) textový vstup */
+.form-control:focus {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Textarea */
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Select box */
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: var(--secondary-color);
+    background-image: url('data:image/svg+xml,...');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.5em 1.5em;
+    border: 1px solid var(--main-bgcolor);
+    border-radius: 0.375rem;
+    appearance: none;
+}
+
+/* Checkbox a radio tlačítka */
+.form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: var(--secondary-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0.25em;
+    appearance: none;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Tlačítko */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: var(--footer-bgcolor);
+    border: 1px solid var(--footer-bgcolor);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.375rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#task > div {
+    padding: 0.5rem;
+}
+/* End of form styles */

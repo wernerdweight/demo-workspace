@@ -26,6 +26,9 @@
             "migrations/.gitignore"
         ]
     },
+    "ehyiah/ux-quill": {
+        "version": "2.0.5"
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {

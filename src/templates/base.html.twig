@@ -12,6 +12,9 @@
             <link href="{{ asset('fontawesome/css/brands.css') }}" rel="stylesheet" />
             <link href="{{ asset('fontawesome/css/solid.css') }}" rel="stylesheet" />
         {% endblock %}
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
     </head>
     <body>
     <div class="layout">
@@ -40,8 +43,5 @@
         {% block modal %}{% endblock %}
     </div>
     </div>
-    {% block javascripts %}
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
-    {% endblock %}
     </body>
 </html>

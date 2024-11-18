@@ -1,5 +1,15 @@
 {
     "controllers": {
+        "@ehyiah/ux-quill": {
+            "quill": {
+                "enabled": true,
+                "fetch": "eager",
+                "autoimport": {
+                    "quill/dist/quill.snow.css": true,
+                    "quill/dist/quill.bubble.css": true
+                }
+            }
+        },
         "@symfony/ux-turbo": {
             "turbo-core": {
                 "enabled": true,

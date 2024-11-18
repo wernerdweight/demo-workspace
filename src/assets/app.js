@@ -37,12 +37,13 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 //     }
 // });
 
-document.querySelectorAll('.sidebar_icon_link').forEach(link => {
-    link.addEventListener('click', function() {
-        // Remove 'active' class from all links
-        document.querySelectorAll('.sidebar_icon_link').forEach(item => item.classList.remove('active'));
-
-        // Add 'active' class to the clicked link
-        this.classList.add('active');
-    });
-});
+// var quill = new Quill('.editor', {
+//     modules: {
+//         toolbar: [
+//           ['bold', 'italic'],
+//           ['link', 'blockquote', 'code-block', 'image'],
+//           [{ list: 'ordered' }, { list: 'bullet' }],
+//         ],
+//       },
+//     theme: 'snow',
+// });
