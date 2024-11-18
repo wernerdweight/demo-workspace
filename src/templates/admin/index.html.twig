@@ -11,29 +11,6 @@
         </div>
     {% endfor %}
 
-    {{ form_start(form) }}
-        {{ form_row(form.locationText) }}
-        {{ form_row(form.position) }}
-        {{ form_row(form.isEnding) }}
-        <div class="options">
-            {{ form_row(form.options) }}
-        </div>
-        <button class="btn btn-primary">Uložit</button>
-    {{ form_end(form) }}
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var collectionHolder = document.querySelector('.options');
-        var addButton = document.createElement('button');
-        addButton.textContent = 'Přidat možnost';
-        collectionHolder.appendChild(addButton);
-        
-        addButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            var newForm = collectionHolder.querySelector('div').cloneNode(true);
-            collectionHolder.appendChild(newForm);
-        });
-    });
-</script>
+    {{ form (form) }}
 
 {% endblock %}

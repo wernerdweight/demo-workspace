@@ -23,6 +23,7 @@ class AdminController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
             $em->persist($location);
             $em->flush();
 
@@ -31,6 +32,30 @@ class AdminController extends AbstractController
         }
 
         return $this->render('admin/index.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/add-location', name: 'add_location')]
+    public function addLocation(Request $request, EntityManagerInterface $em): Response
+    {
+        $location = new Location();
+        $form = $this->createForm(AddLocationType::class, $location);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $options = $form->get('options')->getData();
+            if ($options) {
+                $location->setOptions(json_decode($options, true));
+            }
+            $em->persist($location);
+            $em->flush();
+
+            $this->addFlash('success', 'Lokace byla úspěšně přidána!');
+            return $this->redirectToRoute('app_admin');
+        }
+
+        return $this->render('admin/add.html.twig', [
             'form' => $form->createView(),
         ]);
     }

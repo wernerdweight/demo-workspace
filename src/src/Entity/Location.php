@@ -20,8 +20,8 @@ class Location
     #[ORM\Column(type: Types::STRING, length: 255)]
     private ?string $position = null;
 
-    #[ORM\Column]
-    private ?bool $isEnding = null;
+    #[ORM\Column(options: ["default" => false])]
+    private bool $isEnding = false;
 
     #[ORM\Column(type: Types::JSON)]
     private array $options = [];
@@ -48,7 +48,7 @@ class Location
         return $this->position;
     }
 
-    public function setPosition(array $position): static
+    public function setPosition(string $position): static
     {
         $this->position = $position;
 
