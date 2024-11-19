@@ -62,13 +62,13 @@ return [
         'version' => '2.1.0',
     ],
     'quill' => [
-        'version' => '2.0.0-rc.2',
+        'version' => '2.0.2',
     ],
     'lodash-es' => [
         'version' => '4.17.21',
     ],
     'parchment' => [
-        'version' => '3.0.0-alpha.2',
+        'version' => '3.0.0',
     ],
     'quill-delta' => [
         'version' => '5.1.0',

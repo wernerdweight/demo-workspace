@@ -179,6 +179,7 @@ h1, h2, h3, h4, h5, h6 {
 .content-flex {
     display:flex;
     flex-wrap: wrap;
+    background-color: var(--sidebar-bgcolor);
     color: var(--secondary-color);
     gap: 0.5rem;
 }
@@ -243,7 +244,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0.5rem;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-    background-color: var(--sidebar-bgcolor);
 }
 
 .tasks-table {
@@ -298,6 +298,10 @@ h1, h2, h3, h4, h5, h6 {
 .ql-container {
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+
+.quill-editor {
     font-family: var(--font-heading);
 }
 

@@ -21,7 +21,7 @@ class UpdateTaskController extends AbstractController
         Request $request, 
         ): Response
     {
-        $form = $this->createForm(TaskType::class);
+        $form = $this->createForm(TaskType::class, $task);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
