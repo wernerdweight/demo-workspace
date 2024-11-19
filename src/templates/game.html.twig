@@ -35,6 +35,18 @@
                 {% endfor %}
             </form>
         </section>
+        {# nová verze s direction #}
+    {# <section class="choices">
+        <form method="post" action="{{ path('game') }}">
+        {% for option in options %}
+            <button type="submit" name="direction" value="{{ option.direction }}">
+                {{ option.text }}
+            </button>
+            <br />
+        {% endfor %}
+         </form>
+    </section> #}
+
 
         {% set currentDate = "now"|date("d.m.Y H:i") %}
         <p>Dnešní datum: {{ currentDate }}</p>
