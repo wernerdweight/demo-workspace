@@ -41,6 +41,9 @@ class Team
   #[ORM\OneToMany(targetEntity: User::class, mappedBy: 'favouriteTeam')]
   private Collection $fans;
 
+  #[ORM\Column(length: 255, nullable: true)]
+  private ?string $logoPath = null;
+
   public function __construct()
   {
     $this->players = new ArrayCollection();
@@ -145,6 +148,18 @@ class Team
               $fan->setFavouriteTeam(null);
           }
       }
+
+      return $this;
+  }
+
+  public function getLogoPath(): ?string
+  {
+      return $this->logoPath;
+  }
+
+  public function setLogoPath(?string $logoPath): static
+  {
+      $this->logoPath = $logoPath;
 
       return $this;
   }

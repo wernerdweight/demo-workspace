@@ -1,7 +1,8 @@
-{% macro teamTable(teams) %}
+{% macro teamTable(teams, offset) %}
   <table class="table">
     <tr>
       <th>#</th>
+      <th>Logo</th>
       <th>Team</th>
       <th>Established</th>
       <th>No. of Players</th>
@@ -13,7 +14,12 @@
     </tr>
     {% for team in teams %}
       <tr>
-        <td>{{ loop.index }}</td>
+        <td>{{ loop.index + offset }}</td>
+        <td>
+          {% if team.logoPath is not null %}
+            <img src="{{ asset('images/logos/' ~ team.logoPath) }}" alt="{{ team.name }}" width="50">
+          {% endif %}
+        </td>
         <td><a href="{{ path('app_team', {'teamName': team.canonical}) }}">{{ team.name }}</a></td>
         <td>{{ team.established|date('j. n. Y') }}</td>
         <td>{{ team.players|length }}</td>

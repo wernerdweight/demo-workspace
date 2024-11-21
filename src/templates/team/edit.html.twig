@@ -7,6 +7,10 @@
 {% block content %}
     <h1>Edit Team {{team.name}}</h1>
 
+    {% if team.logoPath %}
+      <img src="{{ asset('images/logos/' ~ team.logoPath) }}" alt="{{ team.name }}" width="50">
+    {% endif %}
+
     {{ form(form) }}
     {#{ dump(errors) }#}
 {% endblock %}
