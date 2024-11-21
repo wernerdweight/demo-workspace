@@ -24,8 +24,8 @@
         <section class="game-text">
             <p>{{ text }}</p>
         </section>
-
-        <section class="choices">
+{# původní verze #}
+        {# <section class="choices">
             <form method="post" action="{{ path('game') }}">
                 {% for option in options %}
                     <button type="submit" name="position" value="{{ option.position }}">
@@ -34,22 +34,17 @@
                     <br />
                 {% endfor %}
             </form>
-        </section>
+        </section> #}
         {# nová verze s direction #}
-    {# <section class="choices">
-        <form method="post" action="{{ path('game') }}">
-        {% for option in options %}
-            <button type="submit" name="direction" value="{{ option.direction }}">
-                {{ option.text }}
+<section>
+    <form method="post" action="{{ path('move') }}">
+        {% for choice in choices %}
+            <button type="submit" name="position" value="{{ choice.toLocation.position }}">
+                {{ choice.choiceText }}
             </button>
-            <br />
         {% endfor %}
-         </form>
-    </section> #}
-
-
-        {% set currentDate = "now"|date("d.m.Y H:i") %}
-        <p>Dnešní datum: {{ currentDate }}</p>
+    </form>
+</section>
     </main>
 </body>
 </html>
