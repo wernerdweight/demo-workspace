@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
@@ -12,12 +13,179 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
-        <div class"popup">
-        {% block popup %}
-    </body>
-    <header>
-    <a href="#" class="logo">Instalater Master<span>.</span></a>
-</header>
+    {% block body %}
+<div id="header">
+  <div class="container">
+    <nav>
+    {% block logo %}
+      <a href="#" class="logo">Josef.</a>
+      {% endblock %}
+      <ul id="sidemenu">
+      {% block zahlavi %}
+        <li><a href="#header">Domů</a></li>
+        <li><a href="#about">O mně</a></li>
+        <li><a href="#services">Služby</a></li>
+        <li><a href="#portofolio">Portofolio</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        {% endblock %}
+      </ul>
+      <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </nav>
+    <div class="header-text">
+    {% block header %}
+      <p>Web developer & PPC specialista</p>
+      <h1>Ahoj! Jmenuji se <span>Josef</span><br>a zaručuji nejlepší webové stránky!</h1>
+    </div>
+  </div>
+  {% endblock header %}
+</div>
+<div id="about">
+{% block about %}
+  <div class="container">
+    <dic class="row">
+      <div class="about-col-1">
+        <img src="IMG_3505.png">
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">O mně</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Dovednosti</p>
+          <p class="tab-links" onclick="opentab('experience')">Zkušenosti</p>
+          <p class="tab-links" onclick="opentab('education')">Vzdělání</p>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>UI/UX</span><br>Web developer/PPC specialista</li>
+            <li><span>Web Development</span><br>Web app Development</li>
+            <li><span>App Development</span><br>Building Android/ios apps</li>
+
+          </ul>
+        </div>
+        <div class="tab-contents" id="experience">
+          <ul>
+            <li><span>2021 - Current</span><br>Web developer/PPC specialista</li>
+            <li><span>Web Development</span><br>Web app Development</li>
+            <li><span>App Development</span><br>Building Android/ios apps</li>
+
+          </ul>
+        </div>
+        <div class="tab-contents" id="education">
+          <ul>
+            <li><span>UI/UX</span><br>Web developer/PPC specialista</li>
+            <li><span>Web Development</span><br>Web app Development</li>
+            <li><span>App Development</span><br>Building Android/ios apps</li>
+
+          </ul>
+        </div>
+      </div>
+    </dic>
+  </div>
+  {% endblock %}
+</div>
+
+<div id="services">
+{% block services %}
+  <div class="container">
+    <h1 class="sub-title">Služby</h1>
+    <div class="services-list">
+      <div>
+        <i class="fa-solid fa-code"></i>
+        <h2>Web Design</h2>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <a href="#">Zjistit více</a>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-crop"></i>
+        <h2>UI/UX Design</h2>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <a href="#">Zjistit více</a>
+      </div>
+
+      <div>
+        <i class="fa-brands fa-app-store"></i>
+        <h2>PPC specialista</h2>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <a href="#">Zjistit více</a>
+      </div>
+    </div>
+  </div>
+  {% endblock services %}
+</div>
+
+<div id="portofolio">
+{% block portofolio %}
+  <div class="container">
+    <h1 class="sub-title">Má práce</h1>
+    <div class="work-list">
+      <div class="work">
+        <img src="img portfolio1.jpg">
+        <div class="layer">
+          <h3>Web Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="work">
+        <img src="img portfolio4.jpg">
+        <div class="layer">
+          <h3>UI/UX Design</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="work">
+        <img src="img portfolio6.jpg">
+        <div class="layer">
+          <h3>Online shopping App</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn">Více</a>
+  </div>
+  {% endblock portofolio %}
+</div>
+
+<div id="contact">
+{% block contact %} 
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Kontakt</h1>
+        <p><i class="fa-solid fa-paper-plane"></i>Info@example.com</p>
+        <p><i class="fa-solid fa-square-phone"></i></i>+420 776 765 897</p>
+        <div class="social-icons">
+          <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form>
+          <input type="text" name="Name" placeholder="Jméno" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="Message" rows="6" placeholder="Váše zpráva"></textarea>
+          <button type="submit" class="btn btn2">Odeslat</button>
+        </form>
+      </div>
+    </div>
+    {% endblock %}
+  </div>
+  <div class="copyright">
+  {% block copyright %} 
+    <p>Copyright © Josef. Webdevelopment Master <i class="fa-solid fa-heart"></i></p>
+  </div>
+  {% endblock %}
+</div>
+
+
+
+{% endblock %}
 </html>
 

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Section Design</title>
+    <link rel="stylesheet" href="styly.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Joseffin Sans', sans-serif;
+            box-sizing: border-box;
+        }
+        .about {
+            width: 100%;
+            padding: 78px 0px;
+            background-color: #191919;
+        }
+        .about img {
+            height: auto;
+            width: 420px;
+        }
+        .about-text {
+            width: 550px;
+        }
+        .main {
+            width: 1130px;
+            max-width: 95%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .about-text h1 {
+            color: white;
+            font-size: 80px;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+        .about-text h5 {
+            color: white;
+            font-size: 25px;
+            text-transform: capitalize;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+        span {
+            color: #f9004d;
+        }
+        .about-text p{
+            color: #fcfc;
+            letter-spacing: 1px;
+            line-height: 28px;
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+        button {
+            background: #f9004d;
+            color: white;
+            text-decoration: none;
+            border: 2px solid transparent;
+            font-weight: bold;
+            padding: 13px 30px;
+            border-radius: 30px;
+            transition: .4s;
+        }
+        button:hover {
+            background: transparent;
+            border: 2px solid #f9004d;
+            cursor: pointer;
+        }
+        footer {
+            background: #343434;
+            padding-top: 50px;
+        }
+        .container {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            color: white;
+            width: 1140px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .footer-content{
+            width: 33.3%;
+        }
+        .footer-content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .footer-content p {
+            width: 190px;
+            margin: auto;
+            padding: 7px;
+        }
+        .footer-content ul {
+            text-align: center;
+        }
+        .list {
+            padding: 0;
+        }
+        .list li {
+            width: auto;
+            text-align: center;
+            list-style-type: none;
+            padding: 7px;
+            position: relative;
+        }
+        .list li::before {
+            content: '';
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 100%;
+            width: 0;
+            height: 2px;
+            background: #f18930;
+            transition-duration: .5s;
+          }
+          .list li:hover::before {
+            width: 70px;
+          }
+          .social-icons {
+            text-align: center;
+            padding: 0;
+          }
+          .social-icons li {
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+          }
+          .social-icons i {
+            color: white;
+            font-size: 25px;
+          }
+          .footer-content a {
+            text-decoration: none;
+            color: #ededed;
+          }
+          .footer-content a:hover {
+            color: #f18930;
+          }
+          .social-icons i:hover {
+            color: #f18930;
+          }
+          .bottom-bar {
+            background: #f18930;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+          }
+          .bottom-bar p {
+            color: #343434;
+            margin: 0;
+            font-size: 16px;
+            padding: 7px;
+          }
+    </style>
+</head>
+<body>
+<section class="about">
+    <div class="main">
+        <img src="o mně 2.jpg.jpeg">
+        <div class="about-text">
+            <h1>O mně</h1>
+            <h5> Web Developer<span> & PPC specialista</span></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button type="button">Zeptej se</button>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <h3>Kontakt</h3>
+            <p>Email: Info@example.com</p>
+            <p>Tel: +420 456 786 876</p>
+            <p>Adresa: 677 u Kováře</p>
+        </div>
+        <div class="footer-content">
+            <h3>Quick Links</h3>
+            <ul class="list">
+                <li><a href="">Domů</a></li>
+                <li><a href="">O Mně</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="footer-content">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+            <li><a href=""><i class="bx bxl-facebook"></i></a></li>
+            <li><a href=""><i class="bx bxl-twitter"></i></a></li>
+            <li><a href=""><i class="bx bxl-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <p>&copy; 2024 your company . All rights reserved</p>
+    </div>
+</footer>
+
+</body>
+</html>

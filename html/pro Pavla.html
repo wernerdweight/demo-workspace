@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalatérské práce</title>
+    <link rel="stylesheet" href="styly.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        input{
+            
+            background-color: white;
+            width: 70%;
+            margin-left: 12%;
+            font-size: 20px;
+            padding: 16px 16px;
+            border-color: black;
+            margin-bottom: 20px;
+        }
+        .container{
+            width: 100%;
+            text-align: center;
+        }
+        h1{
+            font-weight: normal;
+            font-size: 35px;
+            position: relative;
+            margin: 40px 0;
+        }
+        h1::before{
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: crimson;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: animate 4s linear infinite;
+        }
+        @keyframes animate{
+            0%{
+                width: 100px;
+            }
+            50%{
+                width: 200px;
+            }
+            100%{
+                width: 100px;
+            }
+        }
+        .top-content{
+            background-color: lightgray;
+            width: 90%;
+            margin: 0 auto 20px auto;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            box-shadow: 3px 3px 5px lightgray;
+            
+        }
+        label{
+            display: inline-block;
+            height: 100%;
+            margin: 0 20px;
+            line-height: 60px;
+            font-size: 18px;
+            color: gray;
+            cursor: pointer;
+            transition: color .5s;
+        }
+        label:hover{
+            color: black;
+        }
+        .photo-gallery{
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+        .pic{
+            position: relative;
+            height: 230px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px lightgray;
+            cursor: pointer;
+        }
+        .pic img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .pic::before{
+            content: "Instalatéři Praha";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: -100%;
+            opacity: 0;
+            transition: .3s;
+            transition-delay: .2s;
+            z-index: 1;
+        }
+        .pic::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;    
+            border-radius: 10px;
+            height: 0;
+            background-color: rgba(0,0,0,.4);
+            transition: .3s;
+        }
+        .pic:hover::after{
+            height: 100%;
+        }
+        .pic:hover::before{
+            margin-top: 0;
+            opacity: 1;
+        }
+       .card-container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        /*margin-top: 100px;*/ 
+       }
+       .card{
+        width: 300px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+        margin: 20px;
+       }
+       .card img{
+        width: 100%;
+        height: auto;
+       }
+       .card-content{
+        padding: 16px;
+       }
+       .card-content h3{
+        font-size: 28px;
+        margin-bottom: 8px;
+        
+       }
+       .card-content p{
+        color: #666;
+        font-size: 15px;
+        line-height: 1.3;
+       }
+       .card-content .button{
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 16px;
+        color: #fff;
+       }
+       .content h2{
+        text-align: center;
+       }
+       .top-content button{
+        width: 200px;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: 2px solid #009688;
+        background: transparent;
+        color: black;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+       }
+       .button span{
+        background: #009688;
+        height: 100%;
+        width: 0;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+       }
+       .top-content button:hover span{
+        width: 100%;
+       }
+       .top-content button:hover{
+        border: none;
+       }
+       header .logo{
+            font-size: 3rem;
+            color: #333;
+            font-weight: bolder;
+        }
+        header .logo span{
+            color: blue;
+        }
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 2rem 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+          
+        }
+
+        .choose {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        }
+        
+        .icons {
+        width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 20px;
+        height: auto;
+        color: red;
+        }
+        .fa-child {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 16px;
+        color: #fff;
+      }
+      .fa-clock {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 16px;
+        color: #fff;
+      }
+      .fa-credit-card-alt {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 16px;
+        color: #fff;
+      }
+      .Osobní {
+        background-color: #060616;
+      }
+      .nadpis2 {
+        color: white;
+        padding-top: 10px;
+        text-align: center;
+        font-size: 60px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #060616;
+      }
+      textarea {
+        background-color: white;
+        width: 70%;
+        margin-left: 12%;
+        font-size: 20px;
+        padding: 16px 16px;
+        border-radius: 10px;
+        border-color: black;
+        margin-bottom: 25px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      input:focus-within {
+        outline: none;
+        border-color: #5bd183;
+        border-width: 3px;
+      }
+      textarea:focus-within {
+        outline: none;
+        border-color: #5bd183;
+        border-width: 3px;
+      }
+      .right-content .button {
+        background-color: #5bd183;
+        border-radius: 20px;
+        border-color: black;
+        font-size: 22px;
+        padding: 10px 18px;
+        text-align: center;
+        display: flex;
+        margin: auto;
+      }
+      button:hover {
+        opacity: 80%;
+        cursor: pointer;
+      }
+
+
+
+
+
+
+   
+
+
+     
+        
+    </style>
+
+</head>
+<body>
+    
+
+<header>
+    <a href="#" class="logo">Instalater Master<span>.</span></a>
+</header>
+
+    <div class="container">
+        <h1>Instalatéři Praha</h1>
+        <div class="top-content">
+            <label for="check1"> Domů</label>
+            <label for="check2"> Kontakty</label>
+            <label for="check3"> O nás</label>
+            <label for="check4"> Galerie</label>
+            <button type="button"><span></span>765 456 345</button>
+           </div>
+    
+
+           
+    <div class="content">
+        <h2>NAŠE SLUŽBY</h2>
+        <p><h4>Provádíme kompletní instalatérské, topenářské a plynařské práce v Praze a okolí. <br>Instalatérské práce od malých oprav po rekonstrukce, včetně havárií.<br> Opravy i výměny baterií, WC, umyvadel, dřezů, desek kuchyňských linek,<br> rozvodů vody, odpadů, ohřívačů, dále instalace praček, myček, sporáků i čištění odpadů a kanalizací.</p></h4>
+    </div>
+        
+    <section>
+            <div class="card-container">
+            <div class="card">
+                <img src="obazek1.jpg">
+                <div class="card-content">
+                    <h3>Drobné instalatérské práce</h3>
+                    <p>Výměna vodovodních baterií, rohových ventilů atd..</p>
+                    <a href="" class="button">Více</a>
+         </div>   
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="obrazek2.jpg">
+                    <div class="card-content">
+                        <h3>Pohotovost 24/7</h3>
+                        <p>Instalatérská a topenářská pohotovost. Pracujeme nonstop každý den včetně víkendů a svátků. Vyřešíme jakoukoli havárii vody nebo drobné opravy v Praze a Středočeském kraji.</p>
+                        <a href="" class="button">Více</a>
+             </div>   
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="obrazek3.jpg">
+                        <div class="card-content">
+                            <h3>Bojlery - oprava, výměna, montáž</h3>
+                            <p>Zjistíme, proč váš bojler nefunguje. Doprava po Praze je ZDARMA.</p>
+                            <a href="" class="button">Více</a>
+                            </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="obrazek4.jpg">
+                            <div class="card-content">
+                                <h3>Čištění odpadu</h3>
+                                <p>Provádíme profesionální čištění odpadů pomocí strojů Rothenberger a Milwaukee. Vyčistíme ucpaný odpad v bytě nebo rodinném domě. Jakkoli složité instalace pro nás nejsou problém.</p>
+                                <a href="" class="button">Více</a>
+                                </div>
+                                </div>
+                            </section>
+        
+        <section>
+            <h2>NAŠE PRÁCE</h2>
+        <div class="photo-gallery">
+            <div class="pic place">
+                <img src="img place1.jpg">
+            </div>
+            <div class="pic galerie"> 
+                <img src="img place2.jpg"> 
+            </div>
+            <div class="pic galerie">
+                <img src="img place3.jpg">
+            </div>
+            <div class="pic galerie">
+                <img src="img place4.jpg">
+            </div>
+            <div class="pic galerie">
+                <img src="img place5.jpg">
+            </div>
+            <div class="pic galerie">
+                <img src="img place6.jpg">
+            </div>
+            <div class="pic galerie">
+                <img src="img place7.jpg">
+            </div>
+            <div class="pic galerie">
+                <img src="img place8.jpg">
+            </div>
+        </section>        
+            
+
+<div class="nadpis1">
+    <h2>Proč si nás vybrat?</h2>
+</div>
+<section>
+        <div class="choose">
+            <div class="icons">
+
+                <a href="#" class="fa fa-child"></a>
+                <p>100% SPOLEHLIVOST</p>
+                </div>
+
+                <div class="choose">
+                    <div class="icons">
+                        <a href="#" class="fa fa-clock"></a>
+                            <p>RYCHLOST</p>
+                 </div>   
+
+                 <div class="choose">
+                    <div class="icons">
+                        <a href="#" class="fa fa-credit-card-alt"></a>
+                            <p>ROZUMNÁ CENA</p>
+                 </div>   
+        </div>
+    </section>
+    <section>
+<div class="nadpis2">
+   <h2>Osobní údaje</h2>
+   <div class="right-content">
+   <input type="text" name="jméno" placeholder="Jméno" autocomplete="off" required>
+   <input type="text" name="příjmení" placeholder="Příjmení" autocomplete="off" required>
+   <input type="email" name="email" placeholder="Email" autocomplete="off" required>
+   <textarea rows="5" cols="60" name="zpráva" placeholder="Odeslat zprávu" autocomplete="off" required></textarea>
+   <button type="button">Poslat zprávu</button>
+</div>
+</section>
+   
+
+
+
+        <footer>
+            <p class="footer-header">
+                kontakt
+            </p>
+            <address>
+                Navsi 1234
+                <br> Česká Třebová
+            </address>
+            <p>
+                Email:
+                <a href="mailto: email@email.cz">
+                    mail@mail.cz
+                </a>
+            </p>
+            <p>
+                Tel:
+                <a href="tel:3625550100">
+                    567456432
+                </a>
+            </p>
+        </footer>
+                
+            </body>
+            </html>
+
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Kontakt</title>
+                <link rel="stylesheet" href="styly.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+                <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+                <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif ;
+            }
+            .container {
+                min-height: 100vh;
+                background: #08071d;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: url("formular3.jpg") no-repeat center center/cover;
+            }
+            .container form {
+                width: 670px;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+                border-radius: 15px;
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+                flex-wrap: wrap;
+            }
+            .container form h1 {
+                color: #fff;
+                font-weight: 500;
+                margin-top: 20px;
+                width: 500px;
+                text-align: center;
+            }
+            .container form input {
+                width: 290px;
+                height: 40px;
+                padding-left: 10px;
+                outline: none;
+                border: none;
+                font-size: 10px;
+                margin-bottom: 10px;
+                background: none;
+                border-bottom: 2px solid #fff;
+            }
+            .container form input::placeholder {
+                color: #ddd;
+            }
+            .container form #lastName,
+            .container form #mobile {
+                margin-left: 20px;
+            }
+            .container form h4 {
+                color: #fff;
+                font-weight: 300;
+                width: 600px;
+                margin-top: 20px;
+            }
+            .container form textarea {
+                background: none;
+                border: none;
+                border-bottom: 2px solid #fff;
+                color: #fff;
+                font-weight: 200;
+                font-size: 15px;
+                padding: 10px;
+                outline: none;
+                min-width: 600px;
+                max-width: 600px;
+                min-height: 80px;
+                max-height: 80px;
+            }
+            textarea::-webkit-scrollbar {
+                width: 1em;
+            }
+            textarea::-webkit-scrollbar-thumb {
+                background-color: rgba(194,194,194,0.713);
+            }
+            .container form #button {
+                border: none;
+                background: #fff;
+                border-radius: 5px;
+                margin-top: 20px;
+                font-weight: 600;
+                font-size: 20px;
+                color: #333;
+                width: 100px;
+                padding: 0;
+                margin-right: 500px;
+                margin-bottom: 30px;
+                transition: 0.3s;
+            }
+            .container form #button:hover {
+                opacity: 0.7;
+            }
+            
+            
+            
+            
+            
+                </style>
+            </head>
+            <body>
+            <div class="container">
+                <form>
+                    <h1>Formulář</h1>
+                    <input type="text" id="firstName" placeholder="Jméno*" required>
+                    <input type="text" id="lastName" placeholder="Příjmení*" required>
+                    <input type="email" id="email" placeholder="Email*" required>
+                    <input type="text" id="mobile" placeholder="Telefon*" required>
+                    <h4>Rozepište se o svých potřebách a nápadech...</h4>
+                    <textarea required></textarea>
+                    <input type="submit" value="Odeslat" id="button">
+            </form>
+            </div>
+            
+            
+            
+            </body>
+            </html>

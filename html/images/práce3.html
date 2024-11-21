@@ -204,3 +204,62 @@
 
         </section>
     </body>
+
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Osobní informace </legend>
+            <label for="name">Jméno</label>
+            <br>
+            <input type="text1" id="name" name="user_name" required maxlength="10">
+            <br>
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="text2" id="email" name="user_email" required maxlength="10">
+            <br>
+            <br>
+            <input type="text3" name="tel" id="tel" required maxlength="10">
+            <label for="tel">Telefoní číslo</label>
+            <br>
+            <input type="text4" id="adress" name="adress"required maxlength="10">
+            <label for="adresa">Adresa ulice</label>
+            <br>
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Kontaktní informace</legend>
+            <label for="country">Stát</label>
+            <select name="country" id="country">
+                <optgroup label="Evropa">
+                    <option value="cz">ČR</option>
+                    <option value="sk">SK</option>
+                    <option value="hu">HU</option>
+                </optgroup>
+                <optgroup label="Svět">
+                    <option value="ca">Kanada</option>
+                    <option value="br">Brazílie</option>
+                </optgroup>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Zpráva</legend>
+            <label><input type="checkbox" name="interest" value="work">Drobné instalatérské práce</label>
+            <label><input type="checkbox" name="interest" value="repair">Bojlery - oprava, výměna, montáž</label>
+            <label><input type="checkbox" name="interest" value="cleaning">Čištění odpadu</label>
+            <label><input type="checkbox" name="interest" value="emergency">Pohotovost 24/7</label>
+            <label for="bio">O Nás:</label>
+            <textarea id="bio" name="bio" rows="3" cols="100"></textarea>
+        </fieldset>
+        
+        <input type="hidden" value="validation_token" name="validation_token">
+        <input type="submit" value="Odeslat">
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+    </form>
+
+    <input type="radio" name="Domů" id="check1" checked>
+    <input type="radio" name="Kontaktky" id="check2">  
+    <input type="radio" name="O nás" id="check3">
+    <input type="radio" name="Galerie" id="check4">
+    </div>
