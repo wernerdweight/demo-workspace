@@ -9,43 +9,67 @@
 {% endblock %}
 
 {% block body %}
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hra - No Bad Choices</title>
-</head>
-<body>
     <header>
         <h1>{{ 'No Bad Choices'|upper }}</h1>
     </header>
 
     <main>
         <section class="game-text">
-            <p>{{ text }}</p>
+            <p id="location-text">{{ text }}</p>
         </section>
-{# původní verze #}
-        {# <section class="choices">
-            <form method="post" action="{{ path('game') }}">
-                {% for option in options %}
-                    <button type="submit" name="position" value="{{ option.position }}">
-                        {{ option.text }}
-                    </button>
-                    <br />
-                {% endfor %}
-            </form>
-        </section> #}
-        {# nová verze s direction #}
-<section>
-    <form method="post" action="{{ path('move') }}">
-        {% for choice in choices %}
-            <button type="submit" name="position" value="{{ choice.toLocation.position }}">
-                {{ choice.choiceText }}
-            </button>
-        {% endfor %}
-    </form>
-</section>
+        
+        <section id="choices">
+            {% for choice in choices %}
+                <button 
+                    data-choice-id="{{ choice.id }}" 
+                    class="choice-btn">
+                    {{ choice.choiceText }}
+                </button>
+            {% endfor %}
+        </section>
+
+        <p>Dnešní datum: {{ "now"|date("d.m.Y H:i") }}</p>
     </main>
-</body>
-</html>
+
+    <script>
+        document.querySelectorAll('.choice-btn').forEach(button => {
+            button.addEventListener('click', async (event) => {
+                event.preventDefault();
+
+                const choiceId = button.dataset.choiceId;
+
+                // AJAX požadavek na server
+                const response = await fetch('{{ path('move') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ choiceId })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+
+                    // Aktualizace textu lokace
+                    document.getElementById('location-text').innerText = data.text;
+
+                    // Aktualizace voleb
+                    const choicesContainer = document.getElementById('choices');
+                    choicesContainer.innerHTML = ''; // Vymazání aktuálních voleb
+
+                    // Vykreslení nových voleb
+                    data.choices.forEach(choice => {
+                        const btn = document.createElement('button');
+                        btn.innerText = choice.choiceText;
+                        btn.dataset.choiceId = choice.id;
+                        btn.classList.add('choice-btn');
+                        choicesContainer.appendChild(btn);
+                        console.log('Nové tlačítko přidáno:', btn);
+                    });
+                } else {
+                    console.error('Chyba při získávání nové pozice:', response.statusText);
+                }
+            });
+        });
+    </script>
 {% endblock %}

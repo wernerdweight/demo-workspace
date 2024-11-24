@@ -66,27 +66,57 @@ class PageController extends AbstractController
 
         $choices = $location->getChoices();
 
+        // Debug: Zkontrolujte hodnoty
+        dump($choices);
+        // die();
+
         return $this->render('game.html.twig', [
             'text' => $location->getLocationText(),
             'choices' => $choices,
         ]);
     }
+
     #[Route('/move', name: 'move', methods: ['POST'])]
     public function move(Request $request, EntityManagerInterface $em): Response
     {
-        /** @var User $user */
-        $user = $this->getUser();
-        $newPosition = $request->request->get('position');
+        // Získání dat z JSON
+        $data = json_decode($request->getContent(), true);
+        $choiceId = isset($data['choiceId']) ? (int)$data['choiceId'] : 0;
 
-        $targetLocation = $em->getRepository(Location::class)->findOneBy(['position' => $newPosition]);
+        // Debug: Zkontrolujte přijatá data
+        dump($choiceId);
+
+        $choice = $em->getRepository(Choice::class)->find($choiceId);
+
+        // Debug: Zkontrolujte nalezenou volbu
+        dump($choice);
+        // die();
+
+        if (!$choice) {
+            throw $this->createNotFoundException('Volba nenalezena.');
+        }
+
+        $targetLocation = $choice->getToLocation();
 
         if (!$targetLocation) {
             throw $this->createNotFoundException('Cílová lokace nenalezena.');
         }
 
-        $user->setCurrentPosition($newPosition);
+        $user = $this->getUser();
+        $user->setCurrentPosition($targetLocation->getPosition());
         $em->flush();
 
-        return $this->redirectToRoute('game');
+        return $this->json([
+            'text' => $targetLocation->getLocationText(),
+            'choices' => array_map(function ($choice) {
+                return [
+                    'id' => $choice->getId(),
+                    'choiceText' => $choice->getChoiceText(),
+                    'toLocation' => [
+                        'position' => $choice->getToLocation()->getPosition(),
+                    ],
+                ];
+            }, $targetLocation->getChoices()->toArray()),
+        ]);
     }
 }
