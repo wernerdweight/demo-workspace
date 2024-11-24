@@ -15,8 +15,10 @@
 
     <main>
         <section class="menu">
+        {% if app.user %}
             <button onclick="startNewGame()">Nová hra</button>
             <button onclick="continueGame()">Pokračovat</button>
+            {% endif %}
         </section>
 
         <section class="login">
