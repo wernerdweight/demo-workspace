@@ -24,37 +24,11 @@ class PageController extends AbstractController
     {
         return $this->render('terms.html.twig');
     }
-    // původní verze 
-    //     #[Route('/game', name: 'game', methods: ['GET', 'POST'])]
-    //     public function game(Request $request, EntityManagerInterface $em): Response
-    //     {
-    //         /** @var User $user */
-    //         $user = $this->getUser();
-    //         if ($request->isMethod('POST')) {
-    //             $user->setCurrentPosition($request->request->get('position'));
-    //             $em->flush();
-    //             return $this->redirectToRoute('game');
-    //         }
 
-    //         $location = $em->getRepository(Location::class)->findOneBy([
-    //             'position' => $user->getCurrentPosition() ?? '0',
-    //         ]);
-
-    //         $text = $location ? $location->getLocationText() : 'Text pro tuto lokaci nebyl nalezen.';
-    //         $options = $location ? $location->getOptions() : [];
-
-    //         return $this->render('game.html.twig', [
-    //             'position' =>  $user->getCurrentPosition(),
-    //             'text' => $text,
-    //             'options' => $options,
-    //         ]);
-    //     }
-    // }
-
-    // nová verze 
     #[Route('/game', name: 'game', methods: ['GET', 'POST'])]
     public function game(Request $request, EntityManagerInterface $em): Response
     {
+        /** @var User $user */
         $user = $this->getUser();
         $currentPosition = $user->getCurrentPosition() ?? '0';
 
@@ -66,9 +40,6 @@ class PageController extends AbstractController
 
         $choices = $location->getChoices();
 
-        // Debug: Zkontrolujte hodnoty
-        dump($choices);
-        // die();
 
         return $this->render('game.html.twig', [
             'text' => $location->getLocationText(),
@@ -79,18 +50,10 @@ class PageController extends AbstractController
     #[Route('/move', name: 'move', methods: ['POST'])]
     public function move(Request $request, EntityManagerInterface $em): Response
     {
-        // Získání dat z JSON
         $data = json_decode($request->getContent(), true);
         $choiceId = isset($data['choiceId']) ? (int)$data['choiceId'] : 0;
 
-        // Debug: Zkontrolujte přijatá data
-        dump($choiceId);
-
         $choice = $em->getRepository(Choice::class)->find($choiceId);
-
-        // Debug: Zkontrolujte nalezenou volbu
-        dump($choice);
-        // die();
 
         if (!$choice) {
             throw $this->createNotFoundException('Volba nenalezena.');
@@ -101,7 +64,7 @@ class PageController extends AbstractController
         if (!$targetLocation) {
             throw $this->createNotFoundException('Cílová lokace nenalezena.');
         }
-
+        /** @var User $user */
         $user = $this->getUser();
         $user->setCurrentPosition($targetLocation->getPosition());
         $em->flush();

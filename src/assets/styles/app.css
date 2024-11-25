@@ -141,3 +141,78 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
     opacity: 0;
 }
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+}
+
+.form-box {
+    width: 45%; 
+}
+
+#tree-view {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    overflow-x: auto;
+    margin-top: 20px; 
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.tree-node {
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin: 10px;
+    width: 500px; 
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-block;
+}
+.first-level {
+    font-weight: bold;
+    background-color: #c3e6cb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table td {
+    padding: 10px;
+    border: 2px solid #4b372d /* Jemný okraj mezi buňkami */
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Jemné střídání barev řádků */
+}
+
+table tr:hover {
+    background-color: #f1f1f1; /* Zvýraznění při přejetí myší */
+}
+
+table td:first-child {
+    font-weight: bold;
+    width: 30%; /* Šířka sloupce s popisky */
+}
+

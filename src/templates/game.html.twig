@@ -38,7 +38,6 @@
 
                 const choiceId = button.dataset.choiceId;
 
-                // AJAX požadavek na server
                 const response = await fetch('{{ path('move') }}', {
                     method: 'POST',
                     headers: {
@@ -50,14 +49,11 @@
                 if (response.ok) {
                     const data = await response.json();
 
-                    // Aktualizace textu lokace
                     document.getElementById('location-text').innerText = data.text;
 
-                    // Aktualizace voleb
                     const choicesContainer = document.getElementById('choices');
-                    choicesContainer.innerHTML = ''; // Vymazání aktuálních voleb
+                    choicesContainer.innerHTML = ''; 
 
-                    // Vykreslení nových voleb
                     data.choices.forEach(choice => {
                         const btn = document.createElement('button');
                         btn.innerText = choice.choiceText;

@@ -3,10 +3,10 @@
 namespace App\Entity;
 
 use App\Repository\LocationRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: LocationRepository::class)]
 class Location
@@ -31,11 +31,41 @@ class Location
     #[ORM\OneToMany(mappedBy: 'fromLocation', targetEntity: Choice::class, cascade: ['persist', 'remove'])]
     private Collection $choices;
 
+    // Nový vztah pro rodičovskou lokaci (ManyToOne)
+    #[ORM\ManyToOne(targetEntity: Location::class)]
+    #[ORM\JoinColumn(name: "parent_id", referencedColumnName: "id", nullable: true)]
+    private ?Location $parent = null;
+
+    // Nový vztah pro podřízené lokace (OneToMany)
+    #[ORM\OneToMany(mappedBy: 'parent', targetEntity: Location::class)]
+    private Collection $children;
+
     public function __construct()
     {
         $this->choices = new ArrayCollection();
+        $this->children = new ArrayCollection(); // Inicializace kolekce dětí
     }
 
+    // Getter pro parent (rodičovskou lokaci)
+    public function getParent(): ?Location
+    {
+        return $this->parent;
+    }
+
+    // Setter pro parent (rodičovskou lokaci)
+    public function setParent(?Location $parent): static
+    {
+        $this->parent = $parent;
+        return $this;
+    }
+
+    // Getter pro children (podřízené lokace)
+    public function getChildren(): Collection
+    {
+        return $this->children;
+    }
+
+    // Ostatní getter a setter metody...
     public function getId(): ?int
     {
         return $this->id;
@@ -49,7 +79,6 @@ class Location
     public function setPosition(string $position): static
     {
         $this->position = $position;
-
         return $this;
     }
 
@@ -61,7 +90,6 @@ class Location
     public function setLocationText(string $locationText): static
     {
         $this->locationText = $locationText;
-
         return $this;
     }
 
@@ -73,7 +101,6 @@ class Location
     public function setEnding(bool $isEnding): static
     {
         $this->isEnding = $isEnding;
-
         return $this;
     }
 
@@ -85,7 +112,6 @@ class Location
     public function setEndingType(?string $endingType): static
     {
         $this->endingType = $endingType;
-
         return $this;
     }
 
@@ -100,7 +126,6 @@ class Location
             $this->choices->add($choice);
             $choice->setFromLocation($this);
         }
-
         return $this;
     }
 
@@ -111,7 +136,6 @@ class Location
                 $choice->setFromLocation(null);
             }
         }
-
         return $this;
     }
 }
