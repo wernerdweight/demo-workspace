@@ -1,0 +1,36 @@
+{# templates/admin/user_list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin - Uživatelé{% endblock %}
+
+{% block body %}
+    <h1>Seznam uživatelů</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Oprávnění (Roles)</th>
+                <th>Ověřený (Is Verified)</th>
+                <th>Pozice</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        {% for role in user.roles %}
+                            {{ role }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ user.isVerified ? 'Ano' : 'Ne' }}</td>
+                    <td>{{ user.currentPosition ?: 'Neuvedeno' }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

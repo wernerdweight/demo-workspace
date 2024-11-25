@@ -2,9 +2,9 @@
     --primary-color: #FFA500; 
     --secondary-color: #FFDDC1; 
     --text-color: #2E8B57; 
-    --hover-color: #FF6347; 
+    --hover-color: #fa9450;
     --hover-text-color: white; 
-    --heading-color: #FF8C00; 
+    --heading-color: #fa9450;; 
 }
 
 body {
@@ -194,25 +194,91 @@ h1, h2, h3, h4, h5, h6 {
 
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 12px; 
+    color: var(--text-color); 
+    background-color: var(--secondary-color); 
 }
 
-table td {
+table th, table td {
+    border: 2px solid var(--primary-color); 
     padding: 10px;
-    border: 2px solid #4b372d /* Jemný okraj mezi buňkami */
+    text-align: center; 
+}
+
+table th {
+    background-color: var(--primary-color);
+    color: var(--hover-text-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; 
 }
 
 table tr:nth-child(even) {
-    background-color: #f9f9f9; /* Jemné střídání barev řádků */
+    background-color: var(--secondary-color); 
+}
+
+table tr:nth-child(odd) {
+    background-color: #fff;
 }
 
 table tr:hover {
-    background-color: #f1f1f1; /* Zvýraznění při přejetí myší */
+    background-color: var(--hover-color);
+    color: var(--hover-text-color); 
 }
 
 table td:first-child {
     font-weight: bold;
-    width: 30%; /* Šířka sloupce s popisky */
+    color: var(--text-color); 
 }
 
+.table-empty {
+    font-style: italic;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+
+.table th {
+    background-color: var(--heading-color); 
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: var(--hover-color); 
+    color: var(--hover-text-color);
+}
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 4px 4px 0 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: var(--hover-color);  
+}
+
+.tab-content {
+    display: none;
+}

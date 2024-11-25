@@ -11,17 +11,16 @@ use App\Form\AddLocationType;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Choice;
 use App\Form\ChoiceType;
+use App\Repository\UserRepository;
 
 class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
     public function index(Request $request, EntityManagerInterface $em): Response
     {
-        // Lokace
         $location = new Location();
         $locationForm = $this->createForm(AddLocationType::class, $location);
 
-        // Volba
         $choice = new Choice();
         $choiceForm = $this->createForm(ChoiceType::class, $choice);
 
@@ -60,6 +59,17 @@ class AdminController extends AbstractController
             'locationForm' => $locationForm->createView(),
             'choiceForm' => $choiceForm->createView(),
             'locationsData' => json_encode($locationsData),
+        ]);
+    }
+
+    #[Route('/admin/users', name: 'admin_users')]
+    public function userList(UserRepository $userRepository): Response
+    {
+        // Získání všech uživatelů z databáze
+        $users = $userRepository->findAll();
+
+        return $this->render('admin/user_list.html.twig', [
+            'users' => $users,
         ]);
     }
 }

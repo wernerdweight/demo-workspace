@@ -5,6 +5,15 @@
 {% block body %}
     <h1>Administrace</h1>
 
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="admin-tab" data-bs-toggle="tab" href="#admin-content">Admin</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="users-tab" data-bs-toggle="tab" href="#users-content">Users</a>
+        </li>
+    </ul>
+
 <div class="form-container">
     <div class="form-box">
         <h2>Nejprve přidej nové lokace</h2>
@@ -69,6 +78,8 @@
     <h2>Stromová struktura lokací</h2>
     <div id="tree-view"></div>
 
+    
+
     {% block stylesheets %}
         {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
@@ -122,3 +133,4 @@
         renderTree(tree, container);
     </script>
 {% endblock %}
+
