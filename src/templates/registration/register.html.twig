@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Registrace{% endblock %}
 
 {% block body %}
     {% for flash_error in app.flashes('verify_email_error') %}
@@ -8,17 +8,19 @@
     {% endfor %}
     
     <div class="regisration-form-container">
-    <h3>Register</h3>
+    <h3>Registrace</h3>
 
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
+            label: 'Heslo'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-        <button type="submit" class="btn">Register</button>
+        {{ form_row(registrationForm.agreeTerms, {  
+            label: 'Potvrzení smluvních podmínek'   
+        }) }}
+        <button type="submit" class="btn">Registrovat</button>
     {{ form_end(registrationForm) }}
     </div>
 {% endblock %}

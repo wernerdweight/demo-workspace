@@ -1,9 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello VytvoreniReceptuController!{% endblock %}
+{% block title %}Vytroreni receptu{% endblock %}
 
 {% block body %}
-{{ form_start(form)}}
+<div class="creation-form-container">
+
+{{ form_start(form) }}
+{{ form_row(form.nazev) }}
+{{ form_row(form.Cas) }}
+{{ form_row(form.Obtiznost, {
+    label: 'Obtiznost (1-5)'
+}) }}
+{{ form_row(form.postup) }}
+{{ form_row(form.imagepath) }}
+
 {{ form_label(form.ingredience)}}
 <div {{ stimulus_controller('form-collection') }}
     data-form-collection-index-value="{{ form.ingredience|length > 0 ? form.ingredience|last.vars.name + 1 : 0 }}"
@@ -11,6 +21,8 @@
 >
     <ul {{ stimulus_target('form-collection', 'collectionContainer') }}></ul>
     <button type="button" {{ stimulus_action('form-collection', 'addCollectionElement') }}>Přidej ingredienci</button>
+
 </div>
-{{ form_rest(form)}}
+{{ form_row(form.submit) }}
+</div>
 {% endblock %}

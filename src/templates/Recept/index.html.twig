@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ nazev }} {% endblock %}
+
+{% block body %}
+
+<main>
+    <article>
+        <h3>
+            {{ nazev }}
+        </h3>
+
+            <div class="Difficulty">
+          <img class="Difficultyimg" src="{{asset("Images/star.png")}}" alt="difficulty">
+          {{obtiznost}}
+        </div>
+
+        <div class="imgmain">
+            <img src="{{asset(imgpath)}}" alt="{{ nazev }}">
+            
+            
+        </div>
+    </article>
+
+    <section>
+        <h4>
+            <strong>Suroviny</strong>
+        </h4>
+        <ul>
+            {% for surovina in suroviny %}
+            <li>
+            {{ surovina.ingredience.nazev }}
+            {{ surovina.mnozstvi }}
+            </li>
+            {% endfor %}
+            
+        </ul>
+        
+        <h5>
+            <strong>Postup</strong>
+        </h5>
+        <p>
+{{postup}}
+        </p>
+    </section>   
+</main>
+
+{% endblock %}

@@ -17,10 +17,10 @@
     <header>
 
     {% if is_granted('ROLE_USER') == false %}
-    <button><a class="login-button" href="{{ path('app_login') }}">Login</a></button>
-    <button><a class="register-button" href="{{ path('app_register') }}">Register</a></button>
+    <button><a class="login-button" href="{{ path('app_login') }}">Přihlásit</a></button>
+    <button><a class="register-button" href="{{ path('app_register') }}">Registrovat</a></button>
     {% else %}
-    <button><a class="logout-button" href="{{ path('app_logout') }}">Logout</a></button>
+    <button><a class="logout-button" href="{{ path('app_logout') }}">Odhlásit</a></button>
     {% endif %} 
         
 <a href="{{ path('app_home') }}" class="icon">
@@ -41,7 +41,7 @@
             <a href="#"> Fotogalerie</a>
             <a href="#"> Kontakty</a>
             {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{path('app_vytvoreni_receptu')}}"> Vytvoreni receptu</a>
+            <a href="{{path('app_vytvoreni_receptu')}}"> Vytvoření receptu</a>
             {% endif %}
         </nav>
         
@@ -56,7 +56,7 @@
                                     <adress>Praha 1 </adress><br>
                                 </li>
                                 <li>
-                                    Emali: <a href="mailto :pepazdepa@seznam.cz">pepazdepa@seznam.cz</a> <br>
+                                    Email: <a href="mailto :pepazdepa@seznam.cz">pepazdepa@seznam.cz</a> <br>
                                 </li>
                                 <li>
                                     Tel: <a href="Tel :+420 111 111 111 111 111">+420 111 111 111 111 111</a> <br>
