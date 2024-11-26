@@ -6,6 +6,7 @@
     --main-bgcolor: #9C9C9C;
     --font-heading: Kalam, cursive, sans-serif;
     --font-text: Roboto sans-serif;
+    --font-fa-solid: "Font Awesome 6 Free";
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -380,12 +381,12 @@ textarea.form-control {
 .btn {
     display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: var(--primary-color);
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    background-color: var(--footer-bgcolor);
-    border: 1px solid var(--footer-bgcolor);
+    background-color: var(--main-bgcolor);
+    border: 1px solid var(--secondary-color);
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -403,3 +404,111 @@ textarea.form-control {
     padding: 0.5rem;
 }
 /* End of form styles */
+
+/* Radio style here */
+/* .radio-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-option span {
+    display: block;
+}
+
+.radio-option:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.radio-option:active {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+} */
+
+
+.radio-options {
+    display: flex;
+    gap: 0.1rem;
+}
+
+.radio-options label {
+    display: flex;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    justify-content: center;
+    background-color: var(--main-bgcolor);
+    color: var(--primary-color);
+    cursor: pointer;
+    width: 20%;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.375rem;
+    align-items: baseline;
+}
+
+.radio-options input[type="radio"] {
+    display: none;
+    border: 2px solid var(--secondary-color);
+}
+ 
+.radio-options input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--primary-color);  
+}
+
+.quill-container div:first-child {
+    border-top-left-radius: 0.375rem ;
+    border-top-right-radius: 0.375rem ;
+}
+
+.quill-container div:nth-child(2) {
+    border-bottom-left-radius: 0.375rem ;
+    border-bottom-right-radius: 0.375rem ;
+}
+
+.radio-options label[for="task_listing_0"]::before {
+    content: "\f86d"; 
+    font-family: var(--font-fa-solid);
+    margin-right: 8px;
+}
+
+.radio-options label[for="task_listing_1"]::before {
+    content: "\f0b1"; 
+    font-family: var(--font-fa-solid);
+    margin-right: 8px;
+}
+
+.radio-options label[for="task_listing_2"]::before {
+    content: "\f187"; 
+    font-family: var(--font-fa-solid);
+    margin-right: 8px;
+}
+
+.radio-options label[for="task_scope_0"]::before {
+    content: "\f783"; 
+    font-family: var(--font-fa-solid);
+    margin-right: 8px;
+}
+
+.radio-options label[for="task_scope_1"]::before {
+    content: "\f04e"; 
+    font-family: var(--font-fa-solid);
+    margin-right: 8px;
+}

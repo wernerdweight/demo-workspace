@@ -12,17 +12,17 @@ class HomeController extends AbstractController
     #[Route('/all', name: 'app_all_home')]
     public function all(TaskRepository $taskRepository): Response
     {
-        $tasksCurrentWeek = $taskRepository->findBy([
-            'currentWeek' => true,
-            'archived' => false,
-        ]);
-        $tasksNextWeek = $taskRepository->findBy([
-            'nextWeek' => true,
-            'archived' => false,
-        ]);
+        // $tasksCurrentWeek = $taskRepository->findBy([
+        //     'currentWeek' => true,
+        //     'archived' => false,
+        // ]);
+        // $tasksNextWeek = $taskRepository->findBy([
+        //     'nextWeek' => true,
+        //     'archived' => false,
+        // ]);
         return $this->render('home/index_all.html.twig', [
-            'tasksCurrent' => $tasksCurrentWeek,
-            'tasksNext' => $tasksNextWeek,
+            // 'tasksCurrent' => $tasksCurrentWeek,
+            // 'tasksNext' => $tasksNextWeek,
         ]);
     }
 

@@ -2,7 +2,7 @@
 
 namespace App\Enum;
 
-enum PeriodType: string
+enum ListingType: string
 {
     case PERSONAL = 'personal';
     case WORK = 'work';

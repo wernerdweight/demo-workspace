@@ -24,11 +24,11 @@ class UpdateTaskController extends AbstractController
         $form = $this->createForm(TaskType::class, $task);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $task = $form->getData();
+            $task->setUpdatedDate(new \DateTime());
             $entityManager->flush();
             return $this->redirectToRoute('app_home');
         }
-        $task->setUpdatedDate(new \DateTime()); 
+        
         return $this->render('task/update.html.twig', [
             'form' => $form
         ]);

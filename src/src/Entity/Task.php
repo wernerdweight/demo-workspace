@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Enum\ListingType;
+use App\Enum\ScopeType;
 use App\Repository\TaskRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -29,16 +31,16 @@ class Task
     private ?\DateTimeInterface $updatedDate = null;
 
     #[ORM\Column]
-    private ?bool $currentWeek = false;
-
-    #[ORM\Column]
-    private ?bool $nextWeek = false;
-
-    #[ORM\Column]
     private ?bool $archived = false;
 
     #[ORM\Column(type: Types::TEXT, length: 10, nullable: true)]
     private ?string $periodSelection = 'current';
+
+    #[ORM\Column(enumType: ScopeType::class)]
+    private ?ScopeType $scope = null;
+
+    #[ORM\Column(enumType: ListingType::class)]
+    private ?ListingType $listing = null;
 
     public function getId(): ?int
     {
@@ -93,30 +95,6 @@ class Task
         return $this;
     }
 
-    public function isCurrentWeek(): ?bool
-    {
-        return $this->currentWeek;
-    }
-
-    public function setCurrentWeek(bool $currentWeek): static
-    {
-        $this->currentWeek = $currentWeek;
-
-        return $this;
-    }
-
-    public function isNextWeek(): ?bool
-    {
-        return $this->nextWeek;
-    }
-
-    public function setNextWeek(bool $nextWeek): static
-    {
-        $this->nextWeek = $nextWeek;
-
-        return $this;
-    }
-
     public function isArchived(): ?bool
     {
         return $this->archived;
@@ -137,6 +115,30 @@ class Task
     public function setPeriodSelection(string $periodSelection): static
     {
         $this->periodSelection = $periodSelection;
+
+        return $this;
+    }
+
+    public function getScope(): ?ScopeType
+    {
+        return $this->scope;
+    }
+
+    public function setScope(ScopeType $scope): static
+    {
+        $this->scope = $scope;
+
+        return $this;
+    }
+
+    public function getListing(): ?ListingType
+    {
+        return $this->listing;
+    }
+
+    public function setListing(ListingType $listing): static
+    {
+        $this->listing = $listing;
 
         return $this;
     }

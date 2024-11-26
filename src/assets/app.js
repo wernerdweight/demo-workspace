@@ -7,43 +7,11 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+const searchLink = document.querySelector('.sidebar_icon_link');
+const modal = document.querySelector('#searchModal');
 
-// const sideLinksId = ['home', 'task', 'personal', 'work', 'search', 'settings']
-
-// sideLinksId.forEach ((sideLinkId) => {
-//     const url = 'assets/img/'
-//     document.querySelector('#' + sideLinkId + '_icon').addEventListener('mouseenter', function() {
-//         this.src = url + sideLinkId + '_hover' + '.svg'
-//     });
-//     document.querySelector('#' + sideLinkId + '_icon').addEventListener('mouseleave', function() {
-//         this.src = url + sideLinkId + '.svg'
-//     });
-// });
-
-// const sideLinksId = ['home', 'task', 'personal', 'work', 'search', 'settings'];
-
-// sideLinksId.forEach((sideLinkId) => {
-//     const iconElement = document.querySelector('#' + sideLinkId + '_icon');
-    
-//     if (iconElement) {
-//         iconElement.addEventListener('mouseenter', function() {
-//             this.src = this.getAttribute('data-hover');
-//         });
-
-//         iconElement.addEventListener('mouseleave', function() {
-//             this.src = this.getAttribute('data-default');
-//         });
-//     }
-// });
-
-// var quill = new Quill('.editor', {
-//     modules: {
-//         toolbar: [
-//           ['bold', 'italic'],
-//           ['link', 'blockquote', 'code-block', 'image'],
-//           [{ list: 'ordered' }, { list: 'bullet' }],
-//         ],
-//       },
-//     theme: 'snow',
-// });
+searchLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.showModal();
+    console.log('Search icon clicked');
+});

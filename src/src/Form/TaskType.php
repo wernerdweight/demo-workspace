@@ -3,12 +3,16 @@
 namespace App\Form;
 
 use App\Entity\Task;
+use App\Enum\ListingType;
+use App\Enum\ScopeType;
 use Ehyiah\QuillJsBundle\Form\QuillType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TaskType extends AbstractType
@@ -19,16 +23,20 @@ class TaskType extends AbstractType
         ->add('name', TextType::class, [
             'attr' => ['class' => 'form-control name-field'],
         ])
+        ->add('scope', EnumType::class, [
+            'attr' => ['class' => 'radio-options'],
+            'class' => ScopeType::class,
+            'expanded' => true,
+            'multiple' => false,
+        ])
+        ->add('listing', EnumType::class, [
+            'attr' => ['class' => 'radio-options'],
+            'class' => ListingType::class,
+            'expanded' => true,
+            'multiple' => false,
+        ])
         ->add('description', QuillType::class , [
             'label' => 'Description',
-        ])
-        ->add('currentWeek', CheckboxType::class, [
-            'attr' => ['class' => 'form-check-input current-week-checkbox'],
-            'required' => false, // Checkbox obvykle nebývá povinný
-        ])
-        ->add('nextWeek', CheckboxType::class, [
-            'attr' => ['class' => 'form-check-input next-week-checkbox'],
-            'required' => false,
         ])
         ->add('submit', SubmitType::class, [
             'attr' => ['class' => 'btn btn-primary submit-button'],

@@ -2,6 +2,8 @@
 
 namespace App\Controller\Listing;
 
+use App\Enum\ListingType;
+use App\Enum\ScopeType;
 use App\Repository\TaskRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,12 +15,12 @@ class WorkListingController extends AbstractController
     public function index(TaskRepository $taskRepository): Response
     {   
         $tasksCurrent = $taskRepository->findBy([
-            'currentWeek' => true,
-            'archived' => false,
+            'scope' => ScopeType::CURRENT,
+            'listing' => ListingType::WORK,
         ]);
         $tasksNext = $taskRepository->findBy([
-            'nextWeek' => true,
-            'archived' => false,
+            'scope' => ScopeType::NEXT,
+            'listing' => ListingType::WORK,
         ]);
         return $this->render('listing/work.html.twig', [
             'tasksCurrent' => $tasksCurrent,
