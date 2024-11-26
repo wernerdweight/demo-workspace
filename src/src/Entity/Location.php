@@ -6,7 +6,6 @@ use App\Repository\LocationRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: LocationRepository::class)]
 class Location
@@ -19,7 +18,7 @@ class Location
     #[ORM\Column(length: 255, unique: true)]
     private ?string $position = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: 'text', nullable: true)]
     private ?string $locationText = null;
 
     #[ORM\Column(type: 'boolean')]
@@ -31,41 +30,35 @@ class Location
     #[ORM\OneToMany(mappedBy: 'fromLocation', targetEntity: Choice::class, cascade: ['persist', 'remove'])]
     private Collection $choices;
 
-    // Nový vztah pro rodičovskou lokaci (ManyToOne)
     #[ORM\ManyToOne(targetEntity: Location::class)]
     #[ORM\JoinColumn(name: "parent_id", referencedColumnName: "id", nullable: true)]
     private ?Location $parent = null;
 
-    // Nový vztah pro podřízené lokace (OneToMany)
     #[ORM\OneToMany(mappedBy: 'parent', targetEntity: Location::class)]
     private Collection $children;
 
     public function __construct()
     {
         $this->choices = new ArrayCollection();
-        $this->children = new ArrayCollection(); // Inicializace kolekce dětí
+        $this->children = new ArrayCollection();
     }
 
-    // Getter pro parent (rodičovskou lokaci)
     public function getParent(): ?Location
     {
         return $this->parent;
     }
 
-    // Setter pro parent (rodičovskou lokaci)
     public function setParent(?Location $parent): static
     {
         $this->parent = $parent;
         return $this;
     }
 
-    // Getter pro children (podřízené lokace)
     public function getChildren(): Collection
     {
         return $this->children;
     }
 
-    // Ostatní getter a setter metody...
     public function getId(): ?int
     {
         return $this->id;

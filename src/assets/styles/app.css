@@ -152,11 +152,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #tree-view {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-size: 16px;
     padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #FAF0E6; 
+    border: 1px solid #F4A300; 
     border-radius: 5px;
     width: 100%;
     display: flex;
@@ -164,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     margin: 0 auto;
     overflow-x: auto;
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 .tree-level {
@@ -178,19 +178,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .tree-node {
     padding: 10px;
-    background-color: #e9ecef;
+    background-color: #5e58b4; 
     border-radius: 4px;
     margin: 10px;
-    width: 500px; 
+    width: 500px;
     text-align: center;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     display: inline-block;
+    transition: background-color 0.3s; 
 }
+
+.tree-node:hover {
+    background-color: #aacfac;
+    color: var(--text-color); 
+}
+
 .first-level {
     font-weight: bold;
-    background-color: #c3e6cb;
+    background-color: var(--secondary-color); 
+    color: var(--text-color);
 }
+
 
 table {
     width: 100%;

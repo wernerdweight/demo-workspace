@@ -66,6 +66,9 @@ class PageController extends AbstractController
         }
         /** @var User $user */
         $user = $this->getUser();
+        if ($user->getCurrentPosition() !== $choice->getFromLocation()->getPosition()) {
+            throw $this->createNotFoundException('Nezlob!');
+        }
         $user->setCurrentPosition($targetLocation->getPosition());
         $em->flush();
 

@@ -65,7 +65,6 @@ class AdminController extends AbstractController
     #[Route('/admin/users', name: 'admin_users')]
     public function userList(UserRepository $userRepository): Response
     {
-        // Získání všech uživatelů z databáze
         $users = $userRepository->findAll();
 
         return $this->render('admin/user_list.html.twig', [

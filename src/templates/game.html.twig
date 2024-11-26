@@ -20,21 +20,25 @@
         
         <section id="choices">
             {% for choice in choices %}
-                <button 
+            {# {{ dump(currentPosition) }} #}
+                    {# {% if currentPosition == choice.fromLocation.position %} #}
+            <button 
                     data-choice-id="{{ choice.id }}" 
                     class="choice-btn">
                     {{ choice.choiceText }}
-                </button>
+            </button>
+                    {# {% else %}
+                    <p class="disabled-choice">Nepodváděj!</p>
+                    {% endif %} #}
             {% endfor %}
         </section>
 
     </main>
 
     <script>
-        document.querySelectorAll('.choice-btn').forEach(button => {
-            button.addEventListener('click', async (event) => {
+    const choiceHandler = async (event) => {
                 event.preventDefault();
-
+                const button = event.target;
                 const choiceId = button.dataset.choiceId;
 
                 const response = await fetch('{{ path('move') }}', {
@@ -58,13 +62,15 @@
                         btn.innerText = choice.choiceText;
                         btn.dataset.choiceId = choice.id;
                         btn.classList.add('choice-btn');
+                        btn.addEventListener('click', choiceHandler);
                         choicesContainer.appendChild(btn);
-                        console.log('Nové tlačítko přidáno:', btn);
                     });
                 } else {
                     console.error('Chyba při získávání nové pozice:', response.statusText);
                 }
-            });
-        });
+            };
+        document.querySelectorAll('.choice-btn').forEach(button => {
+            button.addEventListener('click', choiceHandler); 
+});
     </script>
 {% endblock %}
