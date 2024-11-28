@@ -7,11 +7,15 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-const searchLink = document.querySelector('.sidebar_icon_link');
+const searchLink = document.querySelector('.search_modal');
 const modal = document.querySelector('#searchModal');
 
-searchLink.addEventListener('click', function(e) {
+const searchHandler = function(e) {
     e.preventDefault();
     modal.showModal();
     console.log('Search icon clicked');
-});
+};
+setTimeout(() => {
+    console.log('Hello from setTimeout');
+    searchLink.addEventListener('click', searchHandler);
+}, 3000);

@@ -17,7 +17,7 @@
         {% endblock %}
     </head>
     <body>
-    <div class="layout">
+    <div class="layout {% if app.user is null %}no-sidebar{% endif %}">
 
     {% for label, messages in app.flashes %}
         {% for text in messages %}
@@ -30,9 +30,11 @@
     <header class="header">
         {% include 'nav.html.twig' %}
     </header>
-    <div class="sidebar">
-            {% include 'sidebar.html.twig' %}
+    {% if app.user is not null %}
+     <div class="sidebar">
+        {% include 'sidebar.html.twig' %}
     </div>
+    {% endif %}
     <main class="main_content">
     {% block main_content %}{% endblock %}
     </main>

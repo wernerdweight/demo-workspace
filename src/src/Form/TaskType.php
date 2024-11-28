@@ -35,9 +35,9 @@ class TaskType extends AbstractType
             'expanded' => true,
             'multiple' => false,
         ])
-        ->add('description', QuillType::class , [
-            'label' => 'Description',
-        ])
+        // ->add('description', QuillType::class , [
+        //     'label' => 'Description',
+        // ])
         ->add('submit', SubmitType::class, [
             'attr' => ['class' => 'btn btn-primary submit-button'],
         ]);
