@@ -12,6 +12,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Choice;
 use App\Form\ChoiceType;
 use App\Repository\UserRepository;
+use Knp\Component\Pager\PaginatorInterface;
 
 class AdminController extends AbstractController
 {
@@ -45,22 +46,33 @@ class AdminController extends AbstractController
 
         $locations = $em->getRepository(Location::class)->findBy([], ['position' => 'ASC']);
 
+        $choices = $em->getRepository(Choice::class)->findAll();
+
         $locationsData = [];
         foreach ($locations as $location) {
+            $outgoingChoices = [];
+            foreach ($choices as $choice) {
+                if ($choice->getFromLocation() && $choice->getFromLocation()->getId() == $location->getId()) {
+                    $outgoingChoices[] = $choice;
+                }
+            }
+
             $locationsData[] = [
                 'id' => $location->getId(),
                 'position' => $location->getPosition(),
                 'locationText' => $location->getLocationText(),
                 'parentId' => $location->getParent() ? $location->getParent()->getId() : null,
+                'outgoingChoices' => $outgoingChoices,
             ];
         }
 
         return $this->render('admin/index.html.twig', [
             'locationForm' => $locationForm->createView(),
             'choiceForm' => $choiceForm->createView(),
-            'locationsData' => json_encode($locationsData),
+            'locationsData' => $locationsData,
         ]);
     }
+
 
     #[Route('/admin/users', name: 'admin_users')]
     public function userList(UserRepository $userRepository): Response

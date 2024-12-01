@@ -135,12 +135,14 @@ h1, h2, h3, h4, h5, h6 {
 .register-link a:hover {
     text-decoration: underline; 
 }
+
 .error {
     font-size: 0.8em;
     color: #FF6347;
     margin-top: 10px;
     opacity: 0;
 }
+
 .form-container {
     display: flex;
     justify-content: space-between;
@@ -200,21 +202,20 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
 }
 
-
 table {
     width: 100%;
-    border-collapse: collapse; 
+    border-collapse: collapse;
     margin-top: 20px;
-    font-family: 'Press Start 2P', cursive; 
-    font-size: 12px; 
-    color: var(--text-color); 
-    background-color: var(--secondary-color); 
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
 }
 
 table th, table td {
-    border: 2px solid var(--primary-color); 
+    border: 2px solid var(--primary-color);
     padding: 10px;
-    text-align: center; 
+    text-align: center;
 }
 
 table th {
@@ -222,11 +223,11 @@ table th {
     color: var(--hover-text-color);
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
 }
 
 table tr:nth-child(even) {
-    background-color: var(--secondary-color); 
+    background-color: var(--secondary-color);
 }
 
 table tr:nth-child(odd) {
@@ -235,12 +236,12 @@ table tr:nth-child(odd) {
 
 table tr:hover {
     background-color: var(--hover-color);
-    color: var(--hover-text-color); 
+    color: var(--hover-text-color);
 }
 
 table td:first-child {
     font-weight: bold;
-    color: var(--text-color); 
+    color: var(--text-color);
 }
 
 .table-empty {
@@ -249,16 +250,37 @@ table td:first-child {
     text-align: center;
 }
 
-
 .table th {
-    background-color: var(--heading-color); 
+    background-color: var(--heading-color);
     color: white;
 }
 
 .table tbody tr:hover {
-    background-color: var(--hover-color); 
+    background-color: var(--hover-color);
     color: var(--hover-text-color);
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .pagination_link {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.pagination .pagination_link:hover {
+    background-color: var(--hover-color);
+    color: var(--hover-text-color);
+}
+
 .nav {
     list-style: none;
     padding: 0;

@@ -14,123 +14,106 @@
         </li>
     </ul>
 
-<div class="form-container">
-    <div class="form-box">
-        <h2>Nejprve přidej nové lokace</h2>
-        {{ form_start(locationForm) }}
-        <table>
-            <tr>
-                <td>{{ form_label(locationForm.locationText) }}</td>
-                <td>{{ form_widget(locationForm.locationText) }}</td>
-            </tr>
-            <tr>
-                <td>{{ form_label(locationForm.position) }}</td>
-                <td>{{ form_widget(locationForm.position) }}</td>
-            </tr>
-            <tr>
-                <td>{{ form_label(locationForm.isEnding) }}</td>
-                <td>{{ form_widget(locationForm.isEnding) }}</td>
-            </tr>
-            <tr>
-                <td>{{ form_label(locationForm.endingType) }}</td>
-                <td>{{ form_widget(locationForm.endingType) }}</td>
-            </tr>
-            <tr>
-                <td>{{ form_label(locationForm.parent) }}</td>
-                <td>{{ form_widget(locationForm.parent) }}</td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary">Add Location</button>
-                </td>
-            </tr>
-        </table>
-        {{ form_end(locationForm) }}
-    </div>
+    <div class="form-container">
+        <div class="form-box">
+            <h2>Nejprve přidej nové lokace</h2>
+            {{ form_start(locationForm) }}
+            <table>
+                <tr>
+                    <td>{{ form_label(locationForm.locationText) }}</td>
+                    <td>{{ form_widget(locationForm.locationText) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form_label(locationForm.position) }}</td>
+                    <td>{{ form_widget(locationForm.position) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form_label(locationForm.isEnding) }}</td>
+                    <td>{{ form_widget(locationForm.isEnding) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form_label(locationForm.endingType) }}</td>
+                    <td>{{ form_widget(locationForm.endingType) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form_label(locationForm.parent) }}</td>
+                    <td>{{ form_widget(locationForm.parent) }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit" class="btn btn-primary">Add Location</button>
+                    </td>
+                </tr>
+            </table>
+            {{ form_end(locationForm) }}
+        </div>
 
-    <div class="form-box">
-        <h2>A poté přidej vazby mezi nimi</h2>
-        {{ form_start(choiceForm) }}
-        <table>
-            <tr>
-                <td>{{ form_label(choiceForm.choiceText) }}</td>
-                <td>{{ form_widget(choiceForm.choiceText) }}</td>
-            </tr>
-            <tr>
-                <td>{{ form_label(choiceForm.fromLocation) }}</td>
-                <td>{{ form_widget(choiceForm.fromLocation) }}</td>
-            </tr>
-            <tr>
-                <td>{{ form_label(choiceForm.toLocation) }}</td>
-                <td>{{ form_widget(choiceForm.toLocation) }}</td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary">Add Choice</button>
-                </td>
-            </tr>
-        </table>
-        {{ form_end(choiceForm) }}
+        <div class="form-box">
+            <h2>A poté přidej vazby mezi nimi</h2>
+            {{ form_start(choiceForm) }}
+            <table>
+                <tr>
+                    <td>{{ form_label(choiceForm.choiceText) }}</td>
+                    <td>{{ form_widget(choiceForm.choiceText) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form_label(choiceForm.fromLocation) }}</td>
+                    <td>{{ form_widget(choiceForm.fromLocation) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form_label(choiceForm.toLocation) }}</td>
+                    <td>{{ form_widget(choiceForm.toLocation) }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit" class="btn btn-primary">Add Choice</button>
+                    </td>
+                </tr>
+            </table>
+            {{ form_end(choiceForm) }}
+        </div>
     </div>
-</div>
-
 
     <h2>Stromová struktura lokací</h2>
-    <div id="tree-view"></div>
 
-    
-
-    {% block stylesheets %}
-        {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    {% endblock %}
-
-    <script>
-        var locationsData = {{ locationsData|raw }};
-
-        function generateTree(locations) {
-            var tree = [];
-            var locationsById = {};
-            locations.forEach(function(location) {
-                locationsById[location.id] = location;
-                location.children = [];
-            });
-            locations.forEach(function(location) {
-                if (location.parentId === null) {
-                    tree.push(location);
-                } else {
-                    var parent = locationsById[location.parentId];
-                    if (parent) {
-                        parent.children.push(location);
-                    }
-                }
-            });
-
-            return tree;
-        }
-
-        function renderTree(tree, container) {
-            tree.forEach(function(node) {
-                var nodeElement = document.createElement('div');
-                nodeElement.classList.add('tree-node', 'first-level');
-                nodeElement.textContent = node.position + " - " + node.locationText;
-
-                if (node.children.length > 0) {
-                    var subTreeContainer = document.createElement('div');
-                    subTreeContainer.classList.add('tree-level');
-                    renderTree(node.children, subTreeContainer); 
-                    nodeElement.appendChild(subTreeContainer);
-                }
-
-                container.appendChild(nodeElement);
-            });
-        }
-
-        var tree = generateTree(locationsData);
-
-        var container = document.getElementById('tree-view');
-        renderTree(tree, container);
-    </script>
+{% if locationsData is empty %}
+    <p class="table-empty">No locations found.</p>
+{% else %}
+    <div class="table-responsive">
+       <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Location Text</th>
+            <th>Position</th>
+            <th>Parent</th>
+            <th>Choices</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {% for location in locationsData %}
+            <tr>
+                <td>{{ location.id }}</td>
+                <td>{{ location.locationText }}</td>
+                <td>{{ location.position }}</td>
+                <td>
+                    {% if location.parentId %}
+                        {{ location.parentId }}
+                    {% else %}
+                        None
+                    {% endif %}
+                </td>
+                <td>
+                    {% for choice in location.outgoingChoices %}
+                        {{ choice.choiceText }} ({{ choice.toLocation.id }}) <br />
+                    {% else %}
+                        No choices
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endif %}
 {% endblock %}
-
