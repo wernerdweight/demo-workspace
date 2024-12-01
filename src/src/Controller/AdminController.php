@@ -12,10 +12,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Choice;
 use App\Form\ChoiceType;
 use App\Repository\UserRepository;
-use Knp\Component\Pager\PaginatorInterface;
 
 class AdminController extends AbstractController
 {
+    private const DEFAULT_PAGE = 1;
+    private const DEFAULT_LIMIT = 10;
     #[Route('/admin', name: 'app_admin')]
     public function index(Request $request, EntityManagerInterface $em): Response
     {
@@ -43,8 +44,10 @@ class AdminController extends AbstractController
             $this->addFlash('success', 'Volba byla úspěšně přidána!');
             return $this->redirectToRoute('app_admin');
         }
-
-        $locations = $em->getRepository(Location::class)->findBy([], ['position' => 'ASC']);
+        $page = $request->query->getInt('page', self::DEFAULT_PAGE);
+        $limit = $request->query->getInt('limit', self::DEFAULT_LIMIT);
+        $locations = $em->getRepository(Location::class)->findWithPagination(page: $page, limit: $limit);
+        $totalLocations = $em->getRepository(Location::class)->count([]);
 
         $choices = $em->getRepository(Choice::class)->findAll();
 
@@ -66,10 +69,14 @@ class AdminController extends AbstractController
             ];
         }
 
+
         return $this->render('admin/index.html.twig', [
             'locationForm' => $locationForm->createView(),
             'choiceForm' => $choiceForm->createView(),
             'locationsData' => $locationsData,
+            'totalLocations' => $totalLocations,
+            'page' => $page,
+            'limit' => $limit
         ]);
     }
 

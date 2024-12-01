@@ -313,3 +313,49 @@ table td:first-child {
 .tab-content {
     display: none;
 }
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    padding: 8px 15px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--hover-color);
+    color: var(--hover-text-color);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    color: var(--hover-text-color);
+    font-weight: bold;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #f0f0f0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.pagination .page-item:first-child .page-link {
+    border-radius: 4px 0 0 4px; /* Zaoblené rohy pro první tlačítko */
+}
+
+.pagination .page-item:last-child .page-link {
+    border-radius: 0 4px 4px 0; /* Zaoblené rohy pro poslední tlačítko */
+}

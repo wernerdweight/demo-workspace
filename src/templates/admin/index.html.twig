@@ -115,5 +115,25 @@
     </tbody>
 </table>
 </div>
+{% set limit = 10 %} {# Define the limit variable #}
+{% set numberOfPages = (totalLocations / limit) |round(0,'ceil') %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+    {% if page > 1 %}
+    <a class="page-link" href="{{ path('app_admin', {'page': page-1, 'limit': limit}) }}">Previous</a></li>
+    {% else %}
+    <span>Previous</span>
+    {% endif %}
+    {% for pageNumber in 1..numberOfPages %}
+        <li class="page-item"><a class="page-link" href="{{ path('app_admin', {'page': pageNumber, 'limit': limit}) }}">{{ pageNumber }}</a></li>
+    {% endfor %}
+     {% if page < numberOfPages %}
+    <li class="page-item"><a class="page-link" href="{{ path('app_admin', {'page': page+1, 'limit': limit}) }}">Next</a></li>
+    {% else %}
+    <span>Next</span>
+    {% endif %}
+  </ul>
+</nav>
 {% endif %}
 {% endblock %}
