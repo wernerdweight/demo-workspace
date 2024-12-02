@@ -44,6 +44,7 @@ class PageController extends AbstractController
         return $this->render('game.html.twig', [
             'text' => $location->getLocationText(),
             'choices' => $choices,
+            'imagePath' => $location->getImagePath(),
         ]);
     }
 

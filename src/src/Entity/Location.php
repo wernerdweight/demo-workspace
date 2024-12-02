@@ -37,6 +37,9 @@ class Location
     #[ORM\OneToMany(mappedBy: 'parent', targetEntity: Location::class)]
     private Collection $children;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $imagePath;
+
     public function __construct()
     {
         $this->choices = new ArrayCollection();
@@ -129,6 +132,17 @@ class Location
                 $choice->setFromLocation(null);
             }
         }
+        return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return $this->imagePath;
+    }
+
+    public function setImagePath(?string $imagePath): self
+    {
+        $this->imagePath = $imagePath;
         return $this;
     }
 }

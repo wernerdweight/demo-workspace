@@ -14,8 +14,14 @@
     </header>
 
     <main>
+        <section class="game-image">
+        {% if imagePath %}
+            <img src="{{ asset(imagePath) }}" alt="Obrázek lokace" class="location-image">
+        {% endif %}
+        </section>
+
         <section class="game-text">
-            <p id="location-text">{{ text }}</p>
+            <p id="location-text">{{ text|nl2br }}</p>
         </section>
         
         <section id="choices">
@@ -34,8 +40,20 @@
         </section>
 
     </main>
-
+    <button id="audio-btn" class="audio-btn">Zapnout/vypnout zvuk</button>
+    <audio id="audio" src="{{ asset('audio/example.mp3') }}" loop></audio>
     <script>
+        const audio = document.getElementById('audio');
+        const audioBtn = document.getElementById('audio-btn');
+        audioBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+        audioBtn.click();
+
     const choiceHandler = async (event) => {
                 event.preventDefault();
                 const button = event.target;

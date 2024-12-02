@@ -353,9 +353,19 @@ table td:first-child {
 }
 
 .pagination .page-item:first-child .page-link {
-    border-radius: 4px 0 0 4px; /* Zaoblené rohy pro první tlačítko */
+    border-radius: 4px 0 0 4px; 
 }
 
 .pagination .page-item:last-child .page-link {
-    border-radius: 0 4px 4px 0; /* Zaoblené rohy pro poslední tlačítko */
+    border-radius: 0 4px 4px 0; 
+}
+br {
+    display: block;
+    margin-bottom: 10px; 
+}
+.location-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
