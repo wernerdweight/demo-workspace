@@ -13,39 +13,40 @@
         {% endblock %}
     </head>
     <body>
-    {% block body %}
+    {% block header  %}
 <div id="header">
   <div class="container">
     <nav>
     {% block logo %}
       <a href="#" class="logo">Josef.</a>
-      {% endblock %}
+      {% endblock logo %}
       <ul id="sidemenu">
-      {% block zahlavi %}
+     
         <li><a href="#header">Domů</a></li>
         <li><a href="#about">O mně</a></li>
         <li><a href="#services">Služby</a></li>
         <li><a href="#portofolio">Portofolio</a></li>
         <li><a href="#contact">Kontakt</a></li>
         <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-        {% endblock %}
       </ul>
       <i class="fa-solid fa-bars" onclick="openmenu()"></i>
     </nav>
+     {% endblock header %}
     <div class="header-text">
-    {% block header %}
+    {% block body %}
       <p>Web developer & PPC specialista</p>
       <h1>Ahoj! Jmenuji se <span>Josef</span><br>a zaručuji nejlepší webové stránky!</h1>
     </div>
   </div>
-  {% endblock header %}
+  {% endblock body %}
 </div>
+
 <div id="about">
 {% block about %}
   <div class="container">
     <dic class="row">
       <div class="about-col-1">
-        <img src="IMG_3505.png">
+        <img src="{{asset('Images/IMG.png')}}">
       </div>
       <div class="about-col-2">
         <h1 class="sub-title">O mně</h1>
@@ -58,32 +59,32 @@
         </div>
         <div class="tab-contents active-tab" id="skills">
           <ul>
-            <li><span>UI/UX</span><br>Web developer/PPC specialista</li>
-            <li><span>Web Development</span><br>Web app Development</li>
-            <li><span>App Development</span><br>Building Android/ios apps</li>
+            <li><span>UI/UX</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>Web Development</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>PPC specialist</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
 
           </ul>
         </div>
         <div class="tab-contents" id="experience">
           <ul>
-            <li><span>2021 - Current</span><br>Web developer/PPC specialista</li>
-            <li><span>Web Development</span><br>Web app Development</li>
-            <li><span>App Development</span><br>Building Android/ios apps</li>
+            <li><span>2021 - ......</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>2022 - ......</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>2023 - ......</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
 
           </ul>
         </div>
         <div class="tab-contents" id="education">
           <ul>
-            <li><span>UI/UX</span><br>Web developer/PPC specialista</li>
-            <li><span>Web Development</span><br>Web app Development</li>
-            <li><span>App Development</span><br>Building Android/ios apps</li>
+            <li><span>UI/UX</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>Web Development</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>PPC specialist</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
 
           </ul>
         </div>
       </div>
     </dic>
   </div>
-  {% endblock %}
+  {% endblock about %}
 </div>
 
 <div id="services">
@@ -94,21 +95,21 @@
       <div>
         <i class="fa-solid fa-code"></i>
         <h2>Web Design</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <a href="#">Zjistit více</a>
+        <p>{{services.webdesign}}</p>
+        <a href="#">Zjistit více</a> 
       </div>
 
       <div>
         <i class="fa-solid fa-crop"></i>
         <h2>UI/UX Design</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>{{services.uiuxdesign}}</p>
         <a href="#">Zjistit více</a>
       </div>
 
       <div>
         <i class="fa-brands fa-app-store"></i>
         <h2>PPC specialista</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <p>{{services.ppc}}</p>
         <a href="#">Zjistit více</a>
       </div>
     </div>
@@ -122,31 +123,31 @@
     <h1 class="sub-title">Má práce</h1>
     <div class="work-list">
       <div class="work">
-        <img src="img portfolio1.jpg">
+        <img src="{{asset('Images/img portfolio1.jpg')}}" class="my-image-class">
         <div class="layer">
           <h3>Web Design</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>{{services.webdesign}}</p>
           <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
       <div class="work">
-        <img src="img portfolio4.jpg">
+        <img src="{{asset('Images/img portfolio4.jpg')}}" class="my-image-class">
         <div class="layer">
           <h3>UI/UX Design</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>{{services.uiuxdesign}}</p>
           <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
       <div class="work">
-        <img src="img portfolio6.jpg">
+        <img src="{{asset('Images/img portfolio6.jpg')}}" class="my-image-class">
         <div class="layer">
-          <h3>Online shopping App</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3>PPC</h3>
+          <p>{{services.ppc}}</p>
           <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
     </div>
-    <a href="#" class="btn">Více</a>
+    <a href="{{ path('app_contact') }}" class="btn">Více</a> 
   </div>
   {% endblock portofolio %}
 </div>
@@ -167,12 +168,7 @@
         </div>
       </div>
       <div class="contact-right">
-        <form>
-          <input type="text" name="Name" placeholder="Jméno" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <textarea name="Message" rows="6" placeholder="Váše zpráva"></textarea>
-          <button type="submit" class="btn btn2">Odeslat</button>
-        </form>
+       {% include "formular/form.html.twig" %} 
       </div>
     </div>
     {% endblock %}
@@ -181,11 +177,76 @@
   {% block copyright %} 
     <p>Copyright © Josef. Webdevelopment Master <i class="fa-solid fa-heart"></i></p>
   </div>
-  {% endblock %}
 </div>
-
-
-
 {% endblock %}
+{% block java %}
+<script>
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab(tabname) {
+    for(tablink of tablinks) {
+      tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents) {
+      tabcontent.classList.remove("active-tab");
+  }
+  event.currentTarget.classList.add("active-link");
+  document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
+
+<script>
+  var sidemenu = document.getElementById("sidemenu");
+  function openmenu(){
+    sidemenu.style.right = "0";
+  }
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+  }
+</script>
+<script>
+  const form=document.querySelector('Form')
+  form.addEventListener('submit', (event)=>{
+    event.preventDefault()
+
+    let isValid=true
+
+    const inputs = form.querySelectorAll('input')
+    inputs.forEach(input => {
+      if (input.name==="name"){
+        const error = form.querySelector('#NameError')
+        if (input.value.length < 5) {
+          isValid=false
+          error.style.opacity = 1 
+          if (input.value.length === 0) {
+            error.textContent = "Zadejte jméno a příjmení"
+          } else {
+            error.textContent = "Jméno musí mít alespoň 5 čísel"
+          }
+
+        } else {
+          error.style.opacity = 0
+        }
+      }
+      if (input.name === 'email') {
+        const error = form.querySelector ('#EmailError')
+        if (null === input.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+          isValid=false
+          error.style.opacity = 1 
+        } else {
+          error.style.opacity = 0
+        }
+      }
+    })
+
+    if (isValid) {
+      event.target.submit()
+    }
+
+  })
+  {% endblock %}
+  </script>
+
 </html>
+
 

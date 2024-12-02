@@ -276,7 +276,7 @@ nav ul li a:hover::after {
   color: #00DF81;
   transform: translateY(-5px);
 }
-.btn.btn2 {
+.btn .btn2 {
   display: inline-block;
   background: #00DF81;
 }
@@ -290,7 +290,7 @@ form input, form textarea {
   background: #fff;
   padding: 15px;
   margin: 15px 0;
-  color: #00DF81;
+  color: black;
   font-size: 18px;
   border-radius: 6px;
 }
@@ -299,6 +299,8 @@ form .btn2 {
   font-size: 18px;
   margin-top: 20px;
   cursor: pointer;
+  display: inline-block;
+  background: #00DF81;
 }
 .copyright {
   width: 100%;
@@ -376,5 +378,3 @@ nav ul .fa-solid {
   font-size: 14px;
 }
 }
-
-

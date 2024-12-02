@@ -325,6 +325,19 @@
     nav .fa-solid {
       display: none;
     }
+  
+    form fieldset {
+      width: 100%;
+      border: 0;
+      outline: none;
+      background: #fff;
+      padding: 15px;
+      margin: 15px 0;
+      color: black;
+      font-size: 18px;
+      border-radius: 6px;
+   }
+   
 
     @media only screen and (max-width: 600px) {
       #header {
@@ -432,25 +445,25 @@
         </div>
         <div class="tab-contents active-tab" id="skills">
           <ul>
-            <li><span>UI/UX</span><br>Web developer/PPC specialista</li>
-            <li><span>Web Development</span><br>Web app Development</li>
-            <li><span>App Development</span><br>Building Android/ios apps</li>
+            <li><span>UI/UX</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>Web Development</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>PPC specialist</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
 
           </ul>
         </div>
         <div class="tab-contents" id="experience">
           <ul>
-            <li><span>2021 - Current</span><br>Web developer/PPC specialista</li>
-            <li><span>Web Development</span><br>Web app Development</li>
-            <li><span>App Development</span><br>Building Android/ios apps</li>
+            <li><span>2021 - ......</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>2022 - ......</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>2023 - ......</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
 
           </ul>
         </div>
         <div class="tab-contents" id="education">
           <ul>
-            <li><span>UI/UX</span><br>Web developer/PPC specialista</li>
-            <li><span>Web Development</span><br>Web app Development</li>
-            <li><span>App Development</span><br>Building Android/ios apps</li>
+            <li><span>UI/UX</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>Web Development</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li><span>PPC specialist</span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
 
           </ul>
         </div>
@@ -510,7 +523,7 @@
       <div class="work">
         <img src="img portfolio6.jpg">
         <div class="layer">
-          <h3>Online shopping App</h3>
+          <h3>PPC</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
@@ -536,10 +549,17 @@
       </div>
       <div class="contact-right">
         <form>
-          <input type="text" name="Name" placeholder="Jméno" required>
-          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="Name" placeholder="Jméno" required> 
+          <input type="email" name="email" placeholder="Email" required> 
+          <fieldset>
+            <select name="possibility" id="possibility">
+                <option value="web design">Web Design</option>
+                <option value="ui/ux design">UI/UX Design</option>
+                <option value="ppc">PPC</option>
+            </select>
+        </fieldset>
           <textarea name="Message" rows="6" placeholder="Váše zpráva"></textarea>
-          <button type="submit" class="btn btn2">Odeslat</button>
+          <button type="submit" class="btn btn2">Odeslat</button>  
         </form>
       </div>
     </div>
@@ -574,5 +594,47 @@
   }
 </script>
 
+<script>
+  const form=document.querySelector('#myForm')
+  form.addEventListener('submit', (event)=>{
+    console.log(event)
+    event.preventDefault()
+
+    let isValid=true
+
+    const inputs = form.querySelectorAll('input')
+    inputs.forEach(input => {
+      if (input.name==="name"){
+        const error = form.querySelector('nameError')
+        if (input.value.length < 5) {
+          isValid=false
+          error.style.opacity = 1 
+          if (input.value.length === 0) {
+            error.textContent = "Zadejte jméno a příjmení"
+          } else {
+            error.textContent = "Jméno musí mít alespoň 5 čísel"
+          }
+
+        } else {
+          error.style.opacity = 0
+        }
+      }
+      if (input.name === 'email') {
+        const error = form.querySelector ('emailError')
+        if (null === input.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+          isValid=false
+          error.style.opacity = 1 
+        } else {
+          error.style.opacity = 0
+        }
+      }
+    })
+
+    if (isValid) {
+      event.target.submit()
+    }
+
+  })
+</script>
 </body>
 </html>
