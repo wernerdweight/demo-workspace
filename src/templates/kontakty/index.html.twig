@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recenze{% endblock %}
+
+{% block body %}
+
+<h3>Pošlete recenzi</h3>
+<div class="form-recenze-container">
+    {% for message in app.flashes('success') %}
+        <div style="color: green;">{{ message }}</div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        <div style="color: red;">{{ message }}</div>
+    {% endfor %}
+
+    {% if user_email %}
+        <p>Váš Email: <strong>{{ user_email }}</strong></p>
+        <form method="post" action="{{ path('app_kontakty') }}">
+            <textarea name="review" placeholder="Napiště recenzi..." required></textarea>
+            <button type="submit">Odeslat</button>
+        </form>
+    {% else %}
+        <p>Musíte se přihlásit, aby jste mohli odeslat recenzi.</p>
+    {% endif %}
+</div>
+{% endblock %}

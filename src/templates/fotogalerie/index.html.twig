@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fotogalerie{% endblock %}
+
+{% block body %}
+
+<h3> Fotogalerie</h3>
+
+<div class="grid-container">
+    {% for recept in foto %}
+        {% if recept.imagepath is not null %}
+            <div class="grid-item">
+                <img src="{{ asset(recept.imagepath) }}" alt="{{ recept.nazev }}">
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

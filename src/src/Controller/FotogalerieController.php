@@ -6,16 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\ReceptyRepository;
+use App\Entity\Recepty;
 
-class ReceptyController extends AbstractController
+class FotogalerieController extends AbstractController
 {
-    #[Route('/recepty', name: 'app_recepty')]
+    #[Route('/fotogalerie', name: 'app_fotogalerie')]
     public function index(ReceptyRepository $repository): Response
     {
-        $recepty = $repository->findAll();
+        $foto = $repository->findAll();
 
-        return $this->render('Recepty/index.html.twig', [
-            "recepty" => $recepty,
+        return $this->render('fotogalerie/index.html.twig', [
+            'foto' =>  $foto,
         ]);
     }
 }

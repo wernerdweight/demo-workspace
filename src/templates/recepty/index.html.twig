@@ -5,7 +5,7 @@
 {% block body %}
 
 {% for recept in recepty %}
-<a href="{{path('app_recept', {"id":recept.id})}}">{{recept.nazev}}</a><br>
+        <a href="{{ path('app_recept', { nazev: recept.nazev }) }}">{{ recept.nazev }}</a><br>
 {% endfor %}
 
 {% endblock %}

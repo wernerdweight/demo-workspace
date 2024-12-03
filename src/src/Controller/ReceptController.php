@@ -12,20 +12,22 @@ use App\Entity\Ingredience;
 
 class ReceptController extends AbstractController
 {
-    #[Route('/Recepty/{id}', name: 'app_recept')]
-    public function index(ManagerRegistry $doctrine, Recepty $recipe): Response
-    {
+    #[Route('/recepty/{nazev}', name: 'app_recept')]
+public function index(ManagerRegistry $doctrine, string $nazev): Response
+{
+    $recipe = $doctrine->getRepository(Recepty::class)->findOneBy(['nazev' => $nazev]);
 
-            if (!$recipe) {
-                throw $this->createNotFoundException('Recipe not found.');
-            }
-
-            return $this->render('Recept/index.html.twig', [
-                'nazev' => $recipe->getNazev(),
-                'suroviny' => $recipe->getIngredience(),
-                'postup' => $recipe->getPostup(),
-                'imgpath' => $recipe->getImagepath(),
-                'obtiznost' => $recipe->getObtiznost(),
-        ]);
+    if (!$recipe) {
+        throw $this->createNotFoundException("Recipe with name '$nazev' not found.");
     }
+
+    return $this->render('Recept/index.html.twig', [
+        'nazev' => $recipe->getNazev(),
+        'suroviny' => $recipe->getIngredience(),
+        'postup' => $recipe->getPostup(),
+        'imgpath' => $recipe->getImagepath(),
+        'obtiznost' => $recipe->getObtiznost(),
+    ]);
+}
+
 }

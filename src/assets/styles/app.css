@@ -169,6 +169,13 @@ input[type="text"], input[type="password"], input[type="email"]{
     width: 100%;
     padding: 10px;
 }
+textarea{
+    margin: 20px 0;
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    resize: vertical;
+}
 label {
     font-size: 26px;
     display:block;
@@ -246,5 +253,10 @@ button[type="submit"]:hover {
     max-height: 50px;
     display: flex;
     align-self: center;
+  }
+
+  .form-recenze-container {
+    width: 40%;
+    margin: 0 auto;
   }
   

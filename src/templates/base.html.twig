@@ -38,8 +38,10 @@
         <nav>
             <a href="{{path('app_home')}}"> Domov</a>
             <a href="{{path('app_recepty')}}"> Recepty</a>
-            <a href="#"> Fotogalerie</a>
-            <a href="#"> Kontakty</a>
+            <a href="{{path('app_fotogalerie')}}"> Fotogalerie</a>
+            {% if is_granted('ROLE_USER') %}
+            <a href="{{path('app_kontakty')}}"> Recenze</a>
+            {% endif %}
             {% if is_granted('ROLE_ADMIN') %}
             <a href="{{path('app_vytvoreni_receptu')}}"> Vytvoření receptu</a>
             {% endif %}
