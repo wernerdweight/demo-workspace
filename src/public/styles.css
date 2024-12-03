@@ -144,8 +144,10 @@ h1, h2, h3, h4, h5, h6 {
 audio {
     display: none;
 }
-/* .location-image {
-    max-width: 100%;
-    height: auto;
-} */
+.location-image {
+    max-width: 50%;
+    max-height: 50%;
+
+
+}
 

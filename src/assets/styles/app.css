@@ -365,7 +365,7 @@ br {
 }
 .location-image {
     max-width: 100%;
-    height: auto;
+    height: 40vh;
     margin-bottom: 20px;
     border-radius: 8px;
 }
