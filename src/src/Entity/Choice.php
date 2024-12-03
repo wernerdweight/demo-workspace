@@ -24,6 +24,9 @@ class Choice
     #[ORM\Column(length: 255)]
     private ?string $choiceText = null;
 
+    #[ORM\ManyToOne]
+    private ?Artefact $requiredArtefact = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +64,18 @@ class Choice
     public function setChoiceText(string $choiceText): static
     {
         $this->choiceText = $choiceText;
+
+        return $this;
+    }
+
+    public function getRequiredArtefact(): ?Artefact
+    {
+        return $this->requiredArtefact;
+    }
+
+    public function setRequiredArtefact(?Artefact $requiredArtefact): static
+    {
+        $this->requiredArtefact = $requiredArtefact;
 
         return $this;
     }

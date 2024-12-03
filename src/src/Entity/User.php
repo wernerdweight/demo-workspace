@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -39,6 +41,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $currentPosition = null;
+
+    /**
+     * @var Collection<int, Artefact>
+     */
+    #[ORM\ManyToMany(targetEntity: Artefact::class)]
+    private Collection $artefacts;
+
+    public function __construct()
+    {
+        $this->artefacts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -135,6 +148,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCurrentPosition(?string $currentPosition): static
     {
         $this->currentPosition = $currentPosition;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Artefact>
+     */
+    public function getArtefacts(): Collection
+    {
+        return $this->artefacts;
+    }
+
+    public function addArtefact(Artefact $artefact): static
+    {
+        if (!$this->artefacts->contains($artefact)) {
+            $this->artefacts->add($artefact);
+        }
+
+        return $this;
+    }
+
+    public function removeArtefact(Artefact $artefact): static
+    {
+        $this->artefacts->removeElement($artefact);
 
         return $this;
     }

@@ -23,14 +23,27 @@
         <section class="game-text">
             <p id="location-text">{{ text|nl2br }}</p>
         </section>
+            {% if artefacts|length > 0 %}
+        <section class="artefact">
+        {% for artefact in artefacts|filter(artefact => not app.user.artefacts.contains(artefact)) %}
+            <button class="artefact-btn" data-artefact-id="{{ artefact.id }}">
+                {{ artefact.name }}
+            </button>
+        {% endfor %}
+        </section>
+                {% endif %}
         
         <section id="choices">
             {% for choice in choices %}
             {# {{ dump(currentPosition) }} #}
                     {# {% if currentPosition == choice.fromLocation.position %} #}
             <button 
+                    {% if choice.requiredArtefact is null or app.user.artefacts.contains(choice.requiredArtefact) %}
                     data-choice-id="{{ choice.id }}" 
-                    class="choice-btn">
+                    class="choice-btn"
+                    {% else %}
+                    disabled
+                    {% endif %}>
                     {{ choice.choiceText }}
             </button>
                     {# {% else %}
@@ -41,7 +54,7 @@
 
     </main>
     <button id="audio-btn" class="audio-btn">Zapnout/vypnout zvuk</button>
-    <audio id="audio" src="{{ asset('audio/example.mp3') }}" loop></audio>
+    <audio id="audio" src="{{ asset('audio/wholeGame.mp3') }}" loop></audio>
     <script>
         const audio = document.getElementById('audio');
         const audioBtn = document.getElementById('audio-btn');
@@ -90,5 +103,27 @@
         document.querySelectorAll('.choice-btn').forEach(button => {
             button.addEventListener('click', choiceHandler); 
 });
+const artefactHandler = async (event) => {
+                event.preventDefault();
+                const button = event.target;
+                const artefactId = button.dataset.artefactId;
+
+                const response = await fetch('{{ path('collect') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ artefactId })
+                });
+
+                if (response.ok) {
+                    button.remove();
+                    
+                } else {
+                    console.error('Chyba při sebrání artefaktu:', response.statusText);
+                }
+            };
+        document.querySelectorAll('.artefact-btn').forEach(button => {
+            button.addEventListener('click', artefactHandler);})
     </script>
 {% endblock %}

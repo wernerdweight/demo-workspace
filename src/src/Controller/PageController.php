@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Entity\Choice;
+use App\Entity\Artefact;
 
 class PageController extends AbstractController
 {
@@ -30,7 +31,7 @@ class PageController extends AbstractController
     {
         /** @var User $user */
         $user = $this->getUser();
-        $currentPosition = $user->getCurrentPosition() ?? '0';
+        $currentPosition = $user->getCurrentPosition() ?? '1';
 
         $location = $em->getRepository(Location::class)->findOneBy(['position' => $currentPosition]);
 
@@ -45,6 +46,7 @@ class PageController extends AbstractController
             'text' => $location->getLocationText(),
             'choices' => $choices,
             'imagePath' => $location->getImagePath(),
+            'artefacts' => $location->getArtefacts(),
         ]);
     }
 
@@ -70,6 +72,9 @@ class PageController extends AbstractController
         if ($user->getCurrentPosition() !== $choice->getFromLocation()->getPosition()) {
             throw $this->createNotFoundException('Nezlob!');
         }
+        if ($choice->getRequiredArtefact() && !$user->getArtefacts()->contains($choice->getRequiredArtefact())) {
+            throw $this->createNotFoundException('Nemáš potřebný artefakt!');
+        }
         $user->setCurrentPosition($targetLocation->getPosition());
         $em->flush();
 
@@ -84,6 +89,33 @@ class PageController extends AbstractController
                     ],
                 ];
             }, $targetLocation->getChoices()->toArray()),
+        ]);
+    }
+    #[Route('/collect', name: 'collect', methods: ['POST'])]
+    public function collect(Request $request, EntityManagerInterface $em): Response
+    {
+        $data = json_decode($request->getContent(), true);
+        $artefactId = isset($data['artefactId']) ? (int)$data['artefactId'] : 0;
+
+        $artefact = $em->getRepository(Artefact::class)->find($artefactId);
+
+        if (!$artefact) {
+            throw $this->createNotFoundException('Artefakt nenalezen.');
+        }
+
+        /** @var User $user */
+        $user = $this->getUser();
+        if ($user->getCurrentPosition() !== $artefact->getLocation()->getPosition()) {
+            throw $this->createNotFoundException('Nezlob!');
+        }
+        if ($user->getArtefacts()->contains($artefact)) {
+            throw $this->createNotFoundException('Artefakt již máš!');
+        }
+        $user->addArtefact($artefact);
+        $em->flush();
+
+        return $this->json([
+            'success' => true,
         ]);
     }
 }

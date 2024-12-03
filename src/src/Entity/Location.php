@@ -40,10 +40,17 @@ class Location
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imagePath;
 
+    /**
+     * @var Collection<int, Artefact>
+     */
+    #[ORM\OneToMany(targetEntity: Artefact::class, mappedBy: 'location', orphanRemoval: true)]
+    private Collection $artefacts;
+
     public function __construct()
     {
         $this->choices = new ArrayCollection();
         $this->children = new ArrayCollection();
+        $this->artefacts = new ArrayCollection();
     }
 
     public function getParent(): ?Location
@@ -143,6 +150,36 @@ class Location
     public function setImagePath(?string $imagePath): self
     {
         $this->imagePath = $imagePath;
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Artefact>
+     */
+    public function getArtefacts(): Collection
+    {
+        return $this->artefacts;
+    }
+
+    public function addArtefact(Artefact $artefact): static
+    {
+        if (!$this->artefacts->contains($artefact)) {
+            $this->artefacts->add($artefact);
+            $artefact->setLocation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArtefact(Artefact $artefact): static
+    {
+        if ($this->artefacts->removeElement($artefact)) {
+            // set the owning side to null (unless already changed)
+            if ($artefact->getLocation() === $this) {
+                $artefact->setLocation(null);
+            }
+        }
+
         return $this;
     }
 }

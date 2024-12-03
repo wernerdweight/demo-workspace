@@ -1,16 +1,16 @@
 :root {
-    --primary-color: #FFA500; 
-    --secondary-color: #FFDDC1; 
-    --text-color: #2E8B57; 
-    --hover-color: #fa9450;
-    --hover-text-color: white; 
-    --heading-color: #fa9450;; 
+    --primary-color: #FFA500;
+    --secondary-color: #FFDDC1;
+    --text-color: #2E8B57;
+    --hover-color: #fa9450; /* Používám hodnotu z druhého souboru, protože je novější */
+    --hover-text-color: white;
+    --heading-color: #fa9450; /* Používám hodnotu z druhého souboru */
 }
 
 body {
-    font-family: 'Press Start 2P', cursive; 
+    font-family: 'Press Start 2P', cursive;
     background-color: var(--secondary-color);
-    color: var(--text-color); 
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
     line-height: 1.5;
@@ -22,7 +22,7 @@ header {
 
 h1 {
     font-size: 3em;
-    color: var(--heading-color); 
+    color: var(--heading-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 .menu button,
 .login-button,
 .login-form button {
-    font-family: 'Press Start 2P', cursive; 
+    font-family: 'Press Start 2P', cursive;
     font-size: 1.1em;
     padding: 10px 20px;
     margin: 10px;
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color);
     color: var(--text-color);
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s ease; 
+    transition: background-color 0.3s, transform 0.2s ease;
     width: 80%;
     max-width: 300px;
     box-sizing: border-box;
@@ -49,20 +49,20 @@ h1, h2, h3, h4, h5, h6 {
 .menu button:hover,
 .login-button:hover,
 .login-form button:hover {
-    background-color: var(--hover-color); 
-    transform: translateY(-2px) rotate(1deg); 
-    color: var(--hover-text-color); 
+    background-color: var(--hover-color);
+    transform: translateY(-2px) rotate(1deg);
+    color: var(--hover-text-color);
 }
 
 .login-button {
-    font-size: 0.8em; 
+    font-size: 0.8em;
     padding: 8px 16px;
     background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s ease; 
-    width: 60%; 
+    transition: background-color 0.3s, transform 0.2s ease;
+    width: 60%;
     max-width: 250px;
 }
 
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .login-button {
-        font-size: 1em; 
+        font-size: 1em;
         width: 70%;
     }
 }
@@ -96,27 +96,26 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: var(--text-color); 
+    color: var(--text-color);
 }
 
 .login-form input {
-    width: 100%; 
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 100%;
+    padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .login-form button {
-    font-family: 'Press Start 2P', cursive; 
+    font-family: 'Press Start 2P', cursive;
     background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
     padding: 10px;
     cursor: pointer;
-    width: 100%; 
-    transition: background-color 0.3s, transform 0.2s ease; 
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .login-form button:hover {
@@ -129,11 +128,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .register-link a {
     color: var(--primary-color);
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .register-link a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 .error {
@@ -143,30 +142,40 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
 }
 
+audio {
+    display: none;
+}
+
+.location-image {
+    max-width: 100%;
+    height: 40vh; /* Hodnota z druhého souboru */
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
 .form-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .form-box {
-    width: 45%; 
+    width: 45%;
 }
 
 #tree-view {
     font-family: 'Press Start 2P', cursive;
     font-size: 16px;
     padding: 10px;
-    background-color: #FAF0E6; 
-    border: 1px solid #F4A300; 
+    background-color: #FAF0E6;
+    border: 1px solid #F4A300;
     border-radius: 5px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 20px auto;
     overflow-x: auto;
-    margin-top: 20px;
 }
 
 .tree-level {
@@ -180,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .tree-node {
     padding: 10px;
-    background-color: #5e58b4; 
+    background-color: #5e58b4;
     border-radius: 4px;
     margin: 10px;
     width: 500px;
@@ -188,17 +197,17 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     display: inline-block;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
 }
 
 .tree-node:hover {
     background-color: #aacfac;
-    color: var(--text-color); 
+    color: var(--text-color);
 }
 
 .first-level {
     font-weight: bold;
-    background-color: var(--secondary-color); 
+    background-color: var(--secondary-color);
     color: var(--text-color);
 }
 
@@ -219,8 +228,8 @@ table th, table td {
 }
 
 table th {
-    background-color: var(--primary-color);
-    color: var(--hover-text-color);
+    background-color: var(--heading-color);
+    color: white;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -239,80 +248,6 @@ table tr:hover {
     color: var(--hover-text-color);
 }
 
-table td:first-child {
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.table-empty {
-    font-style: italic;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.table th {
-    background-color: var(--heading-color);
-    color: white;
-}
-
-.table tbody tr:hover {
-    background-color: var(--hover-color);
-    color: var(--hover-text-color);
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination .pagination_link {
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 4px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.pagination .pagination_link:hover {
-    background-color: var(--hover-color);
-    color: var(--hover-text-color);
-}
-
-.nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.nav-item {
-    margin-right: 10px;
-}
-
-.nav-link {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    border-radius: 4px 4px 0 0;
-    text-decoration: none;
-    color: #333;
-}
-
-.nav-link.active {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.nav-link:hover {
-    background-color: var(--hover-color);  
-}
-
-.tab-content {
-    display: none;
-}
 .pagination {
     display: flex;
     justify-content: center;
@@ -351,21 +286,35 @@ table td:first-child {
     color: #aaa;
     cursor: not-allowed;
 }
-
-.pagination .page-item:first-child .page-link {
-    border-radius: 4px 0 0 4px; 
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-.pagination .page-item:last-child .page-link {
-    border-radius: 0 4px 4px 0; 
+.nav-item {
+    margin-right: 10px;
 }
-br {
-    display: block;
-    margin-bottom: 10px; 
+
+.nav-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 4px 4px 0 0;
+    text-decoration: none;
+    color: #333;
 }
-.location-image {
-    max-width: 100%;
-    height: 40vh;
-    margin-bottom: 20px;
-    border-radius: 8px;
+
+.nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: var(--hover-color);  
+}
+
+.tab-content {
+    display: none;
 }
