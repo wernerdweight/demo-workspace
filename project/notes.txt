@@ -1,4 +1,0 @@
-Poznámky
-Na hover se změní ikona a backroung color
-Na klik zůstane změněná ikona a background color
-Při klinutí na nový prvek se musí změnit na nově kliknutý a odebrat z toho starého
