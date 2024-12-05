@@ -32,10 +32,7 @@ class PageController extends AbstractController
         /** @var User $user */
         $user = $this->getUser();
 
-        // Zkontrolujeme, zda má uživatel pozici 0 (nová hra) nebo aktuální pozici
         $currentPosition = $user->getCurrentPosition() ?? '1';
-
-        // Pokud je pozice 0, načteme výchozí pozici pro novou hru
         if ($currentPosition == '0') {
             $location = $em->getRepository(Location::class)->findOneBy(['position' => 0]);
         } else {
@@ -65,16 +62,14 @@ class PageController extends AbstractController
         /** @var User $user */
         $user = $this->getUser();
 
-        // Smazání všech artefaktů uživatele (ale artefakty zůstanou v databázi)
         foreach ($user->getArtefacts() as $artefact) {
-            $user->removeArtefact($artefact); // Odstranit artefakt z uživatele
+            $user->removeArtefact($artefact);
         }
 
-        // Nastavíme pozici uživatele na 0 pro novou hru
         $user->setCurrentPosition(0);
         $em->flush();
 
-        return $this->redirectToRoute('game');  // Po nové hře přesměrujeme na hru
+        return $this->redirectToRoute('game');
     }
 
     #[Route('/move', name: 'move', methods: ['POST'])]

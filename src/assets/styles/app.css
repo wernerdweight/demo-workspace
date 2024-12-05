@@ -360,6 +360,14 @@ table tr:hover {
     border-color: var(--hover-color);
     transform: translateY(-2px) rotate(1deg);
 }
+.choice-btn:disabled {
+    background-color: var(--secondary-color); /* Můžeš změnit na jinou barvu pro deaktivované tlačítko */
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    cursor: not-allowed; /* Mění kurzor na "zakázaný" */
+    opacity: 0.6; /* Změní průhlednost pro lepší zobrazení deaktivovaného stavu */
+}
+
 .artefact-btn {
     background-color: var(--primary-color);
     color: var(--text-color);

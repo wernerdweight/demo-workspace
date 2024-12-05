@@ -45,6 +45,7 @@
                     class="choice-btn"
                     {% else %}
                     disabled
+                    class="choice-btn"
                     {% endif %}>
                     {{ choice.choiceText }}
                 </button>
@@ -71,38 +72,51 @@
         });
         audioBtn.click();
 
-        const choiceHandler = async (event) => {
-            event.preventDefault();
-            const button = event.target;
-            const choiceId = button.dataset.choiceId;
+const choiceHandler = async (event) => {
+    event.preventDefault();
+    const button = event.target;
+    const choiceId = button.dataset.choiceId;
 
-            const response = await fetch('{{ path('move') }}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ choiceId })
+    const response = await fetch('{{ path('move') }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ choiceId })
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+
+        document.getElementById('location-text').innerText = data.text;
+
+        const choicesContainer = document.getElementById('choices');
+        choicesContainer.innerHTML = ''; 
+
+        data.choices.forEach(choice => {
+            const btn = document.createElement('button');
+            btn.innerText = choice.choiceText;
+            btn.dataset.choiceId = choice.id;
+            btn.classList.add('choice-btn');
+            btn.addEventListener('click', choiceHandler);
+            choicesContainer.appendChild(btn);
+        });
+
+        const artefactsContainer = document.querySelector('.artefact');
+        if (artefactsContainer) {
+            artefactsContainer.innerHTML = ''; 
+            data.artefacts.forEach(artefact => {
+                const artefactBtn = document.createElement('button');
+                artefactBtn.classList.add('artefact-btn');
+                artefactBtn.dataset.artefactId = artefact.id;
+                artefactBtn.innerText = artefact.name;
+                artefactsContainer.appendChild(artefactBtn);
+                artefactBtn.addEventListener('click', artefactHandler);
             });
-
-            if (response.ok) {
-                const data = await response.json();
-
-                document.getElementById('location-text').innerText = data.text;
-
-                const choicesContainer = document.getElementById('choices');
-                choicesContainer.innerHTML = ''; 
-
-                data.choices.forEach(choice => {
-                    const btn = document.createElement('button');
-                    btn.innerText = choice.choiceText;
-                    btn.dataset.choiceId = choice.id;
-                    btn.classList.add('choice-btn');
-                    btn.addEventListener('click', choiceHandler);
-                    choicesContainer.appendChild(btn);
-                });
-            } else {
-                console.error('Chyba při získávání nové pozice:', response.statusText);
-            }
+        }
+    } else {
+        console.error('Chyba při získávání nové pozice:', response.statusText);
+    }
         };
         document.querySelectorAll('.choice-btn').forEach(button => {
             button.addEventListener('click', choiceHandler); 

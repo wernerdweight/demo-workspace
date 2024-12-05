@@ -16,9 +16,7 @@
     <main>
         <section class="menu">
         {% if app.user %}
-            <!-- Nová hra směruje na start_new_game -->
             <button onclick="startNewGame()">Nová hra</button>
-            <!-- Pokračovat směruje na game -->
             <button onclick="continueGame()">Pokračovat</button>
         {% endif %}
         </section>
@@ -33,11 +31,11 @@
 
         <script>
             function startNewGame() {
-                window.location.href = '{{ path('start_new_game') }}';  // Směruje na Novou hru
+                window.location.href = '{{ path('start_new_game') }}';  
             }
 
             function continueGame() {
-                window.location.href = '{{ path('game') }}';  // Směruje na Pokračování
+                window.location.href = '{{ path('game') }}'; 
             }
         </script>
     </main>
