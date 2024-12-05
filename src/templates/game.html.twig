@@ -10,7 +10,9 @@
 
 {% block body %}
     <header>
-        <h1>{{ 'No Bad Choices'|upper }}</h1>
+                <button id="audio-btn" class="audio-btn">Zapnout/vypnout zvuk</button>
+    <audio id="audio" src="{{ asset('audio/wholeGame.mp3') }}" loop></audio>
+        <h1>{{ 'No Bad Choices'}}</h1>
     </header>
 
     <main>
@@ -53,8 +55,6 @@
         </section>
 
     </main>
-    <button id="audio-btn" class="audio-btn">Zapnout/vypnout zvuk</button>
-    <audio id="audio" src="{{ asset('audio/wholeGame.mp3') }}" loop></audio>
     <script>
         const audio = document.getElementById('audio');
         const audioBtn = document.getElementById('audio-btn');

@@ -318,3 +318,50 @@ table tr:hover {
 .tab-content {
     display: none;
 }
+
+.audio-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px; 
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 6px 10px; /* Více prostoru kolem textu pro širší tlačítka */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 50%; /* Tlačítka budou mít šířku 80% rodičovského kontejneru */
+    max-width: 200px; /* Maximální šířka tlačítka */
+    margin: 10px;
+}
+
+.audio-btn:hover {
+    background-color: var(--hover-color);
+    color: var(--hover-text-color);
+    border-color: var(--hover-color);
+    transform: translateY(-2px) rotate(1deg);
+}
+.choice-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px; 
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 12px 24px; /* Více prostoru kolem textu pro širší tlačítka */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%; /* Tlačítka budou mít šířku 80% rodičovského kontejneru */
+    max-width: 400px; /* Maximální šířka tlačítka */
+    margin: 10px;
+}
+.choice-btn:hover {
+    background-color: var(--hover-color);
+    color: var(--hover-text-color);
+    border-color: var(--hover-color);
+    transform: translateY(-2px) rotate(1deg);
+}
+.artefact-btn {
+    background-color: #A1C4FF; /* Světle modrá pro artefakty */
+    color: var(--text-color);
+    border-color: #6A98E1; /* Modrá barva pro artefakt */
+}
