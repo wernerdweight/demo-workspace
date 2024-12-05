@@ -31,9 +31,16 @@ class PageController extends AbstractController
     {
         /** @var User $user */
         $user = $this->getUser();
+
+        // Zkontrolujeme, zda má uživatel pozici 0 (nová hra) nebo aktuální pozici
         $currentPosition = $user->getCurrentPosition() ?? '1';
 
-        $location = $em->getRepository(Location::class)->findOneBy(['position' => $currentPosition]);
+        // Pokud je pozice 0, načteme výchozí pozici pro novou hru
+        if ($currentPosition == '0') {
+            $location = $em->getRepository(Location::class)->findOneBy(['position' => 0]);
+        } else {
+            $location = $em->getRepository(Location::class)->findOneBy(['position' => $currentPosition]);
+        }
 
         if (!$location) {
             throw $this->createNotFoundException('Lokace nenalezena.');
@@ -41,13 +48,33 @@ class PageController extends AbstractController
 
         $choices = $location->getChoices();
 
+        $isEnding = $location->getEndingType();
 
         return $this->render('game.html.twig', [
             'text' => $location->getLocationText(),
             'choices' => $choices,
             'imagePath' => $location->getImagePath(),
             'artefacts' => $location->getArtefacts(),
+            'isEnding' => $isEnding,
         ]);
+    }
+
+    #[Route('/start-new-game', name: 'start_new_game')]
+    public function startNewGame(EntityManagerInterface $em): Response
+    {
+        /** @var User $user */
+        $user = $this->getUser();
+
+        // Smazání všech artefaktů uživatele (ale artefakty zůstanou v databázi)
+        foreach ($user->getArtefacts() as $artefact) {
+            $user->removeArtefact($artefact); // Odstranit artefakt z uživatele
+        }
+
+        // Nastavíme pozici uživatele na 0 pro novou hru
+        $user->setCurrentPosition(0);
+        $em->flush();
+
+        return $this->redirectToRoute('game');  // Po nové hře přesměrujeme na hru
     }
 
     #[Route('/move', name: 'move', methods: ['POST'])]
@@ -67,6 +94,7 @@ class PageController extends AbstractController
         if (!$targetLocation) {
             throw $this->createNotFoundException('Cílová lokace nenalezena.');
         }
+
         /** @var User $user */
         $user = $this->getUser();
         if ($user->getCurrentPosition() !== $choice->getFromLocation()->getPosition()) {
@@ -91,6 +119,7 @@ class PageController extends AbstractController
             }, $targetLocation->getChoices()->toArray()),
         ]);
     }
+
     #[Route('/collect', name: 'collect', methods: ['POST'])]
     public function collect(Request $request, EntityManagerInterface $em): Response
     {

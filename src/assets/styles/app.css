@@ -361,7 +361,7 @@ table tr:hover {
     transform: translateY(-2px) rotate(1deg);
 }
 .artefact-btn {
-    background-color: #A1C4FF; /* Světle modrá pro artefakty */
+    background-color: var(--primary-color);
     color: var(--text-color);
-    border-color: #6A98E1; /* Modrá barva pro artefakt */
+    border-color: var(--primary-color)
 }

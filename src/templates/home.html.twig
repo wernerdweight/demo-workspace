@@ -16,25 +16,30 @@
     <main>
         <section class="menu">
         {% if app.user %}
+            <!-- Nová hra směruje na start_new_game -->
             <button onclick="startNewGame()">Nová hra</button>
+            <!-- Pokračovat směruje na game -->
             <button onclick="continueGame()">Pokračovat</button>
-            {% endif %}
+        {% endif %}
         </section>
 
         <section class="login">
         {% if app.user is null %}
             <button class="login-button" onclick="window.location.href='{{ path('app_login') }}'">Přihlásit se</button>
-            {% else %}
+        {% else %}
             <button class="login-button" onclick="window.location.href='{{ path('app_logout') }}'">Odhlásit se</button>
-            {% endif %}
+        {% endif %}
         </section>
 
         <script>
-function startNewGame() {
-    window.location.href = '{{ path('game') }}';
-}
-</script>
+            function startNewGame() {
+                window.location.href = '{{ path('start_new_game') }}';  // Směruje na Novou hru
+            }
 
+            function continueGame() {
+                window.location.href = '{{ path('game') }}';  // Směruje na Pokračování
+            }
+        </script>
     </main>
 
     <footer>

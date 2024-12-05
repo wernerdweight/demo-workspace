@@ -10,36 +10,36 @@
 
 {% block body %}
     <header>
-                <button id="audio-btn" class="audio-btn">Zapnout/vypnout zvuk</button>
-    <audio id="audio" src="{{ asset('audio/wholeGame.mp3') }}" loop></audio>
+        <button id="audio-btn" class="audio-btn">Zapnout/vypnout zvuk</button>
+        <audio id="audio" src="{{ asset('audio/wholeGame.mp3') }}" loop></audio>
         <h1>{{ 'No Bad Choices'}}</h1>
     </header>
 
     <main>
         <section class="game-image">
-        {% if imagePath %}
-            <img src="{{ asset(imagePath) }}" alt="Obrázek lokace" class="location-image">
-        {% endif %}
+            {% if imagePath %}
+                <img src="{{ asset(imagePath) }}" alt="Obrázek lokace" class="location-image">
+            {% endif %}
         </section>
 
         <section class="game-text">
             <p id="location-text">{{ text|nl2br }}</p>
         </section>
-            {% if artefacts|length > 0 %}
+
+        {% if artefacts|length > 0 %}
         <section class="artefact">
-        {% for artefact in artefacts|filter(artefact => not app.user.artefacts.contains(artefact)) %}
-            <button class="artefact-btn" data-artefact-id="{{ artefact.id }}">
-                {{ artefact.name }}
-            </button>
-        {% endfor %}
+        <p>Dostupné předměty v lokaci:</p>
+            {% for artefact in artefacts|filter(artefact => not app.user.artefacts.contains(artefact)) %}
+                <button class="artefact-btn" data-artefact-id="{{ artefact.id }}">
+                    {{ artefact.name }}
+                </button>
+            {% endfor %}
         </section>
-                {% endif %}
-        
+        {% endif %}
+
         <section id="choices">
             {% for choice in choices %}
-            {# {{ dump(currentPosition) }} #}
-                    {# {% if currentPosition == choice.fromLocation.position %} #}
-            <button 
+                <button 
                     {% if choice.requiredArtefact is null or app.user.artefacts.contains(choice.requiredArtefact) %}
                     data-choice-id="{{ choice.id }}" 
                     class="choice-btn"
@@ -47,14 +47,18 @@
                     disabled
                     {% endif %}>
                     {{ choice.choiceText }}
-            </button>
-                    {# {% else %}
-                    <p class="disabled-choice">Nepodváděj!</p>
-                    {% endif %} #}
+                </button>
             {% endfor %}
         </section>
 
+        {% if isEnding %}
+        <section class="back-to-menu">
+            <button class="back-to-menu" onclick="window.location.href = '{{ path('home') }}';">Zpět do hlavního menu</button>
+        </section>
+        {% endif %}
+
     </main>
+
     <script>
         const audio = document.getElementById('audio');
         const audioBtn = document.getElementById('audio-btn');
@@ -67,63 +71,64 @@
         });
         audioBtn.click();
 
-    const choiceHandler = async (event) => {
-                event.preventDefault();
-                const button = event.target;
-                const choiceId = button.dataset.choiceId;
+        const choiceHandler = async (event) => {
+            event.preventDefault();
+            const button = event.target;
+            const choiceId = button.dataset.choiceId;
 
-                const response = await fetch('{{ path('move') }}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ choiceId })
+            const response = await fetch('{{ path('move') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ choiceId })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+
+                document.getElementById('location-text').innerText = data.text;
+
+                const choicesContainer = document.getElementById('choices');
+                choicesContainer.innerHTML = ''; 
+
+                data.choices.forEach(choice => {
+                    const btn = document.createElement('button');
+                    btn.innerText = choice.choiceText;
+                    btn.dataset.choiceId = choice.id;
+                    btn.classList.add('choice-btn');
+                    btn.addEventListener('click', choiceHandler);
+                    choicesContainer.appendChild(btn);
                 });
-
-                if (response.ok) {
-                    const data = await response.json();
-
-                    document.getElementById('location-text').innerText = data.text;
-
-                    const choicesContainer = document.getElementById('choices');
-                    choicesContainer.innerHTML = ''; 
-
-                    data.choices.forEach(choice => {
-                        const btn = document.createElement('button');
-                        btn.innerText = choice.choiceText;
-                        btn.dataset.choiceId = choice.id;
-                        btn.classList.add('choice-btn');
-                        btn.addEventListener('click', choiceHandler);
-                        choicesContainer.appendChild(btn);
-                    });
-                } else {
-                    console.error('Chyba při získávání nové pozice:', response.statusText);
-                }
-            };
+            } else {
+                console.error('Chyba při získávání nové pozice:', response.statusText);
+            }
+        };
         document.querySelectorAll('.choice-btn').forEach(button => {
             button.addEventListener('click', choiceHandler); 
-});
-const artefactHandler = async (event) => {
-                event.preventDefault();
-                const button = event.target;
-                const artefactId = button.dataset.artefactId;
+        });
 
-                const response = await fetch('{{ path('collect') }}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ artefactId })
-                });
+        const artefactHandler = async (event) => {
+            event.preventDefault();
+            const button = event.target;
+            const artefactId = button.dataset.artefactId;
 
-                if (response.ok) {
-                    button.remove();
-                    
-                } else {
-                    console.error('Chyba při sebrání artefaktu:', response.statusText);
-                }
-            };
+            const response = await fetch('{{ path('collect') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ artefactId })
+            });
+
+            if (response.ok) {
+                button.remove();
+            } else {
+                console.error('Chyba při sebrání artefaktu:', response.statusText);
+            }
+        };
         document.querySelectorAll('.artefact-btn').forEach(button => {
-            button.addEventListener('click', artefactHandler);})
+            button.addEventListener('click', artefactHandler); 
+        });
     </script>
 {% endblock %}
