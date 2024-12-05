@@ -4,8 +4,12 @@
 
 {% block body %}
 
+<div class="recepty-container">
+
 {% for recept in recepty %}
         <a href="{{ path('app_recept', { nazev: recept.nazev }) }}">{{ recept.nazev }}</a><br>
 {% endfor %}
+
+</div>
 
 {% endblock %}

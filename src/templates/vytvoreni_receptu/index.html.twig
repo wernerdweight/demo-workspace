@@ -22,7 +22,10 @@
     <ul {{ stimulus_target('form-collection', 'collectionContainer') }}></ul>
     <button type="button" {{ stimulus_action('form-collection', 'addCollectionElement') }}>Přidej ingredienci</button>
 
+{{ form_widget(form._token) }}
+
 </div>
 {{ form_row(form.submit) }}
 </div>
+{{ form_end(form) }}
 {% endblock %}

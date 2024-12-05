@@ -25,7 +25,7 @@ class VytvoreniReceptuController extends AbstractController
                 $entityManager->persist($ingredienceReceptu);
             }
             $entityManager->flush();
-            return $this->redirectToRoute('app_vytvoreni_receptu');
+            return $this->redirectToRoute('app_home');
         }
         return $this->render('vytvoreni_receptu/index.html.twig', [
             'form' => $form,
