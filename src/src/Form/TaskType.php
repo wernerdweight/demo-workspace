@@ -7,12 +7,10 @@ use App\Enum\ListingType;
 use App\Enum\ScopeType;
 use Ehyiah\QuillJsBundle\Form\QuillType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TaskType extends AbstractType
@@ -35,9 +33,10 @@ class TaskType extends AbstractType
             'expanded' => true,
             'multiple' => false,
         ])
-        // ->add('description', QuillType::class , [
-        //     'label' => 'Description',
-        // ])
+        ->add('description', QuillType::class , [
+            'label' => 'Description',
+            'quill_options' => ['bold', 'italic', 'link', 'blockquote', 'code-block', 'image', ['list' => 'ordered'], ['list' => 'bullet']],
+        ])
         ->add('submit', SubmitType::class, [
             'attr' => ['class' => 'btn btn-primary submit-button'],
         ]);

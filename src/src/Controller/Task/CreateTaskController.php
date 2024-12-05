@@ -24,6 +24,10 @@ class CreateTaskController extends AbstractController
             $task->setUpdatedDate(new \DateTime());
             $entityManager->persist($task);
             $entityManager->flush();
+            $referer = $request->headers->get('referer');
+            if ($referer) {
+                return $this->redirect($referer);
+            }
             return $this->redirectToRoute('app_home');
         } 
         return $this->render('task/create.html.twig', [

@@ -16,6 +16,35 @@ class TaskRepository extends ServiceEntityRepository
         parent::__construct($registry, Task::class);
     }
 
+    public function findWithPagination(int $page, int $limit, ?string $searchTerm = null): array
+  {
+    $queryBuilder = $this->createQueryBuilder('task')
+      ->orderBy('task.creationDate', 'DESC')
+      ->setFirstResult(($page - 1) * $limit)
+      ->setMaxResults($limit);
+    if (null !== $searchTerm) {
+      $queryBuilder
+        ->andWhere('(lower(task.name) LIKE lower(:searchTerm) OR lower(task.description) LIKE lower(:searchTerm))')
+        ->setParameter('searchTerm', '%' . $searchTerm . '%');
+    }
+    return $queryBuilder
+      ->getQuery()
+      ->getResult();
+  }
+  public function countWithSearchTerm(?string $searchTerm = null): int
+  {
+    $queryBuilder = $this->createQueryBuilder('task')
+      ->select('count(task.id)');
+    if (null !== $searchTerm) {
+      $queryBuilder
+        ->andWhere('lower(task.name) LIKE lower(:searchTerm)')
+        ->setParameter('searchTerm', '%' . $searchTerm . '%');
+    }
+    return $queryBuilder
+      ->getQuery()
+      ->getSingleScalarResult();
+  }
+
     //    /**
     //     * @return Task[] Returns an array of Task objects
     //     */

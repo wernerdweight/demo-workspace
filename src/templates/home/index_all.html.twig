@@ -5,24 +5,29 @@
 {% block main_content %}
 <h1>Home</h1>
 
-{# <div class="content">
-<section class="current_week">
-<h2>Current week</h2>
-{% for task in tasksCurrent %}
-<div>
-<p>{{task.name}}</p>
-<p>{{task.description}}</p>
+<div class="content">
+    <div>
+        <h2>Things to improve</h2>
+        <ul>
+            <li>Registration form should contais Repeat password field</li>
+            <li>Homepage should look more like homepage</li>
+            <li>Account page divided into two tabs, link from nav and sidebar
+                <ul>
+                    <li>Account - form to change the password</li>
+                    <li>Settings - you can set period type and language</li>
+                </ul>
+            </li>
+            <li>Task list should be paginated</li>
+            <li>Search window should return results</li>
+            <li>Add localization</li>
+            <li>Try clean and simple design</li>
+            <li>Drag and drop into listing</li>
+            <li>Superadmin section, list of user. Resend verification link if necessary</li>
+            <li>Senitazate output from quill </li>
+            <li>Check responzievness, add mobile break points</li>
+            <li>Find new fonts, one for headings and one for text</li>
+            <li>Consider archived listing</li>
+        </ul>
+    </div>
 </div>
-{% endfor %}
-</section>
-<section class="next week">
-<h2>Next week</h2>
-{% for task in tasksNext %}
-<div>
-<p>{{task.name}}</p>
-<p>{{task.description}}</p>
-</div>
-{% endfor %}
-</section>
-</div> #}
 {% endblock %}

@@ -2,12 +2,12 @@
 
 {% block title %}Register{% endblock %}
 
-{% block main_content %}
+{% block user_actions %}
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+    <h2>Register</h2>
 
     {{ form_errors(registrationForm) }}
 

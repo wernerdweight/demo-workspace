@@ -1,8 +1,8 @@
-<dialog id="searchModal">
-  <form method="dialog">
+<dialog id="searchModal" data-search-target="modal">
+  <form action="{{ path('app_search') }}">
     <h2>Vyhledávání</h2>
-    <input type="text" placeholder="What do you searching for?..." />
-    <button type="submit">Search</button>
-    <button id="closeModal">Close</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="What do you searching for?..." aria-label="Search" name="searchTerm" value="{{ searchTerm ?? '' }}">
+    <button class="btn" type="submit" value=>Search</button>
+    <button class="btn" data-action="search#close">Close</button>
   </form>
 </dialog>

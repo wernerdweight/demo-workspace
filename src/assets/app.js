@@ -7,15 +7,26 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-const searchLink = document.querySelector('.search_modal');
+const searchLink = document.querySelector('.search_modal_link');
 const modal = document.querySelector('#searchModal');
 
-const searchHandler = function(e) {
-    e.preventDefault();
-    modal.showModal();
-    console.log('Search icon clicked');
-};
-setTimeout(() => {
-    console.log('Hello from setTimeout');
-    searchLink.addEventListener('click', searchHandler);
-}, 3000);
+// console.log(searchLink);
+// const searchHandler = function(e) {
+//     e.preventDefault();
+//     modal.showModal();
+//     console.log('Search icon clicked');
+// };
+// setTimeout(() => {
+//     console.log('Hello from setTimeout');
+//     searchLink.addEventListener('click', searchHandler);
+//     console.log(getEventListeners(searchLink));
+// }, 3000);
+
+
+
+// console.log('End of file');
+
+// searchLink.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     modal.showModal();
+// });

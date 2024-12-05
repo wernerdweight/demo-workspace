@@ -7,6 +7,7 @@ use App\Form\TaskType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -26,7 +27,8 @@ class UpdateTaskController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $task->setUpdatedDate(new \DateTime());
             $entityManager->flush();
-            return $this->redirectToRoute('app_home');
+            $referer = $request->headers->get('referer'); 
+            return new RedirectResponse($referer);
         }
         
         return $this->render('task/update.html.twig', [

@@ -1,33 +1,39 @@
 <ul class="sidebar_links">
     <li class="sidebar_link">
-        <a href="#" class="sidebar_icon_link">
-            {% include 'img-svg/home.svg' %}
+        <a href="{{ path('app_all_home')}}" class="sidebar_icon_link">
+            <i class="fas fa-home icon"></i>
+            <span>HOME</span>
         </a>
     </li>
     <li class="sidebar_link">
         <a href="{{ path('app_task_create') }}" class="sidebar_icon_link">
-            {% include 'img-svg/task.svg' %}
+            <i class="fas fa-pen-to-square icon"></i>
+            <span>ADD TASK</span>
         </a>
     </li>
     <li class="sidebar_link">
         <a href="{{ path('app_listing_personal') }}" class="sidebar_icon_link">
-            {% include 'img-svg/personal.svg' %}
+            <i class="fas fa-icons icon"></i>
+            <span>PERSONAL</span>
         </a>
     </li>
     <li class="sidebar_link">
         <a href="{{ path('app_listing_work') }}" class="sidebar_icon_link">
-            {% include 'img-svg/work.svg' %}
+            <i class="fas fa-briefcase icon"></i>    
+            <span>WORK</span>
         </a>
     </li>
     <li class="empty"><div></div></li>            
     <li class="sidebar_link">
-        <a href="#" class="sidebar_icon_link search_modal">
-            {% include 'img-svg/search.svg' %}
+        <a href="#" class="sidebar_icon_link search_modal" data-action="search#open">
+            <i class="fas fa-search icon"></i>
+            <span>SEARCH</span>
         </a>
     </li>
     <li class="sidebar_link">
-        <a href="#" class="sidebar_icon_link">
-            {% include 'img-svg/settings.svg' %}
+        <a href="{{ path('app_account') }}" class="sidebar_icon_link">
+            <i class="fas fa-gear icon"></i>
+            <span>SETTINGS</span>
         </a>
     </li>
 </ul>

@@ -1,4 +1,23 @@
 <nav class="navigation">
-    <div class="logo"><a href="/"><img src="{{ asset('img/wuc-logo.png') }}" alt="Week under control logo"></a></div>
-    <div class="sign_tab"><a href="{{ path('app_login') }}"><img src="{{ asset('img/account.svg') }}" alt="Account icon"></a></div>
+    <div class="logo">
+        <a href="/">
+            <img src="{{ asset('img/wuc-logo.png') }}" alt="Week under control logo">
+        </a>
+    </div>
+    <div class="sign_tab">
+        {% if not app.user and app.current_route == 'app_login' %}
+            <a href="{{ path('app_register') }}">
+                <i class="fa-solid fa-person-circle-plus icon"></i>
+            </a>
+        {% elseif not app.user and app.current_route == 'app_register' %}
+            <a href="{{ path('app_login') }}">
+                <i class="fa-solid fa-person-circle-check icon"></i>
+            </a>
+        {% else %}
+        <a href="{{ path('app_account') }}">
+            <i class="fa-solid fa-person-circle-question icon"></i>
+        </a>
+        {% endif %}
+    </div>
 </nav>
+

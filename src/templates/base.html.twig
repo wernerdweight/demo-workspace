@@ -31,17 +31,33 @@
         {% include 'nav.html.twig' %}
     </header>
     {% if app.user is not null %}
-     <div class="sidebar">
+     <div class="sidebar" data-controller="search">
         {% include 'sidebar.html.twig' %}
+        {% include 'modal/search.html.twig' %}
     </div>
     {% endif %}
     <main class="main_content">
-    {% block main_content %}{% endblock %}
+    {% block main_content %}
+        {% if not app.user %}
+            <h1>Welcome to Week under control!</h1>
+            <div class="content content-flex">
+            <div class="intro content-flex-item">
+                <p>Week under control is a simple tool to help you organize your week.</p>
+                <p>It is a place where you can create tasks, organize them in lists and keep track of your progress.</p>
+                <p>You can use it for personal tasks or for work tasks.</p>
+                <p>It is up to you how you use it.</p>
+                <p>Just remember to keep your week under control!</p>
+            </div>
+            <div class="user_actions content-flex-item">
+                {% block user_actions %}{% endblock %}
+            </div>
+            </div>
+        {% endif %}
+    {% endblock %}
     </main>
     <footer class="footer">
         {% include 'footer.html.twig' %}
     </footer>
-        {% include 'modal/search.html.twig' %}
     </div>
     </body>
 </html>

@@ -1,0 +1,35 @@
+ {% set numberOfPages = (totalTasks / limit)|round(0, 'ceil') %}
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        {% if page > 1 %}
+          <a class="page-link" href="{{ path('app_search', {'page': page-1, 'limit': limit, 'searchTerm': searchTerm}) }}">Previous</a>
+        {% else %}
+          <span class="page-link disabled">Previous</span>
+        {% endif %}
+      </li>
+      {% for pageNumber in 1..numberOfPages %}
+        <li class="page-item {% if pageNumber == page %}active{% endif %}">
+          <a class="page-link" href="{{ path('app_search', {'page': pageNumber, 'limit': limit, 'searchTerm': searchTerm}) }}">{{ pageNumber }}</a>
+        </li>
+      {% endfor %}
+      <li class="page-item">
+        {% if page < numberOfPages %}
+          <a class="page-link" href="{{ path('app_search', {'page': page+1, 'limit': limit, 'searchTerm': searchTerm}) }}">Next</a>
+        {% else %}
+          <span class="page-link disabled">Next</span>
+        {% endif %}
+      </li>
+    </ul>
+    {# {% set pageSizes = [10, 20, 30, 40, 50] %}
+    <form class="form-inline" method="get" action="{{ path('app_search') }}">
+      <label for="pageSize">Page size</label>
+      <select name="limit" class="form-control" id="pageSize">
+        {% for pageSize in pageSizes %}
+          <option value="{{ pageSize }}" {% if pageSize == limit %}selected{% endif %}>{{ pageSize }}</option>
+        {% endfor %}
+      </select>
+      <input type="hidden" name="searchTerm" value="{{ searchTerm }}">
+      <button type="submit" class="btn btn-primary">Change</button>
+    </form> #}
+  </nav>
