@@ -205,47 +205,25 @@
   }
 </script>
 <script>
-  const form=document.querySelector('Form')
-  form.addEventListener('submit', (event)=>{
-    event.preventDefault()
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
 
-    let isValid=true
-
-    const inputs = form.querySelectorAll('input')
-    inputs.forEach(input => {
-      if (input.name==="name"){
-        const error = form.querySelector('#NameError')
-        if (input.value.length < 5) {
-          isValid=false
-          error.style.opacity = 1 
-          if (input.value.length === 0) {
-            error.textContent = "Zadejte jméno a příjmení"
-          } else {
-            error.textContent = "Jméno musí mít alespoň 5 čísel"
-          }
-
-        } else {
-          error.style.opacity = 0
+        
+        if (name === "" || email === "" || message === "") {
+            alert("Všechna pole musí být vyplněná.");
+            event.preventDefault(); 
         }
-      }
-      if (input.name === 'email') {
-        const error = form.querySelector ('#EmailError')
-        if (null === input.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
-          isValid=false
-          error.style.opacity = 1 
-        } else {
-          error.style.opacity = 0
+
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert("Prosím zadejte platnou emailovou adresu.");
+            event.preventDefault(); 
         }
-      }
-    })
-
-    if (isValid) {
-      event.target.submit()
-    }
-
-  })
+    });
+    </script>
   {% endblock %}
-  </script>
 
 </html>
 
